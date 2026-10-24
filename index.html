@@ -3,225 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0e14">
-  <meta name="description" content="Cheng-You Cheng is an NCKU Mathematics student focused on combinatorial optimization, QUBO, and computer vision.">
-  <meta property="og:title" content="Cheng-You Cheng — Mathematics & AI">
-  <meta property="og:description" content="Research, projects, and teaching at the intersection of mathematics, optimization, and computer vision.">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="description" content="A personal website for Cheng-You Cheng, a Mathematics undergraduate at NCKU exploring research, programming, teaching, and community.">
+  <meta property="og:title" content="Cheng-You Cheng — Personal website">
+  <meta property="og:description" content="A personal website about mathematics, research, programming, teaching, community, and learning by trying new things.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jengyoyoao.github.io/">
-  <title>Cheng-You Cheng — Mathematics &amp; AI</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0b0e14;
-      --surface: #111923;
-      --surface-raised: #151f2b;
-      --text: #edf0f5;
-      --muted: #aab5c3;
-      --quiet: #8492a3;
-      --blue: #8bb8ff;
-      --orange: #f08a62;
-      --line: #283544;
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 16px/1.65 var(--sans);
-    }
-    a { color: inherit; text-decoration: none; }
-    a:hover { color: var(--blue); }
-    a:focus-visible, button:focus-visible {
-      outline: 3px solid var(--orange);
-      outline-offset: 4px;
-      border-radius: 3px;
-    }
-    .skip-link {
-      position: fixed;
-      z-index: 10;
-      top: 12px;
-      left: 12px;
-      padding: 9px 12px;
-      transform: translateY(-160%);
-      border: 1px solid var(--blue);
-      border-radius: 4px;
-      background: var(--surface-raised);
-      color: var(--text);
-    }
-    .skip-link:focus-visible { transform: translateY(0); }
-    .page { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
-
-    .topbar {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      border-bottom: 1px solid var(--line);
-    }
-    .wordmark { font-size: 15px; font-weight: 700; letter-spacing: -.03em; white-space: nowrap; }
-    .wordmark-mark { color: var(--blue); }
-    .topbar nav { display: flex; flex-wrap: wrap; gap: 24px; color: var(--muted); font-size: 13px; }
-    .topbar nav a { padding: 8px 0; }
-
-    .intro {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 232px;
-      align-items: center;
-      gap: 64px;
-      padding: 62px 0 68px;
-    }
-    .kicker, .eyebrow {
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-    .intro h1 {
-      margin: 17px 0 20px;
-      font: normal clamp(52px, 7.6vw, 88px)/.99 var(--serif);
-      letter-spacing: -.06em;
-    }
-    .intro h1 em { color: var(--blue); font-style: italic; }
-    .intro-copy {
-      max-width: 61ch;
-      margin: 0;
-      color: #c0c9d5;
-      font-size: clamp(16px, 1.9vw, 19px);
-      line-height: 1.65;
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 25px; }
-    .button {
-      min-height: 42px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 9px 14px;
-      border: 1px solid #3b4d62;
-      border-radius: 5px;
-      color: var(--text);
-      font-size: 13px;
-      font-weight: 650;
-    }
-    .button:hover { border-color: var(--blue); color: var(--blue); }
-    .button-primary { border-color: var(--blue); background: var(--blue); color: #0b1420; }
-    .button-primary:hover { background: #a8cbff; color: #0b1420; }
-    .intro-aside { border-left: 2px solid var(--orange); padding: 5px 0 5px 19px; color: var(--muted); font-size: 13px; }
-    .intro-avatar {
-      width: 126px;
-      height: 126px;
-      display: block;
-      margin: 0 0 20px;
-      border: 3px solid var(--line);
-      border-radius: 50%;
-      background: #fff;
-      object-fit: cover;
-    }
-    .intro-aside strong { display: block; margin-bottom: 5px; color: var(--text); font-size: 14px; }
-    .aside-line { margin-top: 14px; }
-    .aside-line span { display: block; color: var(--quiet); font-size: 10px; letter-spacing: .11em; text-transform: uppercase; }
-
-    .section {
-      display: grid;
-      grid-template-columns: 190px minmax(0, 1fr);
-      gap: 54px;
-      padding: 48px 0 58px;
-      border-top: 1px solid var(--line);
-    }
-    .section-title { margin: 0; font: normal 24px/1.2 var(--serif); }
-    .section-title small {
-      display: block;
-      margin-bottom: 11px;
-      color: var(--blue);
-      font: 700 10px/1.4 var(--sans);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    .about-copy { max-width: 68ch; margin: 0; color: var(--muted); }
-    .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
-    .fact b { display: block; margin-bottom: 3px; font: 21px var(--serif); }
-    .fact span { color: var(--muted); font-size: 12px; }
-
-    .research-lead { margin: 0 0 18px; color: var(--muted); font-size: 14px; }
-    .research-lead strong { color: var(--text); }
-    .project-card { padding: 22px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
-    .project-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
-    .project-kicker { color: var(--blue); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-    .project-card h3, .project-row h3 { margin: 5px 0 8px; font: normal 24px/1.22 var(--serif); letter-spacing: -.02em; }
-    .status { flex: 0 0 auto; padding: 4px 8px; border: 1px solid #405268; border-radius: 999px; color: #c6d2e1; font-size: 10px; }
-    .project-description { max-width: 76ch; margin: 0; color: var(--muted); font-size: 13px; }
-    .contribution { margin: 14px 0 0; color: #d1d8e2; font-size: 12px; }
-    .contribution b { color: var(--text); }
-    .project-links { display: flex; flex-wrap: wrap; gap: 17px; margin-top: 16px; font-size: 12px; font-weight: 650; }
-    .project-links a { color: var(--blue); text-decoration: underline; text-decoration-color: #526a89; text-underline-offset: 3px; }
-    .project-list { display: grid; gap: 12px; margin-top: 14px; }
-    .project-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 22px; padding: 19px 21px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); }
-    .project-row > .status { align-self: start; justify-self: end; }
-    .project-row h3 { font-size: 21px; }
-    .project-row p { max-width: 75ch; margin: 0; color: var(--muted); font-size: 12px; }
-    .project-row .project-links { grid-column: 1 / -1; margin-top: 0; }
-    .experience-list { display: grid; }
-    .experience { display: grid; grid-template-columns: 145px minmax(0, 1fr); gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--line); }
-    .experience:first-child { border-top: 1px solid var(--line); }
-    .experience-term { color: var(--blue); font-size: 11px; font-weight: 700; }
-    .experience h3 { margin: 0; font: normal 18px/1.3 var(--serif); }
-    .experience p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
-    .recognition { margin-top: 22px; padding: 17px 19px; border-left: 2px solid var(--orange); background: var(--surface); }
-    .recognition h3 { margin: 0; font: normal 18px var(--serif); }
-    .recognition p { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
-    .footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 22px 0 36px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
-    .footer a { color: var(--blue); }
-
-    @media (max-width: 800px) {
-      .page { width: min(100% - 40px, 680px); }
-      .topbar { align-items: flex-start; justify-content: center; flex-direction: column; gap: 5px; padding: 14px 0; }
-      .topbar nav { gap: 17px; }
-      .intro { grid-template-columns: minmax(0, 1fr) 170px; gap: 30px; padding: 48px 0 50px; }
-      .intro-avatar { width: 100px; height: 100px; }
-      .section { grid-template-columns: 145px minmax(0, 1fr); gap: 28px; padding: 38px 0 44px; }
-    }
-    @media (max-width: 560px) {
-      .page { width: calc(100% - 36px); }
-      .topbar nav { gap: 13px; font-size: 12px; }
-      .intro { grid-template-columns: minmax(0, 1fr); gap: 23px; padding: 38px 0 42px; }
-      .intro h1 { font-size: clamp(49px, 15vw, 68px); }
-      .intro-aside { display: grid; grid-template-columns: 76px minmax(0, 1fr); align-items: center; column-gap: 14px; }
-      .intro-avatar { grid-row: span 3; width: 76px; height: 76px; margin: 0; }
-      .intro-aside strong { align-self: end; margin: 0; }
-      .aside-line { grid-column: 2; align-self: start; margin-top: 5px; }
-      .section { grid-template-columns: minmax(0, 1fr); gap: 18px; padding: 32px 0 38px; }
-      .section-title { font-size: 21px; }
-      .facts { gap: 10px; }
-      .fact b { font-size: 18px; }
-      .fact span { font-size: 10px; }
-      .project-card { padding: 16px; }
-      .project-head { flex-direction: column; gap: 8px; }
-      .project-card h3 { font-size: 22px; }
-      .project-row { grid-template-columns: minmax(0, 1fr); padding: 16px; }
-      .project-row .status { justify-self: start; grid-row: 1; }
-      .project-row > div:first-child { grid-row: 2; }
-      .project-row .project-links { grid-column: 1; grid-row: 3; }
-      .experience { grid-template-columns: minmax(0, 1fr); gap: 4px; }
-      .footer { flex-direction: column; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-    }
-  </style>
+  <title>Cheng-You Cheng — Personal website</title>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
   <a class="skip-link" href="#home">Skip to main content</a>
   <div class="page">
     <header class="topbar">
-      <a class="wordmark" href="#home"><span class="wordmark-mark">CY.</span> Cheng-You Cheng</a>
+      <a class="wordmark" href="#home" aria-current="page"><span class="wordmark-mark">CY.</span> Cheng-You Cheng</a>
       <nav aria-label="Main navigation">
         <a href="about.html">About</a>
         <a href="community.html">Community</a>
@@ -230,18 +25,18 @@
       </nav>
     </header>
 
-    <main id="home">
+    <main id="home" tabindex="-1">
       <section class="intro" aria-labelledby="intro-title">
         <div>
-          <div class="kicker">Mathematics · Combinatorial Optimization · Computer Vision</div>
-          <h1 id="intro-title">Trying new things,<br><em>learning as I go.</em></h1>
-          <p class="intro-copy">I’m Cheng-You Cheng, a Mathematics student at National Cheng Kung University. My work focuses on combinatorial optimization and computer vision: formulating structured problems with QUBO, then exploring how visual data can be translated into useful graph models.</p>
+          <div class="kicker">Mathematics · Computing · Community</div>
+          <h1 id="intro-title">Trying new things, <em>learning as I go.</em></h1>
+          <p class="intro-copy">I’m Cheng-You Cheng, a Mathematics undergraduate at National Cheng Kung University. I like exploring unfamiliar ideas and learning through practice. Research in combinatorial optimization and computer vision is one part of my life; teaching and community activities are another.</p>
           <div class="hero-actions" aria-label="Quick links">
-            <a class="button button-primary" href="https://github.com/jengyoyoAo/Graph-Partitioning-via-QUBO-Optimization-and-YOLO-Geometric-Detection">View research <span aria-hidden="true">↗</span></a>
-            <a class="button" href="mailto:jackyyoyo2@gmail.com">Email <span aria-hidden="true">↗</span></a>
+            <a class="button button-primary" href="#research">Explore selected work <span aria-hidden="true">↓</span></a>
+            <a class="button" href="https://github.com/jengyoyoAo">GitHub profile <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <aside class="intro-aside" aria-label="Current research and profile image">
+        <aside class="intro-aside" aria-label="Profile and research support">
           <img class="intro-avatar" src="images/avatar.jpg" alt="Illustrated avatar of Cheng-You Cheng" width="126" height="126">
           <strong>Research focus</strong>
           QUBO optimization, graph partitioning, and computer vision.
@@ -252,7 +47,7 @@
       <section class="section" id="about" aria-labelledby="about-title">
         <h2 class="section-title" id="about-title"><small>01 / Profile</small>Mathematics<br>meets AI</h2>
         <div>
-          <p class="about-copy">I study mathematical models for discrete, structured problems and build computational experiments around them. My current interests are QUBO formulations, graph partitioning, and computer vision—especially the challenge of moving from a visual representation to a graph that can be analyzed and optimized.</p>
+          <p class="about-copy">I study mathematical models for discrete problems and explore them through computational experiments. My current academic interests include QUBO formulations, graph partitioning, and computer vision, especially translating visual data into graphs that can be analyzed and optimized.</p>
           <div class="facts" aria-label="Research areas">
             <div class="fact"><b>NCKU</b><span>Mathematics</span></div>
             <div class="fact"><b>QUBO</b><span>Combinatorial optimization</span></div>
