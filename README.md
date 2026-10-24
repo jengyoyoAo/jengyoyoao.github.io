@@ -11,6 +11,7 @@ A static personal website for my profile, selected projects, teaching, and conta
 - `online-judge.html` — overview linking to platform-specific solution logs.
 - `project-euler.html`, `cses.html`, `zerojudge.html`, `leetcode.html` — per-platform solution pages.
 - `online-judge.css` — shared styles for the problem-solving pages.
+- `solutions/` — source code and Markdown notes, organized by platform.
 - `404.html` — matching not-found page.
 - `images/avatar.jpg` — illustrated avatar shown on the home page.
 
