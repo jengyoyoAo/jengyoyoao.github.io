@@ -6,35 +6,7 @@
   <meta name="theme-color" content="#0b0e14">
   <meta name="description" content="Online judge problem-solving notes by Cheng-You Cheng.">
   <title>Online Judge — Cheng-You Cheng</title>
-  <style>
-    :root { color-scheme:dark; --bg:#0b0e14; --surface:#111923; --text:#edf0f5; --muted:#aab5c3; --quiet:#8492a3; --blue:#8bb8ff; --orange:#f08a62; --line:#283544; --serif:Georgia,"Times New Roman",serif; --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.7 var(--sans); }
-    a { color:inherit; text-decoration:none; } a:hover { color:var(--blue); }
-    a:focus-visible { outline:3px solid var(--orange); outline-offset:4px; }
-    .page { width:min(1040px,calc(100% - 48px)); margin:auto; }
-    .topbar { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid var(--line); }
-    .wordmark { font-size:14px; font-weight:700; white-space:nowrap; } .wordmark span { color:var(--blue); }
-    nav { display:flex; flex-wrap:wrap; gap:18px; color:var(--muted); font-size:12px; } nav a[aria-current="page"] { color:var(--text); }
-    .hero { padding:72px 0 48px; } .eyebrow { color:var(--blue); font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
-    h1 { margin:16px 0; font:normal clamp(42px,7vw,72px)/1.04 var(--serif); letter-spacing:-.05em; } h1 em { color:var(--blue); }
-    .lead { max-width:68ch; color:#c0c9d5; font-size:18px; }
-    .section { padding:28px 0 38px; border-top:1px solid var(--line); } h2 { margin:0 0 16px; font:normal 26px/1.2 var(--serif); }
-    .empty { padding:26px; border:1px solid var(--line); border-radius:8px; background:var(--surface); }
-    .empty p { max-width:64ch; margin:8px 0 0; color:var(--muted); }
-    .eyebrow-small { color:var(--blue); font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
-    .format { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
-    .format article { padding:17px; border-left:2px solid var(--line); background:var(--surface); }
-    .format h3 { margin:0 0 5px; font:normal 18px var(--serif); } .format p { margin:0; color:var(--muted); font-size:12px; }
-    .platform-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
-    .platform { min-height:180px; padding:20px; border:1px solid var(--line); border-radius:8px; background:var(--surface); }
-    .platform h3 { margin:6px 0 12px; font:normal 24px/1.2 var(--serif); }
-    .platform p { margin:0; color:var(--muted); font-size:13px; }
-    .platform .empty-note { padding-top:12px; margin-top:12px; border-top:1px solid var(--line); color:var(--quiet); font-size:12px; }
-    .back { color:var(--blue); text-decoration:underline; text-underline-offset:4px; }
-    footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:22px 0 34px; border-top:1px solid var(--line); color:var(--quiet); font-size:12px; }
-    @media(max-width:680px) { .page { width:calc(100% - 36px); } .topbar { align-items:flex-start; flex-direction:column; justify-content:center; gap:8px; padding:13px 0; } nav { gap:12px; } .hero { padding:48px 0 32px; } .format, .platform-grid { grid-template-columns:1fr; } }
-</style>
+  <link rel="stylesheet" href="online-judge.css">
 </head>
 <body>
   <div class="page">
@@ -57,30 +29,30 @@
       <section class="section" aria-labelledby="records-title">
         <h2 id="records-title">Problem records by platform</h2>
         <div class="platform-grid">
-          <section class="platform" aria-labelledby="euler-title">
+          <a class="platform" href="project-euler.html" aria-labelledby="euler-title">
             <div class="eyebrow-small">01 · Mathematics &amp; programming</div>
             <h3 id="euler-title">Project Euler</h3>
             <p>Problems that combine mathematical reasoning with programming.</p>
-            <p class="empty-note">No problems recorded yet.</p>
-          </section>
-          <section class="platform" aria-labelledby="cses-title">
+            <span class="open-label">Open Project Euler solution page →</span>
+          </a>
+          <a class="platform" href="cses.html" aria-labelledby="cses-title">
             <div class="eyebrow-small">02 · Algorithms &amp; data structures</div>
             <h3 id="cses-title">CSES</h3>
             <p>Practice notes for the CSES Problem Set.</p>
-            <p class="empty-note">No problems recorded yet.</p>
-          </section>
-          <section class="platform" aria-labelledby="zerojudge-title">
+            <span class="open-label">Open CSES solution page →</span>
+          </a>
+          <a class="platform" href="zerojudge.html" aria-labelledby="zerojudge-title">
             <div class="eyebrow-small">03 · Programming practice</div>
             <h3 id="zerojudge-title">ZeroJudge</h3>
             <p>A place to collect programming problems and implementation notes.</p>
-            <p class="empty-note">No problems recorded yet.</p>
-          </section>
-          <section class="platform" aria-labelledby="leetcode-title">
+            <span class="open-label">Open ZeroJudge solution page →</span>
+          </a>
+          <a class="platform" href="leetcode.html" aria-labelledby="leetcode-title">
             <div class="eyebrow-small">04 · Interview-style problems</div>
             <h3 id="leetcode-title">LeetCode</h3>
             <p>Solutions, patterns, and takeaways from each problem.</p>
-            <p class="empty-note">No problems recorded yet.</p>
-          </section>
+            <span class="open-label">Open LeetCode solution page →</span>
+          </a>
         </div>
       </section>
       <section class="section" aria-labelledby="format-title">

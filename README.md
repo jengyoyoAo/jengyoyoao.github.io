@@ -8,7 +8,9 @@ A static personal website for my profile, selected projects, teaching, and conta
 
 - `index.html` — home page with its styles included; no build step is required.
 - `about.html`, `community.html`, `notes.html` — personal, community, and reflection subpages.
-- `online-judge.html` — a log for problem-solving practice and takeaways.
+- `online-judge.html` — overview linking to platform-specific solution logs.
+- `project-euler.html`, `cses.html`, `zerojudge.html`, `leetcode.html` — per-platform solution pages.
+- `online-judge.css` — shared styles for the problem-solving pages.
 - `404.html` — matching not-found page.
 - `images/avatar.jpg` — illustrated avatar shown on the home page.
 
