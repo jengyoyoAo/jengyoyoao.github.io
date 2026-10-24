@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0e14">
+  <meta name="description" content="Online judge problem-solving notes by Cheng-You Cheng.">
+  <title>Online Judge — Cheng-You Cheng</title>
+  <style>
+    :root { color-scheme:dark; --bg:#0b0e14; --surface:#111923; --text:#edf0f5; --muted:#aab5c3; --quiet:#8492a3; --blue:#8bb8ff; --orange:#f08a62; --line:#283544; --serif:Georgia,"Times New Roman",serif; --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.7 var(--sans); }
+    a { color:inherit; text-decoration:none; } a:hover { color:var(--blue); }
+    a:focus-visible { outline:3px solid var(--orange); outline-offset:4px; }
+    .page { width:min(1040px,calc(100% - 48px)); margin:auto; }
+    .topbar { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid var(--line); }
+    .wordmark { font-size:14px; font-weight:700; white-space:nowrap; } .wordmark span { color:var(--blue); }
+    nav { display:flex; flex-wrap:wrap; gap:18px; color:var(--muted); font-size:12px; } nav a[aria-current="page"] { color:var(--text); }
+    .hero { padding:72px 0 48px; } .eyebrow { color:var(--blue); font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
+    h1 { margin:16px 0; font:normal clamp(42px,7vw,72px)/1.04 var(--serif); letter-spacing:-.05em; } h1 em { color:var(--blue); }
+    .lead { max-width:68ch; color:#c0c9d5; font-size:18px; }
+    .section { padding:28px 0 38px; border-top:1px solid var(--line); } h2 { margin:0 0 16px; font:normal 26px/1.2 var(--serif); }
+    .empty { padding:26px; border:1px solid var(--line); border-radius:8px; background:var(--surface); }
+    .empty p { max-width:64ch; margin:8px 0 0; color:var(--muted); }
+    .eyebrow-small { color:var(--blue); font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    .format { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .format article { padding:17px; border-left:2px solid var(--line); background:var(--surface); }
+    .format h3 { margin:0 0 5px; font:normal 18px var(--serif); } .format p { margin:0; color:var(--muted); font-size:12px; }
+    .back { color:var(--blue); text-decoration:underline; text-underline-offset:4px; }
+    footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:22px 0 34px; border-top:1px solid var(--line); color:var(--quiet); font-size:12px; }
+    @media(max-width:680px) { .page { width:calc(100% - 36px); } .topbar { align-items:flex-start; flex-direction:column; justify-content:center; gap:8px; padding:13px 0; } nav { gap:12px; } .hero { padding:48px 0 32px; } .format { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="wordmark" href="index.html"><span>CY.</span> Cheng-You Cheng</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="about.html">About</a>
+        <a href="index.html#research">Research</a><a href="community.html">Community</a>
+        <a href="notes.html">Notes</a><a href="online-judge.html" aria-current="page">Online Judge</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">Problem solving · Practice log</div>
+        <h1>One problem at a time, <em>one idea at a time.</em></h1>
+        <p class="lead">A record of online judge problems I work through: the key idea, the algorithm, and what I learn from solving or revisiting each one.</p>
+      </section>
+      <section class="section" aria-labelledby="records-title">
+        <h2 id="records-title">Problem records</h2>
+        <div class="empty">
+          <div class="eyebrow-small">The log starts here</div>
+          <p>I haven’t added problem entries yet. As I practice, I’ll record the platform and problem, the main technique, and a short note about the solution or a lesson learned.</p>
+        </div>
+        <div class="format" aria-label="Information recorded for each problem">
+          <article><h3>Problem</h3><p>Platform, problem title, and a link to the statement.</p></article>
+          <article><h3>Approach</h3><p>The central observation, algorithm, or data structure.</p></article>
+          <article><h3>Takeaway</h3><p>A concise note about complexity, a pitfall, or what clicked.</p></article>
+        </div>
+      </section>
+      <p><a class="back" href="index.html">← Back to the home page</a></p>
+    </main>
+    <footer><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
+  </div>
+</body>
+</html>
