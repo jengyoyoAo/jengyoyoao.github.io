@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="description" content="A reflection on my first merged open-source contribution to codetrial.">
+  <title>My first open-source PR was merged — Cheng-You Cheng</title>
+  <link rel="stylesheet" href="../site.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page">
+    <header class="topbar">
+      <a class="wordmark" href="../index.html"><span>CY.</span> Cheng-You Cheng</a>
+      <nav aria-label="Main navigation">
+        <a href="../about.html">About</a>
+        <a href="../community.html">Community</a>
+        <a href="../notes.html" aria-current="page">Journal</a>
+        <a href="../online-judge.html">Online Judge</a>
+      </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <article class="journal-article">
+        <div class="journal-article-meta">
+          <span class="eyebrow">A small milestone</span>
+          <time datetime="2026-10-25">Published October 25, 2026</time>
+        </div>
+        <h1>My first open-source PR was merged</h1>
+        <ul class="journal-tags" aria-label="Post hashtags">
+          <li>#OpenSource</li><li>#C</li><li>#Learning</li>
+        </ul>
+        <div class="journal-article-body">
+          <p>My first pull request to an open-source project has been merged. It went into <strong>codetrial</strong>, an open-source project maintained by Jserv, a professor in National Cheng Kung University’s Department of Computer Science and Information Engineering.</p>
+          <h2>What I worked on</h2>
+          <p>The issue was that test results involving special floating-point values—positive infinity, negative infinity, or NaN—could produce invalid JSON and cause the harness to lose its results. I updated the C output helper to represent non-finite values as JSON <code>null</code>, for both individual doubles and arrays of doubles, and added regression cases for those values.</p>
+          <p>It was a focused fix, but it taught me to trace a bug from a report through the output code and tests, then check that the change handles both the simple and mixed cases.</p>
+          <h2>A first step</h2>
+          <p>I’ve used open-source software for a long time, so seeing my own contribution accepted felt like a meaningful first step toward giving back. It made contributing feel more tangible and encouraged me to keep learning by building, reading other people’s code, and sharing improvements.</p>
+          <div class="journal-article-links">
+            <a href="https://github.com/sysprog21/codetrial/pull/441">View the merged pull request ↗</a>
+            <a href="https://github.com/sysprog21/codetrial/issues/438">Read the original issue ↗</a>
+          </div>
+        </div>
+        <p><a class="back-link" href="../notes.html">← Back to Journal</a></p>
+      </article>
+    </main>
+    <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
+  </div>
+</body>
+</html>
