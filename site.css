@@ -130,7 +130,6 @@ main { min-width: 0; }
 .oj-platform-nav a:hover { border-color: var(--blue); color: var(--text); }
 .oj-platform-nav a[aria-current="page"] { border-color: var(--blue); color: var(--text); background: var(--surface); }
 .oj-section { padding: 30px 0 40px; border-top: 1px solid var(--line); }
-.oj-solution-list { width: min(100%, 860px); margin-inline: auto; }
 .oj-section h2 { margin: 0 0 18px; font: normal 28px/1.25 var(--serif); }
 .oj-platform-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
 .oj-platform { display: block; min-height: 184px; padding: 20px; border: 1px solid var(--line); border-radius: 5px; background: var(--surface); }
