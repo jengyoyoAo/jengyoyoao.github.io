@@ -11,6 +11,7 @@ A static personal website for my profile, selected projects, teaching, and conta
 - `journal/` — individual journal articles; each post has its own page, publication date, and hashtags.
 - `online-judge.html` — overview linking to platform-specific solution logs.
 - `project-euler.html`, `cses.html`, `zerojudge.html`, `leetcode.html` — per-platform solution pages.
+- `project-euler-1.html` — Project Euler Problem 1 write-up with Python and C solutions.
 - `site.css` — shared styles for all site pages.
 - `solutions/` — source code and Markdown notes, organized by platform.
 - `images/avatar.jpg` — illustrated profile avatar.

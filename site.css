@@ -143,6 +143,18 @@ main { min-width: 0; }
 .oj-record-format p { margin: 0; color: var(--muted); font-size: 14px; }
 .solution-empty { max-width: 780px; padding: 22px 24px; border-left: 2px solid var(--orange); background: var(--surface); }
 .solution-empty p { margin: 7px 0 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
+.solution-article { max-width: 780px; padding: 54px 0 42px; }
+.solution-article h1 { margin: 13px 0 12px; font: normal clamp(40px, 5vw, 58px)/1.08 var(--serif); letter-spacing: -.045em; }
+.solution-article > .lead { max-width: 68ch; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.75; }
+.solution-statement { margin: 15px 0 32px; }
+.solution-section { padding: 25px 0 28px; border-top: 1px solid var(--line); }
+.solution-section h2 { margin: 0 0 12px; font: normal 27px/1.25 var(--serif); }
+.solution-section > p { max-width: 74ch; margin: 0 0 13px; color: var(--muted); font-size: 16px; line-height: 1.8; }
+.solution-section pre { overflow-x: auto; margin: 14px 0; padding: 18px 20px; border: 1px solid var(--line); border-radius: 5px; background: #080c11; color: #e3ebf6; font: 14px/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; tab-size: 4; }
+.solution-facts { display: grid; gap: 8px; margin: 0; padding-left: 20px; color: var(--muted); }
+.solution-facts strong { color: var(--text); }
+.solution-result { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 18px !important; padding: 14px 16px; border-left: 2px solid var(--orange); background: var(--surface); }
+.solution-result code { color: var(--text); font: 22px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .repo-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 18px; padding: 8px 12px; border: 1px solid #40536a; border-radius: 4px; color: var(--blue); font-size: 14px; font-weight: 650; }
 .repo-link:hover { border-color: var(--blue); color: var(--text); }
 
@@ -197,6 +209,10 @@ main { min-width: 0; }
   .journal-post-summary { padding: 17px 19px 20px; }
   .journal-article { padding: 42px 0 34px; }
   .journal-article-body p { font-size: 16px; }
+  .solution-article { padding: 42px 0 34px; }
+  .solution-article > .lead { font-size: 17px; }
+  .solution-section { padding: 21px 0 23px; }
+  .solution-section pre { padding: 15px; font-size: 13px; }
   .oj-platform { min-height: 0; padding: 18px; }
   .footer { flex-direction: column; gap: 9px; font-size: 13px; }
   .not-found { min-height: calc(100vh - 72px); }

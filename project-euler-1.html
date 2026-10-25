@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="description" content="Project Euler Problem 1: Python and C solutions for Multiples of 3 or 5, with correctness and complexity analysis.">
+  <title>Project Euler 1: Multiples of 3 or 5 — Cheng-You Cheng</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page">
+    <header class="topbar">
+      <a class="wordmark" href="index.html"><span>CY.</span> Cheng-You Cheng</a>
+      <nav aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="community.html">Community</a>
+        <a href="notes.html">Journal</a>
+        <a href="online-judge.html" aria-current="page">Online Judge</a>
+      </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <article class="solution-article">
+        <div class="eyebrow">Project Euler · Problem 1</div>
+        <h1>Multiples of 3 or 5</h1>
+        <p class="lead">Find the sum of all natural numbers below 1,000 that are multiples of 3 or 5.</p>
+        <p class="solution-statement"><a class="text-link" href="https://projecteuler.net/problem=1" target="_blank" rel="noopener noreferrer">Read the original problem ↗</a></p>
+
+        <section class="solution-section" aria-labelledby="idea-title">
+          <h2 id="idea-title">Key idea</h2>
+          <p>Check every integer below the limit. If it is divisible by 3 <em>or</em> 5, add it to a running total. Using a single OR condition means a number divisible by both (such as 15) is counted only once.</p>
+        </section>
+
+        <section class="solution-section" aria-labelledby="python-title">
+          <h2 id="python-title">Python solution</h2>
+          <pre><code>n = 1000
+total = 0
+
+for i in range(1, n):
+    if i % 3 == 0 or i % 5 == 0:
+        total += i
+
+print(total)</code></pre>
+        </section>
+
+        <section class="solution-section" aria-labelledby="c-title">
+          <h2 id="c-title">C solution</h2>
+          <pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int n = 1000;
+    int total = 0;
+    int i;
+
+    for (i = 0; i &lt; n; i++) {
+        if (i % 3 == 0 || i % 5 == 0) {
+            total += i;
+        }
+    }
+
+    printf("%d\n", total);
+    return 0;
+}</code></pre>
+          <p>The C loop includes zero, while the Python loop starts at one. Since adding zero does not change the total, both versions produce the same result.</p>
+        </section>
+
+        <section class="solution-section" aria-labelledby="correctness-title">
+          <h2 id="correctness-title">Why it works</h2>
+          <p>Each number below 1,000 is examined exactly once. The divisibility condition accepts precisely the numbers that are multiples of 3 or 5, and each accepted number is added once. Therefore, the final total is the required sum.</p>
+        </section>
+
+        <section class="solution-section" aria-labelledby="complexity-title">
+          <h2 id="complexity-title">Complexity</h2>
+          <ul class="solution-facts">
+            <li><strong>Time:</strong> O(n), because the loop checks each number below the limit once.</li>
+            <li><strong>Extra space:</strong> O(1), because the algorithm uses a fixed number of variables.</li>
+          </ul>
+        </section>
+
+        <section class="solution-section" aria-labelledby="takeaway-title">
+          <h2 id="takeaway-title">Takeaway</h2>
+          <p>A direct scan keeps the solution simple and easy to verify. The OR condition is important: it avoids counting multiples of 15 twice.</p>
+          <p class="solution-result"><span class="eyebrow-small">Result</span><code>233168</code></p>
+        </section>
+        <p><a class="back-link" href="project-euler.html">← Back to Project Euler solutions</a></p>
+      </article>
+    </main>
+    <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
+  </div>
+</body>
+</html>
