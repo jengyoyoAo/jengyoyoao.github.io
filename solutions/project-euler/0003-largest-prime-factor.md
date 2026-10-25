@@ -3,7 +3,7 @@
 - **Platform / ID:** Project Euler, Problem 3
 - **Problem:** [Largest Prime Factor](https://projecteuler.net/problem=3)
 - **Languages:** Python, C99 or later
-- **Website write-up:** [Read the solution](../../project-euler-3.html)
+- **Website write-up:** [Read the solution](../../online-judge/project-euler/problem-3.html)
 
 ## Key idea
 

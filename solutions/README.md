@@ -10,7 +10,7 @@ Start from [TEMPLATE.md](TEMPLATE.md) for the write-up. Link to the statement, e
 
 ## Website problem pages
 
-Problem pages are static HTML files linked from the relevant platform page; there is currently no page generator. Use `project-euler-1.html` as the layout reference. The shared `.solution-article` styles live in `site.css`; include `solution-tabs.js` on pages that use the accessible language tabs and Copy control. Add each new page to its platform's HTML list and keep the source code and Markdown note in that platform's folder.
+Problem pages are static HTML files linked from the relevant platform page; there is currently no page generator. Use `online-judge/project-euler/problem-1.html` as the layout reference. The shared `.solution-article` styles live in `site.css`; include `solution-tabs.js` on pages that use the accessible language tabs and Copy control. Add each new page to its platform's HTML list and keep the source code and Markdown note in that platform's folder.
 
 ## Platforms
 

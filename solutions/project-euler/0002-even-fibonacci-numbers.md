@@ -3,7 +3,7 @@
 - **Platform / ID:** Project Euler, Problem 2
 - **Problem:** [Even Fibonacci Numbers](https://projecteuler.net/problem=2)
 - **Languages:** Python, C (C99 or later)
-- **Website write-up:** [Read the solution](../../project-euler-2.html)
+- **Website write-up:** [Read the solution](../../online-judge/project-euler/problem-2.html)
 
 ## Key idea
 

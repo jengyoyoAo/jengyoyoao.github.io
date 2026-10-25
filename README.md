@@ -9,9 +9,9 @@ A static personal website for my profile, selected projects, teaching, and conta
 - `index.html` — responsive home page.
 - `about.html`, `community.html`, `notes.html` — personal, community, and journal subpages.
 - `journal/` — individual journal articles; each post has its own page, publication date, and hashtags.
-- `online-judge.html` — overview linking to platform-specific solution logs.
-- `project-euler.html`, `cses.html`, `zerojudge.html`, `leetcode.html` — per-platform solution pages.
-- `project-euler-1.html` — Project Euler Problem 1 write-up with Python and C solutions.
+- `online-judge/index.html` — overview linking to platform-specific solution logs.
+- `online-judge/project-euler/index.html`, `online-judge/cses/index.html`, `online-judge/zerojudge/index.html`, `online-judge/leetcode/index.html` — per-platform solution pages.
+- `online-judge/project-euler/problem-1.html` — Project Euler Problem 1 write-up with Python and C solutions.
 - `site.css` — shared styles for all site pages.
 - `solutions/` — source code and Markdown notes, organized by platform.
 - `images/avatar.jpg` — illustrated profile avatar.

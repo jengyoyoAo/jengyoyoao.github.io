@@ -3,7 +3,7 @@
 - **Platform / ID:** Project Euler, Problem 1
 - **Problem:** [Multiples of 3 or 5](https://projecteuler.net/problem=1)
 - **Languages:** Python, C
-- **Website write-up:** [Read the solution](../../project-euler-1.html)
+- **Website write-up:** [Read the solution](../../online-judge/project-euler/problem-1.html)
 
 ## Key idea
 
