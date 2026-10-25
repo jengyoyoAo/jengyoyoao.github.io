@@ -23,10 +23,11 @@
     </header>
     <main id="main-content" tabindex="-1">
       <article class="solution-article">
+        <a class="solution-back" href="project-euler.html"><span aria-hidden="true">←</span> Project Euler problems</a>
         <div class="eyebrow">Project Euler · Problem 1</div>
         <h1>Multiples of 3 or 5</h1>
         <p class="lead">Find the sum of all natural numbers below 1,000 that are multiples of 3 or 5.</p>
-        <p class="solution-statement"><a class="text-link" href="https://projecteuler.net/problem=1" target="_blank" rel="noopener noreferrer">Read the original problem ↗</a></p>
+        <p class="solution-statement"><span>Project Euler 1</span><a class="text-link" href="https://projecteuler.net/problem=1" target="_blank" rel="noopener noreferrer">View original problem ↗</a></p>
 
         <section class="solution-section" aria-labelledby="idea-title">
           <h2 id="idea-title">Key idea</h2>
@@ -37,48 +38,51 @@
           <div class="solution-section-heading">
             <div>
               <div class="eyebrow-small">Implementation</div>
-              <h2 id="code-title">Choose a language</h2>
+              <h2 id="code-title">Solution</h2>
             </div>
           </div>
-          <div class="solution-code-card">
+          <div class="solution-code-card" data-code-switcher>
             <div class="solution-code-toolbar">
-              <span class="code-file-label"><span aria-hidden="true">●</span> Solution</span>
               <div class="code-tabs" role="tablist" aria-label="Choose solution language">
                 <button id="python-tab" type="button" role="tab" aria-selected="true" aria-controls="python-panel" tabindex="0">Python</button>
                 <button id="c-tab" type="button" role="tab" aria-selected="false" aria-controls="c-panel" tabindex="-1">C</button>
               </div>
+              <div class="code-copy-group">
+                <button class="code-copy" type="button" data-copy-code>Copy</button>
+                <span class="code-copy-status" data-copy-status aria-live="polite"></span>
+              </div>
             </div>
             <div id="python-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="python-tab" tabindex="0">
-              <pre><code>n = 1000
-total = 0
+              <pre><code><span class="syntax-name">n</span> = <span class="syntax-number">1000</span>
+<span class="syntax-name">total</span> = <span class="syntax-number">0</span>
 
-for i in range(1, n):
-    if i % 3 == 0 or i % 5 == 0:
-        total += i
+<span class="syntax-keyword">for</span> <span class="syntax-name">i</span> <span class="syntax-keyword">in</span> <span class="syntax-function">range</span>(<span class="syntax-number">1</span>, <span class="syntax-name">n</span>):
+    <span class="syntax-keyword">if</span> <span class="syntax-name">i</span> % <span class="syntax-number">3</span> == <span class="syntax-number">0</span> <span class="syntax-keyword">or</span> <span class="syntax-name">i</span> % <span class="syntax-number">5</span> == <span class="syntax-number">0</span>:
+        <span class="syntax-name">total</span> += <span class="syntax-name">i</span>
 
-print(total)</code></pre>
+<span class="syntax-function">print</span>(<span class="syntax-name">total</span>)</code></pre>
             </div>
             <div id="c-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="c-tab" tabindex="0" hidden>
-              <pre><code>#include &lt;stdio.h&gt;
+              <pre><code><span class="syntax-preprocessor">#include &lt;stdio.h&gt;</span>
 
-int main(void)
+<span class="syntax-type">int</span> <span class="syntax-function">main</span>(<span class="syntax-type">void</span>)
 {
-    int n = 1000;
-    int total = 0;
-    int i;
+    <span class="syntax-type">int</span> <span class="syntax-name">n</span> = <span class="syntax-number">1000</span>;
+    <span class="syntax-type">int</span> <span class="syntax-name">total</span> = <span class="syntax-number">0</span>;
+    <span class="syntax-type">int</span> <span class="syntax-name">i</span>;
 
-    for (i = 0; i &lt; n; i++) {
-        if (i % 3 == 0 || i % 5 == 0) {
-            total += i;
+    <span class="syntax-keyword">for</span> (<span class="syntax-name">i</span> = <span class="syntax-number">0</span>; <span class="syntax-name">i</span> &lt; <span class="syntax-name">n</span>; <span class="syntax-name">i</span>++) {
+        <span class="syntax-keyword">if</span> (<span class="syntax-name">i</span> % <span class="syntax-number">3</span> == <span class="syntax-number">0</span> || <span class="syntax-name">i</span> % <span class="syntax-number">5</span> == <span class="syntax-number">0</span>) {
+            <span class="syntax-name">total</span> += <span class="syntax-name">i</span>;
         }
     }
 
-    printf("%d\n", total);
-    return 0;
+    <span class="syntax-function">printf</span>(<span class="syntax-string">"%d\n"</span>, <span class="syntax-name">total</span>);
+    <span class="syntax-keyword">return</span> <span class="syntax-number">0</span>;
 }</code></pre>
             </div>
-            <p class="code-note">Both implementations print <code>233168</code>. The C loop includes zero; it does not change the sum.</p>
           </div>
+          <p class="code-note">Both versions output <code>233168</code>. The C loop includes zero, which does not affect the sum.</p>
         </section>
 
         <section class="solution-section" aria-labelledby="correctness-title">
@@ -97,13 +101,11 @@ int main(void)
         <section class="solution-section" aria-labelledby="takeaway-title">
           <h2 id="takeaway-title">Takeaway</h2>
           <p>A direct scan keeps the solution simple and easy to verify. The OR condition is important: it avoids counting multiples of 15 twice.</p>
-          <p class="solution-result"><span class="eyebrow-small">Result</span><code>233168</code></p>
         </section>
-        <p><a class="back-link" href="project-euler.html">← Back to Project Euler solutions</a></p>
       </article>
     </main>
     <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
   </div>
-  <script src="project-euler-1.js" defer></script>
+  <script src="solution-tabs.js" defer></script>
 </body>
 </html>
