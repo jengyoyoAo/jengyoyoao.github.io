@@ -33,9 +33,23 @@
           <p>Check every integer below the limit. If it is divisible by 3 <em>or</em> 5, add it to a running total. Using a single OR condition means a number divisible by both (such as 15) is counted only once.</p>
         </section>
 
-        <section class="solution-section" aria-labelledby="python-title">
-          <h2 id="python-title">Python solution</h2>
-          <pre><code>n = 1000
+        <section class="solution-section solution-code-section" aria-labelledby="code-title">
+          <div class="solution-section-heading">
+            <div>
+              <div class="eyebrow-small">Implementation</div>
+              <h2 id="code-title">Choose a language</h2>
+            </div>
+          </div>
+          <div class="solution-code-card">
+            <div class="solution-code-toolbar">
+              <span class="code-file-label"><span aria-hidden="true">●</span> Solution</span>
+              <div class="code-tabs" role="tablist" aria-label="Choose solution language">
+                <button id="python-tab" type="button" role="tab" aria-selected="true" aria-controls="python-panel" tabindex="0">Python</button>
+                <button id="c-tab" type="button" role="tab" aria-selected="false" aria-controls="c-panel" tabindex="-1">C</button>
+              </div>
+            </div>
+            <div id="python-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="python-tab" tabindex="0">
+              <pre><code>n = 1000
 total = 0
 
 for i in range(1, n):
@@ -43,11 +57,9 @@ for i in range(1, n):
         total += i
 
 print(total)</code></pre>
-        </section>
-
-        <section class="solution-section" aria-labelledby="c-title">
-          <h2 id="c-title">C solution</h2>
-          <pre><code>#include &lt;stdio.h&gt;
+            </div>
+            <div id="c-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="c-tab" tabindex="0" hidden>
+              <pre><code>#include &lt;stdio.h&gt;
 
 int main(void)
 {
@@ -64,7 +76,9 @@ int main(void)
     printf("%d\n", total);
     return 0;
 }</code></pre>
-          <p>The C loop includes zero, while the Python loop starts at one. Since adding zero does not change the total, both versions produce the same result.</p>
+            </div>
+            <p class="code-note">Both implementations print <code>233168</code>. The C loop includes zero; it does not change the sum.</p>
+          </div>
         </section>
 
         <section class="solution-section" aria-labelledby="correctness-title">
@@ -90,5 +104,6 @@ int main(void)
     </main>
     <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
   </div>
+  <script src="project-euler-1.js" defer></script>
 </body>
 </html>
