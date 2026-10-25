@@ -100,7 +100,7 @@ int main(void) {
         </section>
         <section class="solution-section" aria-labelledby="complexity-title">
           <h2 id="complexity-title">Complexity</h2>
-          <ul class="solution-facts"><li><strong>Time:</strong> <code>O(N² log n)</code>, where <code>n</code> is the upper factor bound; each digit reversal takes <code>O(log n)</code> time.</li><li><strong>Extra space:</strong> <code>O(1)</code>.</li></ul>
+          <ul class="solution-facts"><li><strong>Time:</strong> <code>O(n² log n)</code>, where <code>n</code> is the upper factor bound; each digit reversal takes <code>O(log n)</code> time.</li><li><strong>Extra space:</strong> <code>O(1)</code>.</li></ul>
         </section>
         <section class="solution-section" aria-labelledby="optimization-title">
           <h2 id="optimization-title">A faster approach: mirror a <code>prefix</code></h2>
@@ -137,9 +137,9 @@ print(ans)</code></pre></div>
           </div>
           <p class="code-note">This implementation searches only six-digit palindromes. It finds 906609 = 993 × 913, so shorter palindromes cannot improve the result for this problem. A general solver must also search shorter palindromes if no six-digit candidate has a valid factorization.</p>
           <h3>Complexity</h3>
-          <p>Let <code>n</code> be the upper factor bound for a generalized search over <code>d</code>-digit factors. There are <code>O(n)</code> mirrored candidates, each requiring <code>O(log n)</code> digit operations to construct and at most <code>O(n)</code> trial divisions. The total is <code>O(n log n + N²)</code> = <code>O(N²)</code> time and <code>O(1)</code> extra integer variables under the same unit-cost arithmetic model used above. The factor-of-11 shortcut reduces constant work, not the Big O.</p>
+          <p>Let <code>n</code> be the upper factor bound for a generalized search over <code>d</code>-digit factors. There are <code>O(n)</code> mirrored candidates, each requiring <code>O(log n)</code> digit operations to construct and at most <code>O(n)</code> trial divisions. The total is <code>O(n log n + n²)</code> = <code>O(n²)</code> time and <code>O(1)</code> extra integer variables under the same unit-cost arithmetic model used above. The factor-of-11 shortcut reduces constant work, not the Big O.</p>
           <h3>A small improvement to the pair search</h3>
-          <p>The main solutions can also stop the outer loop when <code>i * i &lt;= ans</code>. Because <code>j ≤ i</code>, no product in the current or later rows can improve the maximum. This pruning does not change the stated <code>O(N² log n)</code> upper bound.</p>
+          <p>The main solutions can also stop the outer loop when <code>i * i &lt;= ans</code>. Because <code>j ≤ i</code>, no product in the current or later rows can improve the maximum. This pruning does not change the stated <code>O(n² log n)</code> upper bound.</p>
         </section>
 
         <section class="solution-section" aria-labelledby="takeaway-title">

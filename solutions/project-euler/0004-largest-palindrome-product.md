@@ -18,7 +18,7 @@ Every unordered pair of three-digit factors appears with 100 ≤ j ≤ i ≤ 999
 
 ## Complexity
 
-- **Time:** O(N² log N), where N is the upper factor bound; each digit reversal takes O(log N).
+- **Time:** O(n² log n), where n is the upper factor bound; each digit reversal takes O(log n).
 - **Extra space:** O(1).
 
 ## Result
@@ -59,11 +59,11 @@ This implementation searches only six-digit palindromes. It finds 906609 = 993 �
 
 ### Complexity
 
-Let N be the upper factor bound for a generalized search over d-digit factors. There are O(N) mirrored candidates, each requiring O(log N) digit operations to construct and at most O(N) trial divisions. The total is O(N log N + N²) = O(N²) time and O(1) extra integer variables under the same unit-cost arithmetic model used above. The factor-of-11 shortcut reduces constant work, not the Big O.
+Let n be the upper factor bound for a generalized search over d-digit factors. There are O(n) mirrored candidates, each requiring O(log n) digit operations to construct and at most O(n) trial divisions. The total is O(n log n + n²) = O(n²) time and O(1) extra integer variables under the same unit-cost arithmetic model used above. The factor-of-11 shortcut reduces constant work, not the Big O.
 
 ### Pair-search pruning
 
-The outer loop may stop when `i * i <= ans`, because all remaining pairs have a product no larger than this bound. This does not change the stated O(N² log N) upper bound.
+The outer loop may stop when `i * i <= ans`, because all remaining pairs have a product no larger than this bound. This does not change the stated O(n² log n) upper bound.
 
 ## Takeaway
 
