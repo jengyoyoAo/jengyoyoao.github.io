@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="description" content="Project Euler Problem 4: Python and C solutions for finding the largest palindrome product, with correctness and complexity analysis.">
+  <title>Project Euler 4: Largest Palindrome Product — Cheng-You Cheng</title>
+  <link rel="stylesheet" href="../../site.css">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page">
+    <header class="topbar">
+      <a class="wordmark" href="../../index.html"><span>CY.</span> Cheng-You Cheng</a>
+      <nav aria-label="Main navigation">
+        <a href="../../about.html">About</a>
+        <a href="../../community.html">Community</a>
+        <a href="../../notes.html">Journal</a>
+        <a href="../index.html" aria-current="page">Online Judge</a>
+      </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <article class="solution-article">
+        <a class="solution-back" href="index.html"><span aria-hidden="true">←</span> Project Euler problems</a>
+        <div class="eyebrow">Project Euler · Problem 4</div>
+        <h1>Largest Palindrome Product</h1>
+        <p class="lead">Find the largest palindrome made from the product of two three-digit numbers.</p>
+        <p class="solution-statement"><span>Project Euler 4</span><time datetime="2026-10-25">Posted October 25, 2026</time><a class="text-link" href="https://projecteuler.net/problem=4" target="_blank" rel="noopener noreferrer">View original problem ↗</a></p>
+
+        <section class="solution-section" aria-labelledby="idea-title">
+          <h2 id="idea-title">Key idea</h2>
+          <p>Check products of two three-digit numbers and reverse the digits to test whether each product is a palindrome. Keep the largest palindrome found instead of returning at the first match.</p>
+          <p>The two implementations use the same arithmetic palindrome check: repeatedly take the last digit with modulo 10, append it to the reversed number, and remove it from the original number using integer division. Starting the inner loop at <code>j = i</code> avoids checking both <code>i × j</code> and <code>j × i</code>.</p>
+          <p>For each fixed <code>i</code>, the product decreases as <code>j</code> decreases. If <code>num &lt;= ans</code>, break only the inner loop: smaller values of <code>j</code> cannot improve the maximum. The next outer-loop iteration must still be checked because its inner loop restarts at a larger <code>j</code>.</p>
+        </section>
+        <section class="solution-section solution-code-section" aria-labelledby="code-title">
+          <h2 id="code-title">Solution</h2>
+          <div class="solution-code-card" data-code-switcher>
+            <div class="solution-code-toolbar">
+              <div class="code-tabs" role="tablist" aria-label="Choose solution language">
+                <button id="python-tab" type="button" role="tab" aria-selected="true" aria-controls="python-panel" tabindex="0">Python</button>
+                <button id="corrected-tab" type="button" role="tab" aria-selected="false" aria-controls="corrected-panel" tabindex="-1">C</button>
+              </div>
+              <div class="code-copy-group"><button class="code-copy" type="button" data-copy-code>Copy</button><span class="code-copy-status" data-copy-status aria-live="polite"></span></div>
+            </div>
+            <div id="python-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="python-tab" tabindex="0"><pre><code>def is_palindrome(num):
+    n, m = num, 0
+    while num != 0:
+        m = m * 10 + num % 10
+        num //= 10
+    return m == n
+
+
+ans = -1
+for i in range(999, 99, -1):
+    for j in range(i, 99, -1):
+        num = i * j
+        if num &lt;= ans:
+            break
+        if is_palindrome(num):
+            ans = num
+print(ans)</code></pre></div>
+            <div id="corrected-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="corrected-tab" tabindex="0" hidden><pre><code>#include &lt;stdio.h&gt;
+#define MAX(a, b) (a &gt; b ? a : b)
+
+int is_palindrome(long long num){
+    int n = num, m = 0;
+    while (num != 0){
+        m = m * 10 + num % 10;;
+        num /= 10;
+    }
+    return m == n;
+}
+
+int main(void) {
+    long long num;
+    long long ans = -1;
+    for (int i = 999; i &gt;= 100; i--){
+        for (int j = i; j &gt;= 100; j--){
+            num = i * j;
+            if (num &lt;= ans) {
+                break;
+            }
+            if (is_palindrome(num)) {
+                ans = num;
+            }
+        }
+    }
+    printf(&quot;%lld\n&quot;, ans);
+    return 0;
+}</code></pre></div>
+          </div>
+          <p class="code-note">Both the Python and C versions print <code>906609</code> = 993 × 913. The C solution is my revised version. Its palindrome helper uses <code>int</code> for the original and reversed values; both fit the products in this problem on a 32-bit-or-larger <code>int</code> implementation.</p>
+        </section>
+        <section class="solution-section" aria-labelledby="correctness-title">
+          <h2 id="correctness-title">Why it works</h2>
+          <p>Every unordered pair of three-digit factors appears with 100 ≤ <code>j</code> ≤ <code>i</code> ≤ 999. Reversing the decimal digits identifies palindromes, and <code>ans</code> stores the largest one seen. For a fixed <code>i</code>, products decrease as <code>j</code> decreases, so once a product is no larger than <code>ans</code>, the remaining products in that inner loop cannot improve it. The final result is therefore the largest palindrome product.</p>
+        </section>
+        <section class="solution-section" aria-labelledby="complexity-title">
+          <h2 id="complexity-title">Complexity</h2>
+          <ul class="solution-facts"><li><strong>Time:</strong> <code>O(N² log n)</code>, where <code>n</code> is the upper factor bound; each digit reversal takes <code>O(log n)</code> time.</li><li><strong>Extra space:</strong> <code>O(1)</code>.</li></ul>
+        </section>
+        <section class="solution-section" aria-labelledby="optimization-title">
+          <h2 id="optimization-title">A faster approach: mirror a <code>prefix</code></h2>
+          <p>Generate six-digit palindromes in descending order by mirroring a three-digit <code>prefix</code>. For example, <code>prefix</code> 906 becomes 906609. Instead of testing whether every product is a palindrome, test whether each palindrome has two three-digit factors.</p>
+          <p>Every six-digit palindrome is divisible by 11 because its alternating digit sum is zero. Since 11 is prime, at least one factor must be divisible by 11. The inner loop therefore checks three-digit multiples of 11 and verifies that the quotient is also a three-digit integer. Palindromes are generated from largest to smallest, so the first valid factorization gives the maximum.</p>
+          <div class="solution-code-card" data-code-switcher>
+            <div class="solution-code-toolbar">
+              <div class="code-tabs" role="tablist" aria-label="Prefix solution language">
+                <button id="prefix-python-tab" type="button" role="tab" aria-selected="true" aria-controls="prefix-python-panel" tabindex="0">Python · Prefix approach</button>
+              </div>
+              <div class="code-copy-group"><button class="code-copy" type="button" data-copy-code>Copy</button><span class="code-copy-status" data-copy-status aria-live="polite"></span></div>
+            </div>
+            <div id="prefix-python-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="prefix-python-tab" tabindex="0"><pre><code>ans = -1
+
+for prefix in range(999, 99, -1):
+    num = prefix
+    n = prefix
+
+    while n != 0:
+        num = num * 10 + n % 10
+        n //= 10
+
+    for i in range(110, 1000, 11):
+        if num % i == 0:
+            j = num // i
+            if 100 &lt;= j &lt;= 999:
+                ans = num
+                break
+
+    if ans != -1:
+        break
+
+print(ans)</code></pre></div>
+          </div>
+          <p class="code-note">This implementation searches only six-digit palindromes. It finds 906609 = 993 × 913, so shorter palindromes cannot improve the result for this problem. A general solver must also search shorter palindromes if no six-digit candidate has a valid factorization.</p>
+          <h3>Complexity</h3>
+          <p>Let <code>n</code> be the upper factor bound for a generalized search over <code>d</code>-digit factors. There are <code>O(n)</code> mirrored candidates, each requiring <code>O(log n)</code> digit operations to construct and at most <code>O(n)</code> trial divisions. The total is <code>O(n log n + N²)</code> = <code>O(N²)</code> time and <code>O(1)</code> extra integer variables under the same unit-cost arithmetic model used above. The factor-of-11 shortcut reduces constant work, not the Big O.</p>
+          <h3>A small improvement to the pair search</h3>
+          <p>The main solutions can also stop the outer loop when <code>i * i &lt;= ans</code>. Because <code>j ≤ i</code>, no product in the current or later rows can improve the maximum. This pruning does not change the stated <code>O(N² log n)</code> upper bound.</p>
+        </section>
+
+        <section class="solution-section" aria-labelledby="takeaway-title">
+          <h2 id="takeaway-title">Takeaway</h2>
+          <p>Descending loop variables do not guarantee that all products are visited in descending order. Keep a running maximum, and only stop a search when the remaining candidates cannot improve it.</p>
+        </section>
+      </article>
+    </main>
+    <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
+  </div>
+  <script src="../../solution-tabs.js" defer></script>
+</body>
+</html>

@@ -54,19 +54,19 @@
             </div>
             <div id="python-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="python-tab" tabindex="0">
               <pre><code><span class="syntax-name">n</span> = <span class="syntax-number">600851475143</span>
-<span class="syntax-name">answer</span> = -<span class="syntax-number">1</span>
+<span class="syntax-name">ans</span> = -<span class="syntax-number">1</span>
 
 <span class="syntax-keyword">def</span> <span class="syntax-function">factorization</span>(<span class="syntax-name">n</span>):
-    <span class="syntax-keyword">global</span> <span class="syntax-name">answer</span>
+    <span class="syntax-keyword">global</span> <span class="syntax-name">ans</span>
     <span class="syntax-keyword">if</span> <span class="syntax-name">n</span> % <span class="syntax-number">2</span> == <span class="syntax-number">0</span>: <span class="syntax-keyword">return</span> <span class="syntax-function">factorization</span>(<span class="syntax-name">n</span>//<span class="syntax-number">2</span>)
     <span class="syntax-keyword">for</span> <span class="syntax-name">i</span> <span class="syntax-keyword">in</span> <span class="syntax-function">range</span>(<span class="syntax-number">3</span>, <span class="syntax-function">int</span>(<span class="syntax-name">n</span>**<span class="syntax-number">0.5</span>)+<span class="syntax-number">1</span>, <span class="syntax-number">2</span>):
         <span class="syntax-keyword">if</span> <span class="syntax-name">n</span> % <span class="syntax-name">i</span> == <span class="syntax-number">0</span>:
-            <span class="syntax-name">answer</span> = <span class="syntax-function">max</span>(<span class="syntax-name">answer</span>, <span class="syntax-name">i</span>)
+            <span class="syntax-name">ans</span> = <span class="syntax-function">max</span>(<span class="syntax-name">ans</span>, <span class="syntax-name">i</span>)
             <span class="syntax-keyword">return</span> <span class="syntax-function">factorization</span>(<span class="syntax-name">n</span>//<span class="syntax-name">i</span>)
-    <span class="syntax-name">answer</span> = <span class="syntax-function">max</span>(<span class="syntax-name">answer</span>, <span class="syntax-name">n</span>)
+    <span class="syntax-name">ans</span> = <span class="syntax-function">max</span>(<span class="syntax-name">ans</span>, <span class="syntax-name">n</span>)
 
 <span class="syntax-function">factorization</span>(<span class="syntax-name">n</span>)
-<span class="syntax-function">print</span>(<span class="syntax-name">answer</span>)</code></pre>
+<span class="syntax-function">print</span>(<span class="syntax-name">ans</span>)</code></pre>
             </div>
             <div id="c-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="c-tab" tabindex="0" hidden>
               <pre><code><span class="syntax-preprocessor">#include &lt;stdio.h&gt;</span>
@@ -74,28 +74,28 @@
 
 <span class="syntax-type">int</span> <span class="syntax-function">main</span>(<span class="syntax-type">void</span>){
     <span class="syntax-type">long long</span> <span class="syntax-name">n</span> = <span class="syntax-number">600851475143LL</span>;
-    <span class="syntax-type">long long</span> <span class="syntax-name">answer</span> = -<span class="syntax-number">1</span>;
+    <span class="syntax-type">long long</span> <span class="syntax-name">ans</span> = -<span class="syntax-number">1</span>;
 
     <span class="syntax-keyword">while</span> (<span class="syntax-name">n</span> % <span class="syntax-number">2</span> == <span class="syntax-number">0</span>) {
-        <span class="syntax-name">answer</span> = <span class="syntax-function">MAX</span>(<span class="syntax-name">answer</span>, <span class="syntax-number">2</span>);
+        <span class="syntax-name">ans</span> = <span class="syntax-function">MAX</span>(<span class="syntax-name">ans</span>, <span class="syntax-number">2</span>);
         <span class="syntax-name">n</span> /= <span class="syntax-number">2</span>;
     }
 
     <span class="syntax-keyword">for</span> (<span class="syntax-type">long long</span> <span class="syntax-name">i</span> = <span class="syntax-number">3</span>; <span class="syntax-name">i</span> * <span class="syntax-name">i</span> &lt;= <span class="syntax-name">n</span>; <span class="syntax-name">i</span> += <span class="syntax-number">2</span>) {
         <span class="syntax-keyword">while</span> (<span class="syntax-name">n</span> % <span class="syntax-name">i</span> == <span class="syntax-number">0</span>) {
-            <span class="syntax-name">answer</span> = <span class="syntax-function">MAX</span>(<span class="syntax-name">answer</span>, <span class="syntax-name">i</span>);
+            <span class="syntax-name">ans</span> = <span class="syntax-function">MAX</span>(<span class="syntax-name">ans</span>, <span class="syntax-name">i</span>);
             <span class="syntax-name">n</span> /= <span class="syntax-name">i</span>;
         }
     }
 
-    <span class="syntax-name">answer</span> = <span class="syntax-function">MAX</span>(<span class="syntax-name">answer</span>, <span class="syntax-name">n</span>);
+    <span class="syntax-name">ans</span> = <span class="syntax-function">MAX</span>(<span class="syntax-name">ans</span>, <span class="syntax-name">n</span>);
 
-    <span class="syntax-function">printf</span>(<span class="syntax-string">"%lld\n"</span>, <span class="syntax-name">answer</span>);
+    <span class="syntax-function">printf</span>(<span class="syntax-string">"%lld\n"</span>, <span class="syntax-name">ans</span>);
     <span class="syntax-keyword">return</span> <span class="syntax-number">0</span>;
 }</code></pre>
             </div>
           </div>
-          <p class="code-note">Both versions output <code>6857</code> for this input. The Python code stays close to my original recursive version. I adjusted the C entry point to <code>int main(void)</code> and added parentheses to the <code>MAX</code> macro. The Python even-number branch does not update <code>answer</code>, but that does not affect this odd input.</p>
+          <p class="code-note">Both versions output <code>6857</code> for this input. The Python code stays close to my original recursive version. I adjusted the C entry point to <code>int main(void)</code> and added parentheses to the <code>MAX</code> macro. The Python even-number branch does not update <code>ans</code>, but that does not affect this odd input.</p>
         </section>
 
         <section class="solution-section" aria-labelledby="correctness-title">
@@ -105,15 +105,16 @@
 
         <section class="solution-section" aria-labelledby="complexity-title">
           <h2 id="complexity-title">Complexity</h2>
+          <p>Let <code>n</code> be the original input value.</p>
           <ul class="solution-facts">
-            <li><strong>Time:</strong> O(√n) trial divisions in the worst case, where n is the input value.</li>
-            <li><strong>Extra space:</strong> O(log n) recursion depth in the Python version; O(1) in the C version.</li>
+            <li><strong>Time:</strong> <code>O(√n)</code> trial divisions in the worst case.</li>
+            <li><strong>Extra space:</strong> <code>O(log n)</code> recursion depth in the Python version; <code>O(1)</code> in the C version.</li>
           </ul>
         </section>
 
         <section class="solution-section" aria-labelledby="takeaway-title">
           <h2 id="takeaway-title">Takeaway</h2>
-          <p>Removing a factor makes the next search smaller. This is the straightforward trial-division approach I used; the C version uses a standard <code>int main(void)</code> entry point, while the Python even-number case could be handled more completely by updating <code>answer</code> before recursing.</p>
+          <p>Removing a factor makes the next search smaller. This is the straightforward trial-division approach I used; the C version uses a standard <code>int main(void)</code> entry point, while the Python even-number case could be handled more completely by updating <code>ans</code> before recursing.</p>
         </section>
       </article>
     </main>
