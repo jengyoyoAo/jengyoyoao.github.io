@@ -149,7 +149,7 @@ main { min-width: 0; }
 .solution-back:hover { color: var(--blue); }
 .solution-article h1 { margin: 10px 0 12px; font: normal clamp(40px, 5vw, 56px)/1.08 var(--serif); letter-spacing: -.045em; }
 .solution-article > .lead { max-width: 70ch; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.75; }
-.solution-statement { max-width: 70ch; display: flex; justify-content: space-between; align-items: center; gap: 18px; margin: 19px 0 0; padding: 0 0 23px; border-bottom: 1px solid var(--line); color: var(--quiet); font-size: 12px; }
+.solution-statement { max-width: 70ch; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 18px; margin: 19px 0 0; padding: 0 0 23px; border-bottom: 1px solid var(--line); color: var(--quiet); font-size: 12px; }
 .solution-statement .text-link { font-size: 13px; }
 .solution-section { padding: 24px 0 26px; border-top: 1px solid var(--line); }
 .solution-section h2 { margin: 0 0 10px; font: normal 25px/1.25 var(--serif); }
