@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="description" content="Project Euler Problem 3: Python and C solutions for finding the largest prime factor, with correctness and complexity analysis.">
+  <title>Project Euler 3: Largest Prime Factor — Cheng-You Cheng</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page">
+    <header class="topbar">
+      <a class="wordmark" href="index.html"><span>CY.</span> Cheng-You Cheng</a>
+      <nav aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="community.html">Community</a>
+        <a href="notes.html">Journal</a>
+        <a href="online-judge.html" aria-current="page">Online Judge</a>
+      </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <article class="solution-article">
+        <a class="solution-back" href="project-euler.html"><span aria-hidden="true">←</span> Project Euler problems</a>
+        <div class="eyebrow">Project Euler · Problem 3</div>
+        <h1>Largest Prime Factor</h1>
+        <p class="lead">Find the largest prime factor of 600,851,475,143.</p>
+        <p class="solution-statement"><span>Project Euler 3</span><time datetime="2026-10-25">Posted October 25, 2026</time><a class="text-link" href="https://projecteuler.net/problem=3" target="_blank" rel="noopener noreferrer">View original problem ↗</a></p>
+
+        <section class="solution-section" aria-labelledby="idea-title">
+          <h2 id="idea-title">Key idea</h2>
+          <p>I used trial division: when a factor divides the number, divide it out and check the smaller result again. After checking 2, test odd factors. If no factor up to the square root divides the remaining number, that remainder is the largest prime factor.</p>
+        </section>
+
+        <section class="solution-section solution-code-section" aria-labelledby="code-title">
+          <div class="solution-section-heading">
+            <div>
+              <div class="eyebrow-small">Implementation</div>
+              <h2 id="code-title">Solution</h2>
+            </div>
+          </div>
+          <div class="solution-code-card" data-code-switcher>
+            <div class="solution-code-toolbar">
+              <div class="code-tabs" role="tablist" aria-label="Choose solution language">
+                <button id="python-tab" type="button" role="tab" aria-selected="true" aria-controls="python-panel" tabindex="0">Python</button>
+                <button id="c-tab" type="button" role="tab" aria-selected="false" aria-controls="c-panel" tabindex="-1">C</button>
+              </div>
+              <div class="code-copy-group">
+                <button class="code-copy" type="button" data-copy-code>Copy</button>
+                <span class="code-copy-status" data-copy-status aria-live="polite"></span>
+              </div>
+            </div>
+            <div id="python-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="python-tab" tabindex="0">
+              <pre><code><span class="syntax-name">n</span> = <span class="syntax-number">600851475143</span>
+<span class="syntax-name">answer</span> = -<span class="syntax-number">1</span>
+
+<span class="syntax-keyword">def</span> <span class="syntax-function">factorization</span>(<span class="syntax-name">n</span>):
+    <span class="syntax-keyword">global</span> <span class="syntax-name">answer</span>
+    <span class="syntax-keyword">if</span> <span class="syntax-name">n</span> % <span class="syntax-number">2</span> == <span class="syntax-number">0</span>: <span class="syntax-keyword">return</span> <span class="syntax-function">factorization</span>(<span class="syntax-name">n</span>//<span class="syntax-number">2</span>)
+    <span class="syntax-keyword">for</span> <span class="syntax-name">i</span> <span class="syntax-keyword">in</span> <span class="syntax-function">range</span>(<span class="syntax-number">3</span>, <span class="syntax-function">int</span>(<span class="syntax-name">n</span>**<span class="syntax-number">0.5</span>)+<span class="syntax-number">1</span>, <span class="syntax-number">2</span>):
+        <span class="syntax-keyword">if</span> <span class="syntax-name">n</span> % <span class="syntax-name">i</span> == <span class="syntax-number">0</span>:
+            <span class="syntax-name">answer</span> = <span class="syntax-function">max</span>(<span class="syntax-name">answer</span>, <span class="syntax-name">i</span>)
+            <span class="syntax-keyword">return</span> <span class="syntax-function">factorization</span>(<span class="syntax-name">n</span>//<span class="syntax-name">i</span>)
+    <span class="syntax-name">answer</span> = <span class="syntax-function">max</span>(<span class="syntax-name">answer</span>, <span class="syntax-name">n</span>)
+
+<span class="syntax-function">factorization</span>(<span class="syntax-name">n</span>)
+<span class="syntax-function">print</span>(<span class="syntax-name">answer</span>)</code></pre>
+            </div>
+            <div id="c-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="c-tab" tabindex="0" hidden>
+              <pre><code><span class="syntax-preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="syntax-preprocessor">#define MAX(a, b) ((a) &gt; (b) ? (a) : (b))</span>
+
+<span class="syntax-type">int</span> <span class="syntax-function">main</span>(<span class="syntax-type">void</span>){
+    <span class="syntax-type">long long</span> <span class="syntax-name">n</span> = <span class="syntax-number">600851475143LL</span>;
+    <span class="syntax-type">long long</span> <span class="syntax-name">answer</span> = -<span class="syntax-number">1</span>;
+
+    <span class="syntax-keyword">while</span> (<span class="syntax-name">n</span> % <span class="syntax-number">2</span> == <span class="syntax-number">0</span>) {
+        <span class="syntax-name">answer</span> = <span class="syntax-function">MAX</span>(<span class="syntax-name">answer</span>, <span class="syntax-number">2</span>);
+        <span class="syntax-name">n</span> /= <span class="syntax-number">2</span>;
+    }
+
+    <span class="syntax-keyword">for</span> (<span class="syntax-type">long long</span> <span class="syntax-name">i</span> = <span class="syntax-number">3</span>; <span class="syntax-name">i</span> * <span class="syntax-name">i</span> &lt;= <span class="syntax-name">n</span>; <span class="syntax-name">i</span> += <span class="syntax-number">2</span>) {
+        <span class="syntax-keyword">while</span> (<span class="syntax-name">n</span> % <span class="syntax-name">i</span> == <span class="syntax-number">0</span>) {
+            <span class="syntax-name">answer</span> = <span class="syntax-function">MAX</span>(<span class="syntax-name">answer</span>, <span class="syntax-name">i</span>);
+            <span class="syntax-name">n</span> /= <span class="syntax-name">i</span>;
+        }
+    }
+
+    <span class="syntax-name">answer</span> = <span class="syntax-function">MAX</span>(<span class="syntax-name">answer</span>, <span class="syntax-name">n</span>);
+
+    <span class="syntax-function">printf</span>(<span class="syntax-string">"%lld\n"</span>, <span class="syntax-name">answer</span>);
+    <span class="syntax-keyword">return</span> <span class="syntax-number">0</span>;
+}</code></pre>
+            </div>
+          </div>
+          <p class="code-note">Both versions output <code>6857</code> for this input. The Python code stays close to my original recursive version. I adjusted the C entry point to <code>int main(void)</code> and added parentheses to the <code>MAX</code> macro. The Python even-number branch does not update <code>answer</code>, but that does not affect this odd input.</p>
+        </section>
+
+        <section class="solution-section" aria-labelledby="correctness-title">
+          <h2 id="correctness-title">Why it works</h2>
+          <p>The code tries factors in increasing order. When a factor divides the number, it divides it out and continues with the smaller quotient. The last remaining value greater than 1 has no smaller factor left to check, so it is prime. For the given input, both programs print <code>6857</code>.</p>
+        </section>
+
+        <section class="solution-section" aria-labelledby="complexity-title">
+          <h2 id="complexity-title">Complexity</h2>
+          <ul class="solution-facts">
+            <li><strong>Time:</strong> O(√n) trial divisions in the worst case, where n is the input value.</li>
+            <li><strong>Extra space:</strong> O(log n) recursion depth in the Python version; O(1) in the C version.</li>
+          </ul>
+        </section>
+
+        <section class="solution-section" aria-labelledby="takeaway-title">
+          <h2 id="takeaway-title">Takeaway</h2>
+          <p>Removing a factor makes the next search smaller. This is the straightforward trial-division approach I used; the C version uses a standard <code>int main(void)</code> entry point, while the Python even-number case could be handled more completely by updating <code>answer</code> before recursing.</p>
+        </section>
+      </article>
+    </main>
+    <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
+  </div>
+  <script src="solution-tabs.js" defer></script>
+</body>
+</html>
