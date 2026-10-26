@@ -3,17 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=index.html#experience">
-  <title>Experience — Cheng-You Cheng</title>
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="description" content="Open-source contributions, teaching, and community activities.">
+  <title>Community — Cheng-You Cheng</title>
   <link rel="stylesheet" href="site.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-  <main class="page not-found" id="main-content">
-    <div class="not-found-inner">
-      <p class="eyebrow">Experience</p>
-      <h1>Experience and activities are now on the home page.</h1>
-      <p><a class="text-link" href="index.html#experience">Continue to experience ↗</a></p>
-    </div>
-  </main>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page">
+    <header class="topbar">
+      <a class="wordmark" href="index.html"><span>CY.</span> Cheng-You Cheng</a>
+      <nav aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="community.html" aria-current="page">Community</a>
+        <a href="notes.html">Journal</a>
+        <a href="online-judge/index.html">Online Judge</a>
+      </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <section class="subpage-hero">
+        <div class="eyebrow">Community · Contribute and connect</div>
+        <h1>Learning is better <em>together.</em></h1>
+        <p class="lead">Open source, teaching, and community activities give me ways to learn with and contribute to people around me.</p>
+      </section>
+      <section class="content-section">
+        <h2>Open source</h2>
+        <article class="content-card">
+          <span class="content-tag">A first milestone · merged</span>
+          <h3>My first open-source contribution · CodeTrial</h3>
+          <p>I contributed to CodeTrial, an open-source project by NCKU computer science professor Jserv. Its C test harness previously printed non-finite values such as <code>inf</code> and <code>NaN</code> directly into JSON, causing the entire test run to lose its results.</p>
+          <p>I added a helper that serializes non-finite <code>double</code> values as JSON <code>null</code>, for both scalar and array outputs, and added regression tests for positive and negative infinity, NaN, and mixed arrays. The fix keeps valid test results available and brings the C harness in line with its C++ and Java counterparts.</p>
+          <p>Having my first PR merged felt like a first step from using open-source software to contributing back. It made open collaboration feel more within reach, and encouraged me to keep learning by taking part in public projects.</p>
+          <p><a class="text-link" href="https://github.com/sysprog21/codetrial/pull/441">View merged PR #441 ↗</a> · <a class="text-link" href="https://github.com/sysprog21/codetrial/issues/438#issuecomment-6360314135">Issue discussion ↗</a> · <a class="text-link" href="https://github.com/sysprog21/codetrial">CodeTrial repository ↗</a></p>
+        </article>
+      </section>
+      <section class="content-section">
+        <h2>Community &amp; activities</h2>
+        <div class="content-grid">
+          <article class="content-card"><span class="content-tag">PyCon Taiwan · 2025–2026</span><h3>From attendee to program team volunteer</h3><p>I attended PyCon Taiwan 2025 and loved the welcoming community. That experience inspired me to volunteer the following year as part of the PyCon Taiwan 2026 Program Team.</p><p>I helped plan and coordinate the Young Inspires sharing stage, and supported keynote-speaker reception and program communication. Working behind the scenes showed me how much care goes into making a community welcoming, and gave me a chance to give back to one that had inspired me.</p><p><a class="text-link" href="https://tw.pycon.org/2026/zh-hant/conference/young-inspires">Explore Young Inspires ↗</a></p></article>
+          <article class="content-card"><span class="content-tag">Mathematics community · 2024</span><h3>Intercollegiate Mathematics Sports Tournament</h3><p>Contributed to event planning and operations for a mathematics community activity.</p></article>
+          <article class="content-card"><span class="content-tag">Folk sports</span><h3>Competition &amp; coaching</h3><p>Received an Excellent Award at a national folk sports competition and hold a Class C coach qualification.</p></article>
+          <article class="content-card"><span class="content-tag">Teaching</span><h3>Helping others learn</h3><p>As a course assistant and mathematics tutor, I’ve supported students as they work through programming and mathematics.</p></article>
+        </div>
+      </section>
+      <p><a class="back-link" href="index.html">← Back to the home page</a></p>
+    </main>
+    <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
+  </div>
 </body>
 </html>
