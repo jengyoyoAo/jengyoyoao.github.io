@@ -22,7 +22,7 @@ For this input, both programs print `6857`. They check factors from small to lar
 
 Both implementations print `6857`.
 
-This page keeps the code close to the versions I wrote. The Python even-factor branch recurses without setting `answer` to 2. That does not change the result for this odd input, but would make the function incomplete for inputs whose largest prime factor is 2. In the C version, I changed the entry point to `int main(void)` and parenthesized the `MAX` macro. The loop condition `i * i <= n` is fine for this input size with `long long`; for larger values, the multiplication could overflow.
+This page keeps the code close to the versions I wrote. The Python even-factor branch recurses without setting `ans` to 2. That does not change the result for this odd input, but would make the function incomplete for inputs whose largest prime factor is 2. In the C version, I changed the entry point to `int main(void)` and parenthesized the `MAX` macro. The loop condition `i * i <= n` is fine for this input size with `long long`; for larger values, the multiplication could overflow.
 
 ## Takeaway
 
