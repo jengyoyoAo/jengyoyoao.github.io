@@ -58,22 +58,18 @@ main { min-width: 0; }
 .fact span { color: var(--muted); font-size: 13px; }
 .research-lead { max-width: 76ch; margin: 0 0 20px; color: var(--muted); font-size: 16px; line-height: 1.75; }
 .research-lead strong { color: var(--text); }
-.project-card { padding: 24px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
-.project-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
 .project-kicker { color: var(--blue); font-size: 11px; font-weight: 720; letter-spacing: .12em; text-transform: uppercase; }
-.project-card h3, .project-row h3 { margin: 6px 0 9px; font: normal 27px/1.25 var(--serif); letter-spacing: -.02em; }
+.project-row h3 { margin: 3px 0 6px; font: normal 23px/1.25 var(--serif); letter-spacing: -.02em; }
 .status { flex: 0 0 auto; padding: 5px 9px; border: 1px solid #405268; border-radius: 999px; color: var(--muted); font-size: 12px; }
-.project-description { max-width: 76ch; margin: 0; color: var(--muted); font-size: 15px; }
-.contribution { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
-.contribution b { color: var(--text); }
 .project-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 18px; font-size: 14px; font-weight: 650; }
 .project-links a { color: var(--blue); text-decoration: underline; text-decoration-color: #526a89; text-underline-offset: 4px; }
 .project-list { display: grid; gap: 0; margin-top: 8px; }
 .project-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 22px; padding: 20px 2px; border-bottom: 1px solid var(--line); }
 .project-row:first-child { border-top: 1px solid var(--line); }
 .project-row > .status { align-self: start; justify-self: end; }
-.project-row h3 { margin: 3px 0 6px; font-size: 23px; }
 .project-row p { max-width: 75ch; margin: 0; color: var(--muted); font-size: 14px; }
+.project-row p + p { margin-top: 8px; }
+.project-row b { color: var(--text); }
 .project-row .project-links { grid-column: 1 / -1; margin-top: 1px; }
 .experience-list { display: grid; }
 .experience { display: grid; grid-template-columns: 145px minmax(0, 1fr); gap: 22px; padding: 19px 0; border-bottom: 1px solid var(--line); }
@@ -216,12 +212,12 @@ main { min-width: 0; }
   .facts { gap: 8px; }
   .fact b { font-size: 20px; }
   .fact span { font-size: 12px; }
-  .project-card { padding: 18px; }
-  .project-card h3 { font-size: 24px; }
   .project-row { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 17px 0; }
   .project-row > .status { justify-self: start; grid-row: 1; }
-  .project-row > div:first-child { grid-row: 2; }
+  .project-row:not(.project-feature-row) > div:first-child { grid-row: 2; }
+  .project-row.project-feature-row > div:first-child { grid-row: 1; }
   .project-row .project-links { grid-column: 1; grid-row: 3; }
+  .project-row.project-feature-row .project-links { grid-row: 2; }
   .experience { grid-template-columns: minmax(0, 1fr); gap: 5px; }
   .subpage-hero { padding: 43px 0 34px; }
   .subpage-hero h1 { font-size: clamp(39px, 10vw, 52px); }
