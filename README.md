@@ -1,13 +1,14 @@
 # Cheng-You Cheng — Personal Website
 
-A static personal website for my profile, selected projects, teaching, and contact information.
+A static personal website for my mathematics background, selected projects, experience, and contact information.
 
 **Live site:** <https://jengyoyoao.github.io/>
 
 ## Files
 
 - `index.html` — responsive home page.
-- `about.html`, `community.html`, `notes.html` — personal, community, and journal subpages.
+- `about.html`, `community.html` — legacy URLs that lead to the corresponding home-page sections.
+- `notes.html` — journal index.
 - `journal/` — individual journal articles; each post has its own page, publication date, and hashtags.
 - `online-judge/index.html` — overview linking to platform-specific solution logs.
 - `online-judge/project-euler/index.html`, `online-judge/cses/index.html`, `online-judge/zerojudge/index.html`, `online-judge/leetcode/index.html` — per-platform solution pages.
