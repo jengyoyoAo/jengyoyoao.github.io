@@ -326,3 +326,7 @@ main { min-width: 0; }
 .math-note-figure figcaption p { margin: .55rem 0; }
 .math-note-figure figcaption a { font-size: .78rem; }
 @media(max-width:620px) { .math-figure-grid { grid-template-columns: 1fr; } }
+
+.note-exercise { margin: 1.5rem 0; padding: 1rem 1.2rem; border: 1px solid #293644; border-radius: 8px; background: #111923; }
+.note-exercise h3 { margin-top: 0; font-size: 1.06rem; color: #bdd4f5; }
+.note-exercise > :last-child { margin-bottom: 0; }
