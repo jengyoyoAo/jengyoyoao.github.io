@@ -330,3 +330,12 @@ main { min-width: 0; }
 .note-exercise { margin: 1.5rem 0; padding: 1rem 1.2rem; border: 1px solid #293644; border-radius: 8px; background: #111923; }
 .note-exercise h3 { margin-top: 0; font-size: 1.06rem; color: #bdd4f5; }
 .note-exercise > :last-child { margin-bottom: 0; }
+
+.geometry-figure-grid .math-note-figure img { height: 290px; }
+
+/* Distinguish chapter sections from their practice pages. */
+.notebook-menu .notebook-section-link { margin: .2rem 0 .2rem .5rem; padding: .55rem .7rem; line-height: 1.5; }
+.notebook-menu .notebook-exercises-link { position: relative; margin: .15rem 0 .6rem 1.35rem; padding: .45rem .65rem .45rem 1rem; font-size: .8rem; line-height: 1.5; color: #acb9ca; }
+.notebook-menu .notebook-exercises-link::before { content: ''; position: absolute; left: .15rem; top: .5rem; bottom: .5rem; width: 2px; background: #40546b; border-radius: 1px; }
+.notebook-menu .notebook-exercises-link[aria-current="page"] { color: #bdd6ff; background: #1c2b3e; }
+.notebook-menu .notebook-exercises-link[aria-current="page"]::before { background: #9fc2ff; }

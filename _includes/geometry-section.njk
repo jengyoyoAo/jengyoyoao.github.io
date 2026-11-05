@@ -1,0 +1,32 @@
+---
+layout: base.njk
+math: true
+navSection: notes
+---
+<div class="notebook-layout">
+  <aside class="notebook-sidebar" aria-label="Geometry chapters">
+    <details class="notebook-menu" open>
+      <summary>Geometry · Contents</summary>
+      <nav aria-label="Notebook sections">
+        <a href="/notes/geometry/"{% if notebookOverview %} aria-current="page"{% endif %}>Overview</a>
+        <p class="eyebrow-small">Chapter 1 · Curves</p>
+        <a class="notebook-section-link" href="/notes/geometry/introduction/"{% if (page.url == "/notes/geometry/introduction/" or page.url == "/notes/geometry/introduction/index.html") %} aria-current="page"{% endif %}>§1.1 Introduction</a>
+        <a class="notebook-section-link" href="/notes/geometry/parametrized-curves/"{% if (page.url == "/notes/geometry/parametrized-curves/" or page.url == "/notes/geometry/parametrized-curves/index.html") %} aria-current="page"{% endif %}>§1.2 Parametrized Curves</a>
+        <a class="notebook-exercises-link" href="/notes/geometry/exercises-1-2/"{% if (page.url == "/notes/geometry/exercises-1-2/" or page.url == "/notes/geometry/exercises-1-2/index.html") %} aria-current="page"{% endif %}>Exercises for §1.2</a>
+      </nav>
+    </details>
+  </aside>
+  <article class="solution-article notebook-article">
+    <a class="solution-back" href="/notes/mathematics/">← Mathematics notes</a>
+    <div class="eyebrow">Mathematics · Geometry</div>
+    <h1>{{ title }}</h1>
+    <p class="lead">{{ summary }}</p>
+    <div class="solution-content">{{ content | safe }}</div>
+    <nav class="notebook-pagination" aria-label="Section navigation">
+      {% if notebookOverview %}<a href="/notes/geometry/introduction/">Start reading: §1.1 Introduction →</a>
+      {% elif (page.url == "/notes/geometry/introduction/" or page.url == "/notes/geometry/introduction/index.html") %}<a href="/notes/geometry/">← Geometry contents</a><a href="/notes/geometry/parametrized-curves/">§1.2 Parametrized Curves →</a>
+      {% elif (page.url == "/notes/geometry/parametrized-curves/" or page.url == "/notes/geometry/parametrized-curves/index.html") %}<a href="/notes/geometry/introduction/">← §1.1 Introduction</a><a href="/notes/geometry/exercises-1-2/">Exercises for §1.2 →</a>
+      {% else %}<a href="/notes/geometry/parametrized-curves/">← §1.2 Parametrized Curves</a><a href="/notes/geometry/">Contents ↑</a>{% endif %}
+    </nav>
+  </article>
+</div>
