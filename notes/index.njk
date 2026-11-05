@@ -12,10 +12,12 @@ permalink: notes/index.html
       <section class="content-section" aria-labelledby="topics-title">
         <h2 id="topics-title">Topics</h2>
         <div class="content-grid">
-          <article class="content-card"><span class="content-tag">01 · Mathematics</span><h3><a href="/notes/linear-algebra/">From definitions to intuition</a></h3><p>Linear algebra, combinatorics, optimization, and the reasoning behind the results.</p></article>
-          <article class="content-card"><span class="content-tag">02 · Programming</span><h3>Ideas expressed in code</h3><p>C, Python, data structures, and algorithms—with examples that help the concepts stick.</p></article>
-          <article class="content-card"><span class="content-tag">03 · AI &amp; Computer Vision</span><h3>Models and experiments</h3><p>Machine learning, deep learning, and the ideas behind understanding images.</p></article>
-          <article class="content-card"><span class="content-tag">04 · Tools</span><h3>A practical reference</h3><p>Git, Linux, LaTeX, and useful workflows I learn along the way.</p></article>
+          {% for category in noteTopics %}<article class="content-card">
+            <span class="content-tag">0{{ loop.index }} · {{ category.name }}</span>
+            <h3><a href="/notes/{{ category.slug }}/">{{ category.headline }}</a></h3>
+            <p>{{ category.description }}</p>
+            <div class="project-links"><a href="/notes/{{ category.slug }}/">Browse {{ category.name }} →</a></div>
+          </article>{% endfor %}
         </div>
       </section>
       <section class="content-section" aria-labelledby="latest-title">

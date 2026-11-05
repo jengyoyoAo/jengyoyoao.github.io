@@ -309,3 +309,7 @@ main { min-width: 0; }
 .notebook-pagination { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; border-top: 1px solid #293644; padding: 1.5rem 0; margin-top: 2.5rem; font-size: .9rem; }
 .notebook-pagination span { color: #a8b3c1; }
 @media(max-width:800px) { .notebook-layout { grid-template-columns: 1fr; gap: 1.5rem; } .notebook-sidebar { position: static; } }
+
+.notebook-list-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1.5rem; }
+.notebook-list-heading .notebook-updated { margin: 0; font-size: .82rem; color: #a8b3c1; }
+.notebook-updated time { white-space: nowrap; }

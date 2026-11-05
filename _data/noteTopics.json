@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "mathematics",
+    "name": "Mathematics",
+    "headline": "From definitions to intuition",
+    "description": "Linear algebra, geometry, combinatorics, and optimization."
+  },
+  {
+    "slug": "programming",
+    "name": "Programming",
+    "headline": "Ideas expressed in code",
+    "description": "C, Python, data structures, and algorithms."
+  },
+  {
+    "slug": "ai-computer-vision",
+    "name": "AI & Computer Vision",
+    "headline": "Models and experiments",
+    "description": "Machine learning, deep learning, and understanding images."
+  },
+  {
+    "slug": "tools",
+    "name": "Tools",
+    "headline": "A practical reference",
+    "description": "Git, Linux, LaTeX, and useful workflows."
+  }
+]

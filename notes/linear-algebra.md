@@ -5,6 +5,7 @@ title: Linear Algebra
 summary: "A section-by-section notebook based on Linear Algebra Done Right."
 topic: Mathematics
 date: 2026-11-06
+updated: 2026-11-06
 draft: false
 notebookOverview: true
 permalink: notes/linear-algebra/index.html

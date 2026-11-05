@@ -4,7 +4,9 @@ math: true
 navSection: notes
 ---
 <article class="solution-article">
-  <a class="solution-back" href="/notes/index.html">← All notes</a>
+  {% set categoryFound = false %}
+  {% for category in noteTopics %}{% if topic == category.name %}<a class="solution-back" href="/notes/{{ category.slug }}/">← {{ category.name }} notes</a>{% set categoryFound = true %}{% endif %}{% endfor %}
+  {% if not categoryFound %}<a class="solution-back" href="/notes/">← All notes</a>{% endif %}
   <div class="eyebrow">Learning notes{% if topic %} · {{ topic }}{% endif %}</div>
   <h1>{{ title }}</h1>
   {% if summary %}<p class="lead">{{ summary }}</p>{% endif %}

@@ -34,6 +34,7 @@ module.exports = function (config) {
     validateArticles(articles);
     return articles.sort((a,b) => a.data.platform.localeCompare(b.data.platform) || a.data.problem_id-b.data.problem_id);
   });
+  config.addFilter('notesByTopic', (items, topic) => (items || []).filter(item => item.data.topic === topic).sort((a,b) => a.data.title.localeCompare(b.data.title)));
   config.addFilter('platformSolutions', (items, platform) => items.filter(item => item.data.platform === platform));
   config.addFilter('number', value => Number(value).toLocaleString('en-US'));
   config.addFilter('dateLabel', value => new Intl.DateTimeFormat('en-US', {year:'numeric', month:'long', day:'numeric',timeZone:'UTC'}).format(new Date(value)));

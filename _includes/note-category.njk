@@ -1,0 +1,25 @@
+---
+layout: base.njk
+navSection: notes
+---
+<section class="subpage-hero">
+  <a class="solution-back" href="/notes/">← All topics</a>
+  <div class="eyebrow">Notes · {{ category.name }}</div>
+  <h1>{{ category.name }}</h1>
+  <p class="lead">{{ category.description }}</p>
+</section>
+{% set entries = collections.notes | notesByTopic(category.name) %}
+<section class="content-section" aria-labelledby="category-notes-title">
+  <h2 id="category-notes-title">Notebooks</h2>
+  {% if entries.length %}<div class="project-list">
+  {% for note in entries %}<article class="project-row"><div>
+    {% set updated = note.data.updated or note.date %}
+    <div class="notebook-list-heading">
+      <h3><a href="{{ note.url }}">{{ note.data.title }}</a></h3>
+      <p class="notebook-updated">Last updated <time datetime="{{ updated | dateISO }}">{{ updated | dateLabel }}</time></p>
+    </div>
+    <p>{{ note.data.summary }}</p>
+    <div class="project-links"><a href="{{ note.url }}">Open notebook →</a></div>
+  </div></article>{% endfor %}
+  </div>{% else %}<div class="solution-empty"><div class="eyebrow-small">No notebooks yet</div><p>Notes in this topic will appear here as they are published.</p></div>{% endif %}
+</section>
