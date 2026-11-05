@@ -102,13 +102,16 @@ main { min-width: 0; }
 .journal-cover-date { color: var(--muted); font-size: 13px; }
 .journal-cover-kicker { color: var(--blue); font-size: 11px; font-weight: 720; letter-spacing: .14em; text-transform: uppercase; }
 .journal-cover-title { max-width: 650px; font: normal clamp(30px, 4vw, 42px)/1.15 var(--serif); letter-spacing: -.025em; }
+.journal-cover-subtitle { position: relative; z-index: 1; color: var(--muted); font-size: 16px; }
 .journal-cover-link { margin-top: 5px; color: var(--blue); font-size: 14px; font-weight: 650; }
 .journal-post-summary { padding: 20px 24px 23px; }
 .journal-post-summary p { max-width: 76ch; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
+.journal-post-summary p + p { margin-top: 10px; }
 .journal-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 17px 0 0; padding: 0; list-style: none; }
 .journal-tags li { padding: 3px 9px; border: 1px solid #34475c; border-radius: 999px; color: var(--blue); font-size: 12px; }
 .journal-article { max-width: 760px; padding: 56px 0 44px; }
 .journal-article-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; color: var(--muted); font-size: 14px; }
+.language-toggle { background: transparent; cursor: pointer; font: inherit; }
 .journal-article h1 { margin: 17px 0 15px; font: normal clamp(40px, 5vw, 60px)/1.08 var(--serif); letter-spacing: -.045em; }
 .journal-article .journal-tags { margin: 0 0 30px; }
 .journal-article-body { border-top: 1px solid var(--line); padding-top: 22px; }

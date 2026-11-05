@@ -25,39 +25,93 @@
     <main id="main-content" tabindex="-1">
       <article class="journal-article">
         <div class="journal-article-meta">
-          <span class="eyebrow">最近的一些碎碎念</span>
-          <time datetime="2026-11-06">Published November 6, 2026</time>
+          <span id="eyebrow-zh">最近的一些碎碎念</span>
+          <span id="eyebrow-en" hidden>A few thoughts</span>
+          <time datetime="2026-11-06">November 6, 2026</time>
+          <button class="button language-toggle" id="language-toggle" type="button" aria-label="Switch to English" aria-controls="article-zh article-en" aria-pressed="false">English</button>
         </div>
-        <h1>我好迷茫</h1>
-        <ul class="journal-tags" aria-label="文章標籤">
-          <li>#大四生活</li><li>#學習</li><li>#下一步</li>
-        </ul>
-        <div class="journal-article-body">
-          <p>最近，我真的很迷茫。</p>
-          <p>我本來在準備考資工所，但越讀越讀不下去，常常覺得自己好像沒有在做真正想做的事。我很不喜歡台灣這種為了考試而學習的氛圍。從小到大經歷了 12 年國教，我好像一直都在為考試念書。可是從高中開始自學程式之後，我慢慢覺得，程式應該要從實作中學，邊做邊摸索，而不是為了考試把一堆東西硬背起來。</p>
-          <p>而且我大四上才開始準備，內容又多，我不太相信自己能在這段時間內把它們讀熟，甚至會覺得自己大概考不上。讀得很辛苦，卻又不知道這是不是自己想走的路，真的很消耗信心。</p>
-          <p>我也想過申請國外的研究所，但現在看起來，應該已經錯過應屆申請的時間了。除此之外，還有兩件很現實的事卡在心裡。</p>
-          <ol>
-            <li><strong>牙套：</strong>我今年 4 月開始戴牙套，評估大概要戴兩年半，現在大約每一到一個半月要回診一次。如果出國，回診和看牙的費用應該會增加很多。</li>
-            <li><strong>兵役：</strong>我畢業後還需要當一年的兵。</li>
-          </ol>
-          <p>這些事情再加上我沒有修過資工系的基礎課，像是 DSA、OS、Computer Organization；成績也沒有特別好，申請時不一定有優勢。數學系跨到資工，我也少了一些可以證明自己具備相關基礎的課程經歷。牙套、兵役、課程背景、成績，還有對未來的不確定，全都擠在一起，難怪我會覺得很迷茫。</p>
-          <h2>要不要先放慢一點？</h2>
-          <p>我現在一直在想，要不要先放棄準備這次的研究所考試。反正畢業學分幾乎都修完了，也許大四這一年可以先把步調放慢，休息一下，做一些自己真正想做的事：</p>
-          <ul>
-            <li><strong>自學比較有挑戰的程式：</strong>多做一些專案，試著從實作中學習，也找回自己喜歡寫程式的感覺。</li>
-            <li><strong>把數學基礎複習好：</strong>回頭整理以前學過的數學核心科目，讓基礎更扎實。</li>
-            <li><strong>處理生活上的事：</strong>考駕照，也準備托福或雅思。</li>
-            <li><strong>多接一些工作：</strong>接家教、助教或研究計畫，多少存一點錢。</li>
+        <section id="article-zh" lang="zh-Hant">
+          <h1>我好迷茫</h1>
+          <ul class="journal-tags" aria-label="文章標籤">
+            <li>#大四生活</li><li>#學習</li><li>#下一步</li>
           </ul>
-          <p>如果一切順利，畢業後就先去當一年的兵。等服役結束，再看看自己想就業，還是申請國外的研究所。</p>
-          <p>我知道這條路也不是沒有問題。成績不算好，數學跨資工，又沒有修過 DSA、OS、Computer Organization 這些基礎課，之後不管申請研究所或找工作，都可能會遇到困難。我還是會擔心，也還沒有把所有事情想清楚。</p>
-          <p>只是比起現在一直逼自己讀一條越來越不確定是不是想走的路，我想先把時間拉長一點，好好想想自己想學什麼、想做什麼。希望多倫多大學和 Fields Institute 的暑期研究計畫能有好消息；至於更遠的以後，就一步一步來吧。</p>
-        </div>
+          <div class="journal-article-body">
+            <p>最近，我真的很迷茫。</p>
+            <p>我本來在準備考資工所，但越讀越讀不下去，常常覺得自己好像沒有在做真正想做的事。我很不喜歡台灣這種為了考試而學習的氛圍。從小到大經歷了 12 年國教，我好像一直都在為考試念書。可是從高中開始自學程式之後，我慢慢覺得，程式應該要從實作中學，邊做邊摸索，而不是為了考試把一堆東西硬背起來。</p>
+            <p>而且我大四上才開始準備，內容又多，我不太相信自己能在這段時間內把它們讀熟，甚至會覺得自己大概考不上。讀得很辛苦，卻又不知道這是不是自己想走的路，真的很消耗信心。</p>
+            <p>我也想過申請國外的研究所，但現在看起來，應該已經錯過應屆申請的時間了。除此之外，還有兩件很現實的事卡在心裡。</p>
+            <ol>
+              <li><strong>牙套：</strong>我今年 4 月開始戴牙套，評估大概要戴兩年半，現在大約每一到一個半月要回診一次。如果出國，回診和看牙的費用應該會增加很多。</li>
+              <li><strong>兵役：</strong>我畢業後還需要當一年的兵。</li>
+            </ol>
+            <p>這些事情再加上我沒有修過資工系的基礎課，像是 DSA、OS、Computer Organization；成績也沒有特別好，申請時不一定有優勢。數學系跨到資工，我也少了一些可以證明自己具備相關基礎的課程經歷。牙套、兵役、課程背景、成績，還有對未來的不確定，全都擠在一起，難怪我會覺得很迷茫。</p>
+            <h2>要不要先放慢一點？</h2>
+            <p>我現在一直在想，要不要先放棄準備這次的研究所考試。反正畢業學分幾乎都修完了，也許大四這一年可以先把步調放慢，休息一下，做一些自己真正想做的事：</p>
+            <ul>
+              <li><strong>自學比較有挑戰的程式：</strong>多做一些專案，試著從實作中學習，也找回自己喜歡寫程式的感覺。</li>
+              <li><strong>把數學基礎複習好：</strong>回頭整理以前學過的數學核心科目，讓基礎更扎實。</li>
+              <li><strong>處理生活上的事：</strong>考駕照，也準備托福或雅思。</li>
+              <li><strong>多接一些工作：</strong>接家教、助教或研究計畫，多少存一點錢。</li>
+            </ul>
+            <p>如果一切順利，畢業後就先去當一年的兵。等服役結束，再看看自己想就業，還是申請國外的研究所。</p>
+            <p>我知道這條路也不是沒有問題。成績不算好，數學跨資工，又沒有修過 DSA、OS、Computer Organization 這些基礎課，之後不管申請研究所或找工作，都可能會遇到困難。我還是會擔心，也還沒有把所有事情想清楚。</p>
+            <p>只是比起現在一直逼自己讀一條越來越不確定是不是想走的路，我想先把時間拉長一點，好好想想自己想學什麼、想做什麼。希望多倫多大學和 Fields Institute 的暑期研究計畫能有好消息；至於更遠的以後，就一步一步來吧。</p>
+          </div>
+        </section>
+        <section id="article-en" lang="en" hidden>
+          <h1>I Feel Lost</h1>
+          <ul class="journal-tags" aria-label="Article tags">
+            <li>#SeniorYear</li><li>#Learning</li><li>#WhatsNext</li>
+          </ul>
+          <div class="journal-article-body">
+            <p>Lately, I’ve been feeling really lost.</p>
+            <p>I started preparing for the entrance exams for computer science graduate programs, like a lot of people around me. But the more I study, the harder it is to keep going. I often feel like I’m not doing what I actually want to do. I really dislike Taiwan’s exam-centered learning culture. After twelve years of compulsory education, it feels like I’ve spent most of my school years studying for tests. But I’ve been teaching myself programming since high school, and I’ve come to believe that programming is best learned by building things and figuring them out as I go—not by memorizing material for an exam.</p>
+            <p>I also didn’t start preparing until the first semester of my senior year. There’s so much material that I don’t think I can master it all in such a short time, and sometimes I feel like I probably won’t pass. Studying this hard without knowing whether this is even the path I want has really worn down my confidence.</p>
+            <p>I’ve also thought about applying to graduate programs abroad, but it looks like I may have missed the application cycle for applying straight out of college. And there are two very practical things on my mind:</p>
+            <ol>
+              <li><strong>Braces:</strong> I got braces in April this year, and the estimate is about two and a half years. I currently have checkups every month to six weeks. If I move abroad, the cost of follow-up appointments and dental care could go up a lot.</li>
+              <li><strong>Military service:</strong> I still have a year of mandatory service to complete after graduation.</li>
+            </ol>
+            <p>On top of that, I haven’t taken the core computer science courses—things like data structures and algorithms, operating systems, or computer organization. My grades aren’t especially strong either, so I may not have an advantage when applying. Coming from mathematics, I’m also missing coursework that could show I have a foundation in computer science. Braces, military service, my academic background, my grades, and all the uncertainty about what comes next are piling up. No wonder I feel lost.</p>
+            <h2>Maybe I should slow down for a while?</h2>
+            <p>I keep wondering whether I should stop preparing for this round of graduate school exams. I’ve finished almost all the credits I need to graduate, so maybe I can slow down a little during my senior year, take a breath, and spend time on things I actually want to do:</p>
+            <ul>
+              <li><strong>Teach myself more challenging programming:</strong> Build bigger projects, learn by doing, and try to find the joy in programming again.</li>
+              <li><strong>Strengthen my math foundations:</strong> Go back over the core mathematics courses I’ve taken and make sure I understand them well.</li>
+              <li><strong>Take care of life stuff:</strong> Get my driver’s license and prepare for the TOEFL or IELTS.</li>
+              <li><strong>Take on more work:</strong> Tutor, work as a teaching assistant, or join research projects and save some money.</li>
+            </ul>
+            <p>If all goes well, I’ll graduate and complete my year of military service first. After that, I can decide whether I want to find a job or apply to graduate school abroad.</p>
+            <p>I know this plan has its own challenges. My grades aren’t great, I’m moving from mathematics into computer science, and I haven’t taken foundational courses like data structures and algorithms, operating systems, or computer organization. That could make it harder to apply to graduate school or find a job. I’m still worried, and I haven’t figured everything out.</p>
+            <p>Still, instead of forcing myself down a path I’m becoming less sure I want, I’d like to give myself more time to think about what I want to learn and do. I hope to hear good news from the summer research programs at the University of Toronto and the Fields Institute. As for everything after that, I’ll take it one step at a time.</p>
+          </div>
+        </section>
         <p><a class="back-link" href="../notes.html">← Back to Journal</a></p>
       </article>
     </main>
     <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
   </div>
+  <script>
+    const languageToggle = document.getElementById('language-toggle');
+    const chineseArticle = document.getElementById('article-zh');
+    const englishArticle = document.getElementById('article-en');
+    const chineseEyebrow = document.getElementById('eyebrow-zh');
+    const englishEyebrow = document.getElementById('eyebrow-en');
+
+    languageToggle.addEventListener('click', () => {
+      const showEnglish = chineseArticle.hidden === false;
+      chineseArticle.hidden = showEnglish;
+      englishArticle.hidden = !showEnglish;
+      chineseEyebrow.hidden = showEnglish;
+      englishEyebrow.hidden = !showEnglish;
+      document.documentElement.lang = showEnglish ? 'en' : 'zh-Hant';
+      document.title = showEnglish
+        ? 'I Feel Lost — Cheng-You Cheng'
+        : '我好迷茫 — Cheng-You Cheng';
+      languageToggle.textContent = showEnglish ? '中文' : 'English';
+      languageToggle.setAttribute('aria-label', showEnglish ? '切換為繁體中文' : 'Switch to English');
+      languageToggle.setAttribute('aria-pressed', String(!showEnglish));
+    });
+  </script>
 </body>
 </html>
