@@ -1,0 +1,22 @@
+{
+  "project-euler": {
+    "name": "Project Euler",
+    "eyebrow": "Mathematics & programming",
+    "lead": "Mathematical ideas, carefully tested in code. Each entry includes the approach, implementation, complexity, and a short takeaway."
+  },
+  "cses": {
+    "name": "CSES",
+    "eyebrow": "Algorithms & data structures",
+    "lead": "I’ll use this page to record CSES problems I solve, focusing on the algorithmic idea, implementation, and important edge cases."
+  },
+  "zerojudge": {
+    "name": "ZeroJudge",
+    "eyebrow": "Programming practice",
+    "lead": "Solution notes, implementations, and lessons from ZeroJudge problems."
+  },
+  "leetcode": {
+    "name": "LeetCode",
+    "eyebrow": "Problem solving",
+    "lead": "I’ll collect LeetCode problems I solve, including the central idea, complexity, and a concise reflection on the problem-solving pattern."
+  }
+}

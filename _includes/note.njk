@@ -1,0 +1,13 @@
+---
+layout: base.njk
+math: true
+navSection: notes
+---
+<article class="solution-article">
+  <a class="solution-back" href="/notes/index.html">← All notes</a>
+  <div class="eyebrow">Learning notes{% if topic %} · {{ topic }}{% endif %}</div>
+  <h1>{{ title }}</h1>
+  {% if summary %}<p class="lead">{{ summary }}</p>{% endif %}
+  {% if date %}<p class="solution-statement"><time datetime="{{ date | dateISO }}">{{ date | dateLabel }}</time></p>{% endif %}
+  <div class="solution-content">{{ content | safe }}</div>
+</article>

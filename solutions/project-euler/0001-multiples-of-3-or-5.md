@@ -1,29 +1,39 @@
-# Project Euler 1: Multiples of 3 or 5
-
-- **Platform / ID:** Project Euler, Problem 1
-- **Problem:** [Multiples of 3 or 5](https://projecteuler.net/problem=1)
-- **Languages:** Python, C
-- **Website write-up:** [Read the solution](../../online-judge/project-euler/problem-1.html)
+---
+layout: "solution.njk"
+tags: ["solution"]
+platform: "project-euler"
+problem_id: 1
+title: "Multiples of 3 or 5"
+date: "2026-10-25"
+problem_url: "https://projecteuler.net/problem=1"
+summary: "Scan the numbers below 1,000 and sum those divisible by 3 or 5. Includes Python and C solutions."
+lead: "Find the sum of all natural numbers below 1,000 that are multiples of 3 or 5."
+topic: "Implementation"
+permalink: "online-judge/project-euler/problem-1.html"
+solutions: [{"label":"Python","path":"solutions/project-euler/0001-multiples-of-3-or-5.py"},{"label":"C","path":"solutions/project-euler/0001-multiples-of-3-or-5.c"}]
+---
 
 ## Key idea
 
-Check every integer below 1,000. Add it to the running total when it is divisible by 3 or 5. A single OR condition counts a number divisible by both only once.
+Check every integer below the limit. If it is divisible by 3 _or_ 5, add it to a running total. Using a single OR condition means a number divisible by both (such as 15) is counted only once.
 
-## Correctness
+## Solution
 
-Each number below the limit is checked exactly once. The condition selects precisely the multiples of 3 or 5, and each selected value is added once. Thus, the final total is the required sum.
+{% solution solutions %}
+
+Both versions output $233168$. The C loop includes zero, which does not affect the sum.
+
+## Why it works
+
+Each number below 1,000 is examined exactly once. The divisibility condition accepts precisely the numbers that are multiples of 3 or 5, and each accepted number is added once. Therefore, the final total is the required sum.
 
 ## Complexity
 
-- **Time:** $O(n)$, where $n$ is the upper limit, because each value below $n$ is checked once.
-- **Extra space:** $O(1)$, because only a fixed number of variables is used.
+Let $n$ be the exclusive upper limit of the scan.
 
-## Result
-
-Both implementations print $233168$.
-
-The C loop starts at zero while the Python loop starts at one; this does not change the result because zero contributes nothing.
+-   **Time:** $O(n)$, because the loop checks each number below the limit once.
+-   **Extra space:** $O(1)$, because the algorithm uses a fixed number of variables.
 
 ## Takeaway
 
-A direct scan is simple to verify. Using OR rather than adding separate sums prevents multiples of 15 from being counted twice.
+A direct scan keeps the solution simple and easy to verify. The OR condition is important: it avoids counting multiples of 15 twice.

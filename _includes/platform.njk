@@ -1,0 +1,22 @@
+---
+layout: base.njk
+---
+{% set info = platforms[platform] %}
+{% set articles = collections.solutions | platformSolutions(platform) %}
+{% set catalog = progress.platforms[platform] %}
+<section class="subpage-hero"><div class="eyebrow">{{ info.name }} · {{ info.eyebrow }}</div><h1>{{ info.name }} <em>solutions.</em></h1><p class="lead">{{ info.lead }}</p></section>
+<nav class="oj-platform-nav" aria-label="Online judge platforms">{% for slug, p in platforms %}<a href="/online-judge/{{ slug }}/index.html"{% if slug == platform %} aria-current="page"{% endif %}>{{ p.name }}</a>{% endfor %}</nav>
+{% if catalog %}
+<section class="oj-progress" aria-labelledby="progress-title">
+  <div class="oj-progress-chart" role="img" aria-label="{{ articles.length }} published solutions out of {{ catalog.total }} problems">
+    <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="oj-progress-track" cx="60" cy="60" r="50"/><circle class="oj-progress-fill" cx="60" cy="60" r="50" pathLength="100" stroke-dasharray="{{ articles.length | percentage(catalog.total) }} 100"/></svg>
+    <div class="oj-progress-center"><strong>{{ articles.length }}</strong><span>/ {{ catalog.total | number }}</span></div>
+  </div>
+  <div><div class="eyebrow-small">Practice progress</div><h2 id="progress-title">{{ articles.length }} / {{ catalog.total | number }} problems</h2><p class="oj-progress-legend"><span>Published solutions · {{ articles.length }}</span><span>Remaining · {{ (catalog.total - articles.length) | number }}</span></p><p class="oj-progress-note">Counts solutions posted on this website. <a href="{{ catalog.source }}" target="_blank" rel="noopener noreferrer">Catalog total</a> · {{ catalog.basis }} · {{ progress.updated | dateLabel }}</p></div>
+</section>
+{% endif %}
+<section class="oj-section oj-solution-list" aria-labelledby="solutions-title"><h2 id="solutions-title">Solution notes</h2>
+{% if articles.length %}<div class="project-list">{% for article in articles %}<article class="project-row" data-problem-id="{{ article.data.problem_id }}"><div><div class="eyebrow-small">Problem {{ article.data.problem_id }}{% if article.data.topic %} · {{ article.data.topic }}{% endif %}{% if article.data.daily %} · {{ article.data.daily }} Daily Question{% endif %}</div><div class="problem-heading"><h3><a href="{{ article.url }}">{{ article.data.problem_id }}. {{ article.data.title }}</a></h3>{% if article.data.difficulty %}<span class="difficulty-label difficulty-{{ article.data.difficulty }}">{{ article.data.difficulty | capitalize }}</span>{% endif %}</div><p>{{ article.data.summary }}</p><div class="project-links"><a href="{{ article.url }}">Read solution ↗</a><a href="{{ article.data.problem_url }}" target="_blank" rel="noopener noreferrer">Problem statement ↗</a></div></div></article>{% endfor %}</div>
+{% else %}<div class="solution-empty"><div class="eyebrow-small">No solutions posted yet</div><p>When I add a problem, this page will include a link to the statement, my solution idea, the algorithm and complexity, and a short note about what I learned.</p></div>{% endif %}
+<a class="repo-link" href="https://github.com/jengyoyoAo/jengyoyoao.github.io/tree/master/solutions/{{ platform }}" target="_blank" rel="noopener noreferrer">Browse code and notes on GitHub ↗</a></section>
+<p><a class="back-link" href="/online-judge/index.html">← All online judge platforms</a></p>

@@ -1,29 +1,39 @@
-# Project Euler 3: Largest Prime Factor
-
-- **Platform / ID:** Project Euler, Problem 3
-- **Problem:** [Largest Prime Factor](https://projecteuler.net/problem=3)
-- **Languages:** Python, C99 or later
-- **Website write-up:** [Read the solution](../../online-judge/project-euler/problem-3.html)
+---
+layout: "solution.njk"
+tags: ["solution"]
+platform: "project-euler"
+problem_id: 3
+title: "Largest Prime Factor"
+date: "2026-10-25"
+problem_url: "https://projecteuler.net/problem=3"
+summary: "Factor 600,851,475,143 by trial division and find its largest prime factor. Includes Python and C solutions."
+lead: "Find the largest prime factor of 600,851,475,143."
+topic: "Prime factorization"
+permalink: "online-judge/project-euler/problem-3.html"
+solutions: [{"label":"Python","path":"solutions/project-euler/0003-largest-prime-factor.py"},{"label":"C","path":"solutions/project-euler/0003-largest-prime-factor.c"}]
+---
 
 ## Key idea
 
-Try factors in increasing order. If a factor divides the number, divide it out and run the function again on the smaller value. Once no odd factor up to the square root divides the remaining value, that value is prime.
+I used trial division: when a factor divides the number, divide it out and check the smaller result again. After checking 2, test odd factors. If no factor up to the square root divides the remaining number, that remainder is the largest prime factor.
 
-## Correctness
+## Solution
 
-For this input, both programs print $6857$. They check factors from small to large and divide out a factor before checking the smaller quotient. The Python function recurses until no factor is found; the C program uses nested loops to do the same.
+{% solution solutions %}
+
+Both versions output $6857$ for this input. The Python code stays close to my original recursive version. I adjusted the C entry point to `int main(void)` and added parentheses to the `MAX` macro. The Python even-number branch does not update $\mathrm{ans}$, but that does not affect this odd input.
+
+## Why it works
+
+The code tries factors in increasing order. When a factor divides the number, it divides it out and continues with the smaller quotient. The last remaining value greater than 1 has no smaller factor left to check, so it is prime. For the given input, both programs print $6857$.
 
 ## Complexity
 
-- **Time:** $O(\sqrt{n})$ trial divisions in the worst case, where $n$ is the input value.
-- **Extra space:** $O(\log n)$ for the Python recursion stack in the worst case; $O(1)$ for the C implementation.
+Let $n$ be the original input value.
 
-## Result
-
-Both implementations print $6857$.
-
-This page keeps the code close to the versions I wrote. The Python even-factor branch recurses without setting $\mathrm{ans}$ to 2. That does not change the result for this odd input, but would make the function incomplete for inputs whose largest prime factor is 2. In the C version, I changed the entry point to `int main(void)` and parenthesized the `MAX` macro. The loop condition $i \cdot  i \le  n$ is fine for this input size with `long long`; for larger values, the multiplication could overflow.
+-   **Time:** $O(\sqrt{n})$ trial divisions in the worst case.
+-   **Extra space:** $O(\log n)$ recursion depth in the Python version; $O(1)$ in the C version.
 
 ## Takeaway
 
-Removing factors reduces the remaining number and therefore the search. The two implementations express the same trial-division idea in the styles I used at the time.
+Removing a factor makes the next search smaller. This is the straightforward trial-division approach I used; the C version uses a standard `int main(void)` entry point, while the Python even-number case could be handled more completely by updating $\mathrm{ans}$ before recursing.

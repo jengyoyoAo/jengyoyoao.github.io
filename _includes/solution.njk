@@ -1,0 +1,13 @@
+---
+layout: base.njk
+math: true
+---
+<article class="solution-article">
+  <a class="solution-back" href="/online-judge/{{ platform }}/index.html"><span aria-hidden="true">←</span> {{ platforms[platform].name }} problems</a>
+  <div class="eyebrow">{{ platforms[platform].name }} · Problem {{ problem_id }}{% if daily %} · Daily Question · {{ daily }}{% endif %}</div>
+  <h1>{{ problem_id }}. {{ title }}</h1>
+  {% if difficulty %}<span class="difficulty-label difficulty-{{ difficulty }}">{{ difficulty | capitalize }}</span>{% endif %}
+  <p class="lead">{{ lead or summary }}</p>
+  <p class="solution-statement"><span>{{ platforms[platform].name }} {{ problem_id }}</span><time datetime="{{ date | dateISO }}">Posted {{ date | dateLabel }}</time><a class="text-link" href="{{ problem_url }}" target="_blank" rel="noopener noreferrer">View original problem ↗</a></p>
+  <div class="solution-content">{{ content | safe }}</div>
+</article>

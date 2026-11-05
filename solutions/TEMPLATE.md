@@ -1,26 +1,54 @@
-# Problem title
+# Solution template
 
-- **Platform / ID:**
-- **Problem:** [Statement link]()
-- **Language:**
+Prefer the scaffold command so the filenames and output URL match the problem:
+
+```sh
+npm run new:solution -- leetcode 4 "Median of Two Sorted Arrays" --difficulty=hard --languages=python,c
+```
+
+A complete article has front matter and Markdown content:
+
+```markdown
+---
+layout: solution.njk
+tags: [solution]
+draft: true
+platform: leetcode
+problem_id: 4
+title: Median of Two Sorted Arrays
+date: "2026-11-05"
+difficulty: hard
+topic: Binary search
+summary: Replace this with your short summary.
+problem_url: https://leetcode.com/problems/median-of-two-sorted-arrays/
+permalink: online-judge/leetcode/problem-4.html
+solutions:
+  - label: Python
+    path: solutions/leetcode/0004-median-of-two-sorted-arrays.py
+  - label: C
+    path: solutions/leetcode/0004-median-of-two-sorted-arrays.c
+---
 
 ## Key idea
 
-What observation or algorithm makes the problem work?
+Explain the algorithm, using $n$ for the input size.
 
 ## Solution
 
-Describe the important steps and implementation choices. The source file lives beside this note.
+{% solution solutions %}
 
-## Correctness
+## Why it works
 
-Why does the approach produce the required result?
+Explain correctness.
 
 ## Complexity
 
-- **Time:**
-- **Space:**
+- **Time:** Replace with your analysis.
+- **Extra space:** Replace with your analysis.
 
 ## Takeaway
 
-What did I learn, or what would I watch out for next time?
+Record the useful observation or pitfall.
+```
+
+Set `draft: false` only after replacing the source placeholders and completing the explanation. Never edit `_site/` directly.

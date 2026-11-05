@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="description" content="{{ description or summary or title }}">
+  <title>{% if problem_id %}{{ platforms[platform].name }} {{ problem_id }}: {% endif %}{{ title }} — Cheng-You Cheng</title>
+  <link rel="stylesheet" href="/site.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  {% if math %}<link rel="stylesheet" href="/assets/katex/katex.min.css"><link rel="stylesheet" href="/assets/code.css">{% endif %}
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page">
+    <header class="topbar">
+      <a class="wordmark" href="/index.html"><span>CY.</span> Cheng-You Cheng</a>
+      <nav aria-label="Main navigation"><a href="/about.html">About</a><a href="/community.html">Community</a><a href="/notes.html">Journal</a><a href="/notes/index.html"{% if navSection == "notes" %} aria-current="page"{% endif %}>Notes</a><a href="/online-judge/index.html"{% if navSection != "notes" %} aria-current="page"{% endif %}>Online Judge</a></nav>
+    </header>
+    <main id="main-content" tabindex="-1">{{ content | safe }}</main>
+    <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
+  </div>
+  {% if math %}<script src="/solution-tabs.js" defer></script>{% endif %}
+</body>
+</html>

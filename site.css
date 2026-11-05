@@ -269,3 +269,9 @@ main { min-width: 0; }
 .oj-progress-legend span + span::before { background: #657180; }
 .problem-heading { display: flex; gap: .8rem; align-items: baseline; flex-wrap: wrap; }
 @media (max-width: 520px) { .oj-progress { gap: 1rem; padding: 1rem; } .oj-progress-chart { width: 100px; height: 100px; flex-basis: 100px; } }
+
+/* Generated Markdown articles retain the existing solution layout. */
+.solution-content .katex { font-size: 1.05em; }
+.solution-content .katex-display { overflow-x: auto; overflow-y: hidden; padding: .3rem 0; }
+.solution-content .solution-code-card { margin-top: 1rem; }
+.solution-code-card .hljs { background: transparent; padding: 0; }
