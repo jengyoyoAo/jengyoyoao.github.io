@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="description" content="LeetCode 3: A Python sliding-window solution with last-seen indices, correctness, and complexity analysis.">
+  <title>LeetCode 3: Longest Substring Without Repeating Characters — Cheng-You Cheng</title>
+  <link rel="stylesheet" href="../../site.css?v=20261105-progress">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script defer src="../../solution-math.js"></script>
+  <style>.solution-article .katex { font-size: 1.05em; } .math-inline { white-space: nowrap; }</style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page">
+    <header class="topbar">
+      <a class="wordmark" href="../../index.html"><span>CY.</span> Cheng-You Cheng</a>
+      <nav aria-label="Main navigation">
+        <a href="../../about.html">About</a>
+        <a href="../../community.html">Community</a>
+        <a href="../../notes.html">Journal</a>
+        <a href="../index.html" aria-current="page">Online Judge</a>
+      </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <article class="solution-article">
+        <a class="solution-back" href="index.html"><span aria-hidden="true">←</span> LeetCode problems</a>
+        <div class="eyebrow">LeetCode · Problem 3 · Sliding window</div>
+        <h1>3. Longest Substring Without Repeating Characters</h1>
+        <span class="difficulty-label difficulty-medium">Medium</span>
+        <p class="lead">Find the length of the longest contiguous substring with no repeated characters.</p>
+        <p class="solution-statement"><span>LeetCode 3</span><time datetime="2026-11-05">Posted November 5, 2026</time><a class="text-link" href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="noopener noreferrer">View original problem ↗</a></p>
+
+        <section class="solution-section" aria-labelledby="idea-title"><h2 id="idea-title">Key idea</h2><p>Maintain a contiguous window from <span class="math-inline">\(\mathrm{start}\)</span> to <span class="math-inline">\(\mathrm{end}\)</span> with no repeated characters. The dictionary <span class="math-inline">\(d\)</span> records the latest index of each character. When the current character already occurs inside the window, jump the left boundary just past its previous occurrence.</p><p>After updating the dictionary, compare the window length <span class="math-inline">\(\mathrm{end}-\mathrm{start}+1\)</span> with <span class="math-inline">\(\mathrm{longest}\)</span>. No substring copies are needed.</p></section>
+        <section class="solution-section solution-code-section" aria-labelledby="code-title"><div class="solution-section-heading"><div><div class="eyebrow-small">Implementation</div><h2 id="code-title">Solution</h2></div></div><div class="solution-code-card" data-code-switcher><div class="solution-code-toolbar"><div class="code-tabs" role="tablist" aria-label="Choose solution language"><button id="python-tab" type="button" role="tab" aria-selected="true" aria-controls="python-panel" tabindex="0">Python</button><button id="c-tab" type="button" role="tab" aria-selected="false" aria-controls="c-panel" tabindex="-1">C</button></div><div class="code-copy-group"><button class="code-copy" type="button" data-copy-code>Copy</button><span class="code-copy-status" data-copy-status aria-live="polite"></span></div></div><div id="python-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="python-tab" tabindex="0"><pre><code><span class="syntax-keyword">class</span> Solution:
+    <span class="syntax-keyword">def</span> <span class="syntax-function">lengthOfLongestSubstring</span>(self, s: str) -&gt; <span class="syntax-type">int</span>:
+        d = <span class="syntax-function">dict</span>()
+        start = <span class="syntax-number">0</span>
+        longest = <span class="syntax-number">0</span>
+
+        <span class="syntax-keyword">for</span> end <span class="syntax-keyword">in</span> <span class="syntax-function">range</span>(<span class="syntax-function">len</span>(s)):
+            char = s[end]
+
+            <span class="syntax-keyword">if</span> char <span class="syntax-keyword">in</span> d <span class="syntax-keyword">and</span> d[char] &gt;= start:
+                start = d[char] + <span class="syntax-number">1</span>
+
+            d[char] = end
+            longest = <span class="syntax-function">max</span>(longest, end - start + <span class="syntax-number">1</span>)
+
+        <span class="syntax-keyword">return</span> longest</code></pre></div><div id="c-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="c-tab" tabindex="0" hidden><pre><code><span class="syntax-preprocessor">#include &lt;limits.h&gt;</span>
+
+<span class="syntax-type">int</span> <span class="syntax-function">lengthOfLongestSubstring</span>(char *s) {
+    <span class="syntax-type">int</span> d[UCHAR_MAX + <span class="syntax-number">1</span>];
+    <span class="syntax-keyword">for</span> (<span class="syntax-type">int</span> i = <span class="syntax-number">0</span>; i &lt;= UCHAR_MAX; i++) {
+        d[i] = -<span class="syntax-number">1</span>;
+    }
+
+    <span class="syntax-type">int</span> start = <span class="syntax-number">0</span>;
+    <span class="syntax-type">int</span> longest = <span class="syntax-number">0</span>;
+
+    <span class="syntax-keyword">for</span> (<span class="syntax-type">int</span> end = <span class="syntax-number">0</span>; s[end] != &#x27;\<span class="syntax-number">0</span>&#x27;; end++) {
+        unsigned char c = (unsigned char)s[end];
+
+        <span class="syntax-keyword">if</span> (d[c] &gt;= start) {
+            start = d[c] + <span class="syntax-number">1</span>;
+        }
+
+        d[c] = end;
+        <span class="syntax-type">int</span> length = end - start + <span class="syntax-number">1</span>;
+        <span class="syntax-keyword">if</span> (length &gt; longest) {
+            longest = length;
+        }
+    }
+
+    <span class="syntax-keyword">return</span> longest;
+}</code></pre></div></div><p class="code-note">The C version replaces the dictionary with a fixed byte-indexed table. Every entry starts at −1 to mean unseen. Casting to <code>unsigned char</code> keeps array indices nonnegative. This matches the problem’s English-letter, digit, symbol, and space inputs; it does not decode UTF-8 characters.</p></section>
+        <section class="solution-section" aria-labelledby="correctness-title"><h2 id="correctness-title">Why it works</h2><p>Before processing each new character, the previous window contains no duplicates. Adding the next character can create only a repetition of that character. If its latest occurrence is inside the window, moving <span class="math-inline">\(\mathrm{start}\)</span> to <span class="math-inline">\(d[\mathrm{char}]+1\)</span> removes that repetition. Otherwise, the existing left boundary remains valid.</p><p>The condition <span class="math-inline">\(d[\mathrm{char}] \ge \mathrm{start}\)</span> matters: an occurrence before the window must not move the left boundary backward. Each updated window is the longest valid substring ending at the current index. Taking the maximum over all ending indices therefore gives the global maximum. An empty string leaves <span class="math-inline">\(\mathrm{longest}=0\)</span>.</p></section>
+        <section class="solution-section" aria-labelledby="complexity-title"><h2 id="complexity-title">Complexity</h2><p>Let <span class="math-inline">\(n=|s|\)</span> and let <span class="math-inline">\(k\)</span> be the number of distinct characters in the input. Assume expected constant-time dictionary lookup and update.</p><ul class="solution-facts"><li><strong>Expected time:</strong> <span class="math-inline">\(O(n)\)</span>, since each index is processed once.</li><li><strong>Extra space:</strong> <span class="math-inline">\(O(k)\)</span>, bounded by <span class="math-inline">\(O(\min(n,|\Sigma|))\)</span> for character alphabet <span class="math-inline">\(\Sigma\)</span>.</li></ul><p>The C version uses direct table access, so its time is <span class="math-inline">\(O(n)\)</span> in the worst case and its auxiliary space is <span class="math-inline">\(O(1)\)</span> for a fixed byte alphabet.</p><p>For a fixed finite alphabet, the dictionary space is bounded independently of input length. Dictionary operations can degrade under collisions, giving a worst-case time bound of <span class="math-inline">\(O(n^2)\)</span> under the usual hash-table model.</p></section>
+        <section class="solution-section" aria-labelledby="example-title"><h2 id="example-title">Why the boundary check matters</h2><p>Consider <code>abba</code>. After processing the second <code>b</code>, the left boundary is <span class="math-inline">\(\mathrm{start}=2\)</span>. At the final <code>a</code>, its previous index is <span class="math-inline">\(0\)</span>, which is outside the current window. The condition prevents the boundary from moving backward to <span class="math-inline">\(1\)</span>, which would incorrectly admit <code>bba</code>. The final valid window is <code>ba</code>, and the result is <span class="math-inline">\(2\)</span>.</p></section>
+        <section class="solution-section" aria-labelledby="takeaway-title"><h2 id="takeaway-title">Takeaway</h2><p>A last-seen index lets the left boundary jump directly past a duplicate. Always check that the duplicate belongs to the current window. The window boundaries move forward, and the dictionary stores the most recent occurrence even for characters no longer in the window.</p><p>The problem asks for a contiguous substring, not a subsequence. The algorithm returns its length rather than constructing the substring itself.</p></section>
+      </article>
+    </main>
+    <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
+  </div>
+  <script src="../../solution-tabs.js" defer></script>
+</body>
+</html>
