@@ -22,3 +22,5 @@ Manfredo P. do Carmo, [*Differential Geometry of Curves and Surfaces*](https://d
 <a class="notebook-section-card" href="/notes/geometry/parametrized-curves/"><span class="eyebrow-small">§1.2</span><strong>Parametrized Curves</strong><span>Smooth maps, traces, velocities, examples, and dot-product differentiation.</span><span class="text-link">Read section →</span></a>
 
 <a class="notebook-section-card" href="/notes/geometry/exercises-1-2/"><span class="eyebrow-small">Practice · §1.2</span><strong>Exercises for §1.2</strong><span>Five problems with collapsible solutions.</span><span class="text-link">Read exercises →</span></a>
+
+<a class="notebook-section-card" href="/notes/geometry/regular-curves/"><span class="eyebrow-small">§1.3</span><strong>Regular Curves; Arc Length</strong><span>Regularity, tangent lines, arc length, unit speed, and orientation.</span><span class="text-link">Read section →</span></a>
