@@ -9,10 +9,6 @@ draft: false
 permalink: notes/linear-algebra/complex-numbers/index.html
 ---
 
-### Reference
-
-Adapted and reworded from Sheldon Axler, [*Linear Algebra Done Right*, fourth edition](https://linear.axler.net/LADR4e.pdf), Chapter 1, §1A, Definition 1.1 and results 1.3–1.6 (printed pages 2–4). The subsection is labeled 1.1 in these notes. Source licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
-
 ::: definition [1.1.1.1] Complex numbers
 A **complex number** is specified by real coordinates $(a,b)$ and written $a+bi$, with $i^2=-1$. We use **$\C$** for their collection:
 

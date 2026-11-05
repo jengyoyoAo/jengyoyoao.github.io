@@ -11,7 +11,8 @@ navSection: notes
         <a href="/notes/linear-algebra/"{% if notebookOverview %} aria-current="page"{% endif %}>Overview</a>
         <p class="eyebrow-small">Chapter 1 · Vector Spaces</p>
         <p class="notebook-group">§1.1 ℝⁿ and ℂⁿ</p>
-        <a href="/notes/linear-algebra/complex-numbers/"{% if not notebookOverview %} aria-current="page"{% endif %}>§1.1.1 Complex Numbers</a>
+        <a href="/notes/linear-algebra/complex-numbers/"{% if (page.url == "/notes/linear-algebra/complex-numbers/index.html" or page.url == "/notes/linear-algebra/complex-numbers/") %} aria-current="page"{% endif %}>§1.1.1 Complex Numbers</a>
+        <a href="/notes/linear-algebra/lists/"{% if (page.url == "/notes/linear-algebra/lists/index.html" or page.url == "/notes/linear-algebra/lists/") %} aria-current="page"{% endif %}>§1.1.2 Lists</a>
       </nav>
     </details>
   </aside>
@@ -23,7 +24,8 @@ navSection: notes
     <div class="solution-content">{{ content | safe }}</div>
     <nav class="notebook-pagination" aria-label="Section navigation">
     {% if notebookOverview %}<a href="/notes/linear-algebra/complex-numbers/">Start reading: §1.1.1 Complex Numbers →</a>
-    {% else %}<a href="/notes/linear-algebra/">← Linear Algebra contents</a><span>End of published sections</span>{% endif %}
+    {% elif (page.url == "/notes/linear-algebra/complex-numbers/index.html" or page.url == "/notes/linear-algebra/complex-numbers/") %}<a href="/notes/linear-algebra/">← Linear Algebra contents</a><a href="/notes/linear-algebra/lists/">§1.1.2 Lists →</a>
+    {% else %}<a href="/notes/linear-algebra/complex-numbers/">← §1.1.1 Complex Numbers</a><a href="/notes/linear-algebra/">Contents ↑</a>{% endif %}
     </nav>
   </article>
 </div>
