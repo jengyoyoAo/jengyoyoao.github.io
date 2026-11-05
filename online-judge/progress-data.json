@@ -1,0 +1,20 @@
+{
+  "updated": "2026-11-05",
+  "platforms": {
+    "project-euler": {
+      "total": 1017,
+      "source": "https://projecteuler.net/recent",
+      "basis": "Official catalog"
+    },
+    "cses": {
+      "total": 400,
+      "source": "https://cses.fi/problemset/",
+      "basis": "Official catalog"
+    },
+    "leetcode": {
+      "total": 4101,
+      "source": "https://leetcode.com/problemset/",
+      "basis": "Provided LeetCode screenshot"
+    }
+  }
+}
