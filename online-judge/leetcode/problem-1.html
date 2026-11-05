@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="description" content="LeetCode 1: Two Sum in Python using a one-pass hash table, with correctness and complexity analysis.">
+  <title>LeetCode 1: Two Sum — Cheng-You Cheng</title>
+  <link rel="stylesheet" href="../../site.css?v=20261105-progress">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script defer src="../../solution-math.js"></script>
+  <style>.solution-article .katex { font-size: 1.05em; } .math-inline { white-space: nowrap; }</style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page">
+    <header class="topbar">
+      <a class="wordmark" href="../../index.html"><span>CY.</span> Cheng-You Cheng</a>
+      <nav aria-label="Main navigation">
+        <a href="../../about.html">About</a>
+        <a href="../../community.html">Community</a>
+        <a href="../../notes.html">Journal</a>
+        <a href="../index.html" aria-current="page">Online Judge</a>
+      </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <article class="solution-article">
+        <a class="solution-back" href="index.html"><span aria-hidden="true">←</span> LeetCode problems</a>
+        <div class="eyebrow">LeetCode · Problem 1 · Hash table</div>
+        <h1>1. Two Sum</h1>
+        <span class="difficulty-label difficulty-easy">Easy</span>
+        <p class="lead">Find two distinct indices whose values sum to the target.</p>
+        <p class="solution-statement"><span>LeetCode 1</span><time datetime="2026-11-05">Posted November 5, 2026</time><a class="text-link" href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener noreferrer">View original problem ↗</a></p>
+
+        <section class="solution-section" aria-labelledby="idea-title"><h2 id="idea-title">Key idea</h2><p>Use a hash table <span class="math-inline">\(h\)</span> to remember each previously visited value and its index. For the current value <span class="math-inline">\(\mathrm{num}\)</span>, the required partner is <span class="math-inline">\(\mathrm{complement} = \mathrm{target} - \mathrm{num}\)</span>. If the partner is already in the table, return its stored index together with the current index <span class="math-inline">\(i\)</span>.</p></section>
+        <section class="solution-section solution-code-section" aria-labelledby="code-title"><div class="solution-section-heading"><div><div class="eyebrow-small">Implementation</div><h2 id="code-title">Solution</h2></div></div>
+          <div class="solution-code-card" data-code-switcher><div class="solution-code-toolbar"><div class="code-tabs" role="tablist" aria-label="Choose solution language"><button id="python-tab" type="button" role="tab" aria-selected="true" aria-controls="python-panel" tabindex="0">Python</button><button id="c-tab" type="button" role="tab" aria-selected="false" aria-controls="c-panel" tabindex="-1">C</button></div><div class="code-copy-group"><button class="code-copy" type="button" data-copy-code>Copy</button><span class="code-copy-status" data-copy-status aria-live="polite"></span></div></div>
+          <div id="python-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="python-tab" tabindex="0"><pre><code><span class="syntax-keyword">class</span> Solution:
+    <span class="syntax-keyword">def</span> <span class="syntax-function">twoSum</span>(self, nums: list[<span class="syntax-type">int</span>], target: <span class="syntax-type">int</span>) -&gt; list[<span class="syntax-type">int</span>]:
+        h = {}
+        <span class="syntax-keyword">for</span> i, num <span class="syntax-keyword">in</span> <span class="syntax-function">enumerate</span>(nums):
+            complement = target - num
+            <span class="syntax-keyword">if</span> complement <span class="syntax-keyword">in</span> h:
+                <span class="syntax-keyword">return</span> [h[complement], i]
+            <span class="syntax-keyword">else</span>:
+                h[num] = i</code></pre></div><div id="c-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="c-tab" tabindex="0" hidden><pre><code><span class="syntax-preprocessor">#include &lt;stdlib.h&gt;</span>
+
+typedef struct {
+    <span class="syntax-type">int</span> key;
+    <span class="syntax-type">int</span> index;
+    <span class="syntax-type">int</span> used;
+} Entry;
+
+static unsigned <span class="syntax-type">int</span> <span class="syntax-function">hash</span>(<span class="syntax-type">int</span> key) {
+    <span class="syntax-keyword">return</span> (unsigned <span class="syntax-type">int</span>)key * 2654435761u;
+}
+
+<span class="syntax-type">int</span> *<span class="syntax-function">twoSum</span>(<span class="syntax-type">int</span> *nums, <span class="syntax-type">int</span> numsSize, <span class="syntax-type">int</span> target, <span class="syntax-type">int</span> *returnSize) {
+    *returnSize = <span class="syntax-number">0</span>;
+    <span class="syntax-type">int</span> capacity = <span class="syntax-number">2</span> * numsSize + <span class="syntax-number">1</span>;
+    Entry *h = <span class="syntax-function">calloc</span>((size_t)capacity, <span class="syntax-type">sizeof</span>(Entry));
+    <span class="syntax-keyword">if</span> (h == NULL) {
+        <span class="syntax-keyword">return</span> NULL;
+    }
+
+    <span class="syntax-keyword">for</span> (<span class="syntax-type">int</span> i = <span class="syntax-number">0</span>; i &lt; numsSize; i++) {
+        <span class="syntax-type">int</span> num = nums[i];
+        <span class="syntax-type">int</span> complement = target - num;
+        unsigned <span class="syntax-type">int</span> pos = <span class="syntax-function">hash</span>(complement) % (unsigned <span class="syntax-type">int</span>)capacity;
+
+        <span class="syntax-keyword">while</span> (h[pos].used) {
+            <span class="syntax-keyword">if</span> (h[pos].key == complement) {
+                <span class="syntax-type">int</span> *ans = <span class="syntax-function">malloc</span>(<span class="syntax-number">2</span> * <span class="syntax-type">sizeof</span>(<span class="syntax-type">int</span>));
+                <span class="syntax-keyword">if</span> (ans != NULL) {
+                    ans[<span class="syntax-number">0</span>] = h[pos].index;
+                    ans[<span class="syntax-number">1</span>] = i;
+                    *returnSize = <span class="syntax-number">2</span>;
+                }
+                <span class="syntax-function">free</span>(h);
+                <span class="syntax-keyword">return</span> ans;
+            }
+            pos = (pos + <span class="syntax-number">1</span>) % (unsigned <span class="syntax-type">int</span>)capacity;
+        }
+
+        pos = <span class="syntax-function">hash</span>(num) % (unsigned <span class="syntax-type">int</span>)capacity;
+        <span class="syntax-keyword">while</span> (h[pos].used &amp;&amp; h[pos].key != num) {
+            pos = (pos + <span class="syntax-number">1</span>) % (unsigned <span class="syntax-type">int</span>)capacity;
+        }
+        h[pos].key = num;
+        h[pos].index = i;
+        h[pos].used = <span class="syntax-number">1</span>;
+    }
+
+    <span class="syntax-function">free</span>(h);
+    <span class="syntax-keyword">return</span> NULL;
+}</code></pre></div></div><p class="code-note">The C version implements a hash table with linear probing. A separate used flag allows zero and negative keys. The table has more than twice as many slots as input values, and the returned index array is allocated for the caller to free. The distance between target and a value fits in int under the problem’s bounds on a 32-bit int implementation.</p></section>
+        <section class="solution-section" aria-labelledby="correctness-title"><h2 id="correctness-title">Why it works</h2><p>Before each iteration, every index stored in <span class="math-inline">\(h\)</span> is smaller than <span class="math-inline">\(i\)</span>. If the complement is found, its value plus the current value equals <span class="math-inline">\(\mathrm{target}\)</span>, and the two indices are distinct.</p><p>If it is not found, storing the current value makes it available to later elements. For the valid pair, the earlier element is therefore present when the later element is processed. Since the problem guarantees exactly one solution, the function returns that pair. Repeated values are handled correctly: with <span class="math-inline">\(\mathrm{nums} = [3,3]\)</span> and <span class="math-inline">\(\mathrm{target} = 6\)</span>, the second element finds the first and returns <span class="math-inline">\([0,1]\)</span>.</p></section>
+        <section class="solution-section" aria-labelledby="complexity-title"><h2 id="complexity-title">Complexity</h2><p>Let <span class="math-inline">\(n = |\mathrm{nums}|\)</span>. For Python’s dictionary and the C table under the usual expected constant-time hash-table lookup and insertion model:</p><ul class="solution-facts"><li><strong>Expected time:</strong> <span class="math-inline">\(O(n)\)</span>, using one pass.</li><li><strong>Extra space:</strong> <span class="math-inline">\(O(n)\)</span>, for stored values and indices.</li></ul><p>The time bound is expected rather than a strict worst-case guarantee. The C table uses a fixed hash function and linear probing; expected performance assumes well-distributed keys. If hash-table operations degrade to linear time because of collisions, the worst-case total can be <span class="math-inline">\(O(n^2)\)</span>.</p></section>
+        <section class="solution-section" aria-labelledby="example-title"><h2 id="example-title">Example</h2><p>For <span class="math-inline">\(\mathrm{nums} = [2,7,11,15]\)</span> and <span class="math-inline">\(\mathrm{target} = 9\)</span>, first store <span class="math-inline">\(h[2] = 0\)</span>. At index <span class="math-inline">\(i = 1\)</span>, the complement is <span class="math-inline">\(9 - 7 = 2\)</span>, which is already in the table. Return <span class="math-inline">\([0,1]\)</span>.</p></section>
+        <section class="solution-section" aria-labelledby="takeaway-title"><h2 id="takeaway-title">Takeaway</h2><p>Check for the complement before inserting the current element. This prevents the same index from being used twice, while still allowing two equal values at different indices. The table stores indices because the required result is a pair of positions.</p></section>
+      </article>
+    </main>
+    <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
+  </div>
+  <script src="../../solution-tabs.js" defer></script>
+</body>
+</html>
