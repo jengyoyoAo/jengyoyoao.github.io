@@ -8,6 +8,11 @@
   <title>Project Euler 2: Even Fibonacci Numbers — Cheng-You Cheng</title>
   <link rel="stylesheet" href="../../site.css">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script defer src="../../solution-math.js"></script>
+  <style>.solution-article .katex { font-size: 1.05em; } .math-inline { white-space: nowrap; }</style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -92,20 +97,20 @@
 }</code></pre>
             </div>
           </div>
-          <p class="code-note">Both versions output <code>4613732</code>. The C version corrects the bound to four million and uses <code>long long</code> for the sequence and sum.</p>
+          <p class="code-note">Both versions output <span class="math-inline">\(4613732\)</span>. The C version corrects the bound to four million and uses <code>long long</code> for the sequence and sum.</p>
         </section>
 
         <section class="solution-section" aria-labelledby="correctness-title">
           <h2 id="correctness-title">Why it works</h2>
-          <p>The initialization sets <code>a</code>, <code>b</code>, and <code>c</code> to the first three Fibonacci values, 1, 1, and 2. Each loop advances the pair by one term, so every Fibonacci value below the limit is visited exactly once. The parity check adds exactly the even-valued terms, and the loop stops before adding any term at or above four million. Therefore, the total is the requested sum.</p>
+          <p>The initialization sets <span class="math-inline">\(a\)</span>, <span class="math-inline">\(b\)</span>, and <span class="math-inline">\(c\)</span> to the first three Fibonacci values, 1, 1, and 2. Each loop advances the pair by one term, so every Fibonacci value below the limit is visited exactly once. The parity check adds exactly the even-valued terms, and the loop stops before adding any term at or above four million. Therefore, the total is the requested sum.</p>
         </section>
 
         <section class="solution-section" aria-labelledby="complexity-title">
           <h2 id="complexity-title">Complexity</h2>
-          <p>Let <code>n</code> be the upper bound on Fibonacci values.</p>
+          <p>Let <span class="math-inline">\(n\)</span> be the upper bound on Fibonacci values.</p>
           <ul class="solution-facts">
-            <li><strong>Time:</strong> <code>O(log n)</code> iterations, because Fibonacci values grow exponentially. In a bit-complexity model for Python's arbitrary-precision integers, additions grow with the number of digits, giving <code>O((log n)^2)</code> bit operations.</li>
-            <li><strong>Extra space:</strong> <code>O(1)</code> stored values; with arbitrary-precision integers, those values require <code>O(log n)</code> bits.</li>
+            <li><strong>Time:</strong> <span class="math-inline">\(O(\log n)\)</span> iterations, because Fibonacci values grow exponentially. In a bit-complexity model for Python's arbitrary-precision integers, additions grow with the number of digits, giving <span class="math-inline">\(O((\log n)^2)\)</span> bit operations.</li>
+            <li><strong>Extra space:</strong> <span class="math-inline">\(O(1)\)</span> stored values; with arbitrary-precision integers, those values require <span class="math-inline">\(O(\log n)\)</span> bits.</li>
           </ul>
         </section>
 

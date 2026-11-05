@@ -15,12 +15,12 @@ Each number below the limit is checked exactly once. The condition selects preci
 
 ## Complexity
 
-- **Time:** O(n), where n is the upper limit, because each value below n is checked once.
-- **Extra space:** O(1), because only a fixed number of variables is used.
+- **Time:** $O(n)$, where $n$ is the upper limit, because each value below $n$ is checked once.
+- **Extra space:** $O(1)$, because only a fixed number of variables is used.
 
 ## Result
 
-Both implementations print `233168`.
+Both implementations print $233168$.
 
 The C loop starts at zero while the Python loop starts at one; this does not change the result because zero contributes nothing.
 

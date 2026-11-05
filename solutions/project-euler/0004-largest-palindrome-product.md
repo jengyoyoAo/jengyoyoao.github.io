@@ -10,24 +10,24 @@
 
 Check products of two three-digit numbers and reverse the digits to test whether each product is a palindrome. Keep the largest palindrome found instead of returning at the first match.
 
-Both implementations reverse digits arithmetically using modulo 10 and integer division. Starting `j` at `i` avoids duplicate factor pairs. For a fixed `i`, products decrease as `j` decreases, so `num <= ans` safely ends only the inner loop. The next outer iteration still needs to be searched.
+Both implementations reverse digits arithmetically using modulo 10 and integer division. Starting $j$ at $i$ avoids duplicate factor pairs. For a fixed $i$, products decrease as $j$ decreases, so $\mathrm{num} \le  \mathrm{ans}$ safely ends only the inner loop. The next outer iteration still needs to be searched.
 
 ## Correctness
 
-Every unordered pair of three-digit factors appears with 100 ≤ j ≤ i ≤ 999. Reversing the decimal digits identifies palindromes, and ans stores the largest one seen. For a fixed i, products decrease as j decreases, so once a product is no larger than ans, the remaining products in that inner loop cannot improve it. The final ans is therefore the largest palindrome product.
+Every unordered pair of three-digit factors appears with 100 ≤ $j$ ≤ $i$ ≤ 999. Reversing the decimal digits identifies palindromes, and $\mathrm{ans}$ stores the largest one seen. For a fixed $i$, products decrease as $j$ decreases, so once a product is no larger than $\mathrm{ans}$, the remaining products in that inner loop cannot improve it. The final $\mathrm{ans}$ is therefore the largest palindrome product.
 
 ## Complexity
 
-- **Time:** O(n² log n), where n is the upper factor bound; each digit reversal takes O(log n).
-- **Extra space:** O(1).
+- **Time:** $O(n^2 \log n)$, where $n$ is the upper factor bound; each digit reversal takes $O(\log n)$.
+- **Extra space:** $O(1)$.
 
 ## Result
 
-Both the Python and C programs print `906609`, which is `993 × 913`.
+Both the Python and C programs print $906609$, which is $993 \times  913$.
 
-## A faster approach: mirror a prefix
+## A faster approach: mirror a $\mathrm{prefix}$
 
-Generate six-digit palindromes in descending order by mirroring a three-digit prefix. For example, prefix 906 becomes 906609. Instead of testing whether every product is a palindrome, test whether each palindrome has two three-digit factors.
+Generate six-digit palindromes in descending order by mirroring a three-digit $\mathrm{prefix}$. For example, $\mathrm{prefix}$ 906 becomes 906609. Instead of testing whether every product is a palindrome, test whether each palindrome has two three-digit factors.
 
 Every six-digit palindrome is divisible by 11 because its alternating digit sum is zero. Since 11 is prime, at least one factor must be divisible by 11. The inner loop therefore checks three-digit multiples of 11 and verifies that the quotient is also a three-digit integer. Palindromes are generated from largest to smallest, so the first valid factorization gives the maximum.
 
@@ -59,11 +59,11 @@ This implementation searches only six-digit palindromes. It finds 906609 = 993 �
 
 ### Complexity
 
-Let n be the upper factor bound for a generalized search over d-digit factors. There are O(n) mirrored candidates, each requiring O(log n) digit operations to construct and at most O(n) trial divisions. The total is O(n log n + n²) = O(n²) time and O(1) extra integer variables under the same unit-cost arithmetic model used above. The factor-of-11 shortcut reduces constant work, not the Big O.
+Let $n$ be the upper factor bound for a generalized search over $d$-digit factors. There are $O(n)$ mirrored candidates, each requiring $O(\log n)$ digit operations to construct and at most $O(n)$ trial divisions. The total is $O(n \log n + n^2)$ = $O(n^2)$ time and $O(1)$ extra integer variables under the same unit-cost arithmetic model used above. The factor-of-11 shortcut reduces constant work, not the Big O.
 
 ### Pair-search pruning
 
-The outer loop may stop when `i * i <= ans`, because all remaining pairs have a product no larger than this bound. This does not change the stated O(n² log n) upper bound.
+The outer loop may stop when $i \cdot  i \le  \mathrm{ans}$, because all remaining pairs have a product no larger than this bound. This does not change the stated $O(n^2 \log n)$ upper bound.
 
 ## Takeaway
 

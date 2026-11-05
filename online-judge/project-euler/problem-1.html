@@ -8,6 +8,11 @@
   <title>Project Euler 1: Multiples of 3 or 5 — Cheng-You Cheng</title>
   <link rel="stylesheet" href="../../site.css">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script defer src="../../solution-math.js"></script>
+  <style>.solution-article .katex { font-size: 1.05em; } .math-inline { white-space: nowrap; }</style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -82,7 +87,7 @@
 }</code></pre>
             </div>
           </div>
-          <p class="code-note">Both versions output <code>233168</code>. The C loop includes zero, which does not affect the sum.</p>
+          <p class="code-note">Both versions output <span class="math-inline">\(233168\)</span>. The C loop includes zero, which does not affect the sum.</p>
         </section>
 
         <section class="solution-section" aria-labelledby="correctness-title">
@@ -92,10 +97,10 @@
 
         <section class="solution-section" aria-labelledby="complexity-title">
           <h2 id="complexity-title">Complexity</h2>
-          <p>Let <code>n</code> be the exclusive upper limit of the scan.</p>
+          <p>Let <span class="math-inline">\(n\)</span> be the exclusive upper limit of the scan.</p>
           <ul class="solution-facts">
-            <li><strong>Time:</strong> <code>O(n)</code>, because the loop checks each number below the limit once.</li>
-            <li><strong>Extra space:</strong> <code>O(1)</code>, because the algorithm uses a fixed number of variables.</li>
+            <li><strong>Time:</strong> <span class="math-inline">\(O(n)\)</span>, because the loop checks each number below the limit once.</li>
+            <li><strong>Extra space:</strong> <span class="math-inline">\(O(1)\)</span>, because the algorithm uses a fixed number of variables.</li>
           </ul>
         </section>
 

@@ -11,18 +11,18 @@ Try factors in increasing order. If a factor divides the number, divide it out a
 
 ## Correctness
 
-For this input, both programs print `6857`. They check factors from small to large and divide out a factor before checking the smaller quotient. The Python function recurses until no factor is found; the C program uses nested loops to do the same.
+For this input, both programs print $6857$. They check factors from small to large and divide out a factor before checking the smaller quotient. The Python function recurses until no factor is found; the C program uses nested loops to do the same.
 
 ## Complexity
 
-- **Time:** O(√n) trial divisions in the worst case, where n is the input value.
-- **Extra space:** O(log n) for the Python recursion stack in the worst case; O(1) for the C implementation.
+- **Time:** $O(\sqrt{n})$ trial divisions in the worst case, where $n$ is the input value.
+- **Extra space:** $O(\log n)$ for the Python recursion stack in the worst case; $O(1)$ for the C implementation.
 
 ## Result
 
-Both implementations print `6857`.
+Both implementations print $6857$.
 
-This page keeps the code close to the versions I wrote. The Python even-factor branch recurses without setting `ans` to 2. That does not change the result for this odd input, but would make the function incomplete for inputs whose largest prime factor is 2. In the C version, I changed the entry point to `int main(void)` and parenthesized the `MAX` macro. The loop condition `i * i <= n` is fine for this input size with `long long`; for larger values, the multiplication could overflow.
+This page keeps the code close to the versions I wrote. The Python even-factor branch recurses without setting $\mathrm{ans}$ to 2. That does not change the result for this odd input, but would make the function incomplete for inputs whose largest prime factor is 2. In the C version, I changed the entry point to `int main(void)` and parenthesized the `MAX` macro. The loop condition $i \cdot  i \le  n$ is fine for this input size with `long long`; for larger values, the multiplication could overflow.
 
 ## Takeaway
 

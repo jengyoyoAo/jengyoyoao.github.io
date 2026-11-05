@@ -8,6 +8,11 @@
   <title>Project Euler 3: Largest Prime Factor — Cheng-You Cheng</title>
   <link rel="stylesheet" href="../../site.css">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script defer src="../../solution-math.js"></script>
+  <style>.solution-article .katex { font-size: 1.05em; } .math-inline { white-space: nowrap; }</style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -95,26 +100,26 @@
 }</code></pre>
             </div>
           </div>
-          <p class="code-note">Both versions output <code>6857</code> for this input. The Python code stays close to my original recursive version. I adjusted the C entry point to <code>int main(void)</code> and added parentheses to the <code>MAX</code> macro. The Python even-number branch does not update <code>ans</code>, but that does not affect this odd input.</p>
+          <p class="code-note">Both versions output <span class="math-inline">\(6857\)</span> for this input. The Python code stays close to my original recursive version. I adjusted the C entry point to <code>int main(void)</code> and added parentheses to the <code>MAX</code> macro. The Python even-number branch does not update <span class="math-inline">\(\mathrm{ans}\)</span>, but that does not affect this odd input.</p>
         </section>
 
         <section class="solution-section" aria-labelledby="correctness-title">
           <h2 id="correctness-title">Why it works</h2>
-          <p>The code tries factors in increasing order. When a factor divides the number, it divides it out and continues with the smaller quotient. The last remaining value greater than 1 has no smaller factor left to check, so it is prime. For the given input, both programs print <code>6857</code>.</p>
+          <p>The code tries factors in increasing order. When a factor divides the number, it divides it out and continues with the smaller quotient. The last remaining value greater than 1 has no smaller factor left to check, so it is prime. For the given input, both programs print <span class="math-inline">\(6857\)</span>.</p>
         </section>
 
         <section class="solution-section" aria-labelledby="complexity-title">
           <h2 id="complexity-title">Complexity</h2>
-          <p>Let <code>n</code> be the original input value.</p>
+          <p>Let <span class="math-inline">\(n\)</span> be the original input value.</p>
           <ul class="solution-facts">
-            <li><strong>Time:</strong> <code>O(√n)</code> trial divisions in the worst case.</li>
-            <li><strong>Extra space:</strong> <code>O(log n)</code> recursion depth in the Python version; <code>O(1)</code> in the C version.</li>
+            <li><strong>Time:</strong> <span class="math-inline">\(O(\sqrt{n})\)</span> trial divisions in the worst case.</li>
+            <li><strong>Extra space:</strong> <span class="math-inline">\(O(\log n)\)</span> recursion depth in the Python version; <span class="math-inline">\(O(1)\)</span> in the C version.</li>
           </ul>
         </section>
 
         <section class="solution-section" aria-labelledby="takeaway-title">
           <h2 id="takeaway-title">Takeaway</h2>
-          <p>Removing a factor makes the next search smaller. This is the straightforward trial-division approach I used; the C version uses a standard <code>int main(void)</code> entry point, while the Python even-number case could be handled more completely by updating <code>ans</code> before recursing.</p>
+          <p>Removing a factor makes the next search smaller. This is the straightforward trial-division approach I used; the C version uses a standard <code>int main(void)</code> entry point, while the Python even-number case could be handled more completely by updating <span class="math-inline">\(\mathrm{ans}\)</span> before recursing.</p>
         </section>
       </article>
     </main>

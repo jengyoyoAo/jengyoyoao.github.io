@@ -8,6 +8,11 @@
   <title>Project Euler 4: Largest Palindrome Product — Cheng-You Cheng</title>
   <link rel="stylesheet" href="../../site.css">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script defer src="../../solution-math.js"></script>
+  <style>.solution-article .katex { font-size: 1.05em; } .math-inline { white-space: nowrap; }</style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -32,8 +37,8 @@
         <section class="solution-section" aria-labelledby="idea-title">
           <h2 id="idea-title">Key idea</h2>
           <p>Check products of two three-digit numbers and reverse the digits to test whether each product is a palindrome. Keep the largest palindrome found instead of returning at the first match.</p>
-          <p>The two implementations use the same arithmetic palindrome check: repeatedly take the last digit with modulo 10, append it to the reversed number, and remove it from the original number using integer division. Starting the inner loop at <code>j = i</code> avoids checking both <code>i × j</code> and <code>j × i</code>.</p>
-          <p>For each fixed <code>i</code>, the product decreases as <code>j</code> decreases. If <code>num &lt;= ans</code>, break only the inner loop: smaller values of <code>j</code> cannot improve the maximum. The next outer-loop iteration must still be checked because its inner loop restarts at a larger <code>j</code>.</p>
+          <p>The two implementations use the same arithmetic palindrome check: repeatedly take the last digit with modulo 10, append it to the reversed number, and remove it from the original number using integer division. Starting the inner loop at <span class="math-inline">\(j = i\)</span> avoids checking both <span class="math-inline">\(i \times  j\)</span> and <span class="math-inline">\(j \times  i\)</span>.</p>
+          <p>For each fixed <span class="math-inline">\(i\)</span>, the product decreases as <span class="math-inline">\(j\)</span> decreases. If <span class="math-inline">\(\mathrm{num} \le  \mathrm{ans}\)</span>, break only the inner loop: smaller values of <span class="math-inline">\(j\)</span> cannot improve the maximum. The next outer-loop iteration must still be checked because its inner loop restarts at a larger <span class="math-inline">\(j\)</span>.</p>
         </section>
         <section class="solution-section solution-code-section" aria-labelledby="code-title">
           <h2 id="code-title">Solution</h2>
@@ -92,19 +97,19 @@ int main(void) {
     return 0;
 }</code></pre></div>
           </div>
-          <p class="code-note">Both the Python and C versions print <code>906609</code> = 993 × 913. The C solution is my revised version. Its palindrome helper uses <code>int</code> for the original and reversed values; both fit the products in this problem on a 32-bit-or-larger <code>int</code> implementation.</p>
+          <p class="code-note">Both the Python and C versions print <span class="math-inline">\(906609\)</span> = 993 × 913. The C solution is my revised version. Its palindrome helper uses <code>int</code> for the original and reversed values; both fit the products in this problem on a 32-bit-or-larger <code>int</code> implementation.</p>
         </section>
         <section class="solution-section" aria-labelledby="correctness-title">
           <h2 id="correctness-title">Why it works</h2>
-          <p>Every unordered pair of three-digit factors appears with 100 ≤ <code>j</code> ≤ <code>i</code> ≤ 999. Reversing the decimal digits identifies palindromes, and <code>ans</code> stores the largest one seen. For a fixed <code>i</code>, products decrease as <code>j</code> decreases, so once a product is no larger than <code>ans</code>, the remaining products in that inner loop cannot improve it. The final result is therefore the largest palindrome product.</p>
+          <p>Every unordered pair of three-digit factors appears with 100 ≤ <span class="math-inline">\(j\)</span> ≤ <span class="math-inline">\(i\)</span> ≤ 999. Reversing the decimal digits identifies palindromes, and <span class="math-inline">\(\mathrm{ans}\)</span> stores the largest one seen. For a fixed <span class="math-inline">\(i\)</span>, products decrease as <span class="math-inline">\(j\)</span> decreases, so once a product is no larger than <span class="math-inline">\(\mathrm{ans}\)</span>, the remaining products in that inner loop cannot improve it. The final result is therefore the largest palindrome product.</p>
         </section>
         <section class="solution-section" aria-labelledby="complexity-title">
           <h2 id="complexity-title">Complexity</h2>
-          <ul class="solution-facts"><li><strong>Time:</strong> <code>O(n² log n)</code>, where <code>n</code> is the upper factor bound; each digit reversal takes <code>O(log n)</code> time.</li><li><strong>Extra space:</strong> <code>O(1)</code>.</li></ul>
+          <ul class="solution-facts"><li><strong>Time:</strong> <span class="math-inline">\(O(n^2 \log n)\)</span>, where <span class="math-inline">\(n\)</span> is the upper factor bound; each digit reversal takes <span class="math-inline">\(O(\log n)\)</span> time.</li><li><strong>Extra space:</strong> <span class="math-inline">\(O(1)\)</span>.</li></ul>
         </section>
         <section class="solution-section" aria-labelledby="optimization-title">
-          <h2 id="optimization-title">A faster approach: mirror a <code>prefix</code></h2>
-          <p>Generate six-digit palindromes in descending order by mirroring a three-digit <code>prefix</code>. For example, <code>prefix</code> 906 becomes 906609. Instead of testing whether every product is a palindrome, test whether each palindrome has two three-digit factors.</p>
+          <h2 id="optimization-title">A faster approach: mirror a <span class="math-inline">\(\mathrm{prefix}\)</span></h2>
+          <p>Generate six-digit palindromes in descending order by mirroring a three-digit <span class="math-inline">\(\mathrm{prefix}\)</span>. For example, <span class="math-inline">\(\mathrm{prefix}\)</span> 906 becomes 906609. Instead of testing whether every product is a palindrome, test whether each palindrome has two three-digit factors.</p>
           <p>Every six-digit palindrome is divisible by 11 because its alternating digit sum is zero. Since 11 is prime, at least one factor must be divisible by 11. The inner loop therefore checks three-digit multiples of 11 and verifies that the quotient is also a three-digit integer. Palindromes are generated from largest to smallest, so the first valid factorization gives the maximum.</p>
           <div class="solution-code-card" data-code-switcher>
             <div class="solution-code-toolbar">
@@ -137,9 +142,9 @@ print(ans)</code></pre></div>
           </div>
           <p class="code-note">This implementation searches only six-digit palindromes. It finds 906609 = 993 × 913, so shorter palindromes cannot improve the result for this problem. A general solver must also search shorter palindromes if no six-digit candidate has a valid factorization.</p>
           <h3>Complexity</h3>
-          <p>Let <code>n</code> be the upper factor bound for a generalized search over <code>d</code>-digit factors. There are <code>O(n)</code> mirrored candidates, each requiring <code>O(log n)</code> digit operations to construct and at most <code>O(n)</code> trial divisions. The total is <code>O(n log n + n²)</code> = <code>O(n²)</code> time and <code>O(1)</code> extra integer variables under the same unit-cost arithmetic model used above. The factor-of-11 shortcut reduces constant work, not the Big O.</p>
+          <p>Let <span class="math-inline">\(n\)</span> be the upper factor bound for a generalized search over <span class="math-inline">\(d\)</span>-digit factors. There are <span class="math-inline">\(O(n)\)</span> mirrored candidates, each requiring <span class="math-inline">\(O(\log n)\)</span> digit operations to construct and at most <span class="math-inline">\(O(n)\)</span> trial divisions. The total is <span class="math-inline">\(O(n \log n + n^2)\)</span> = <span class="math-inline">\(O(n^2)\)</span> time and <span class="math-inline">\(O(1)\)</span> extra integer variables under the same unit-cost arithmetic model used above. The factor-of-11 shortcut reduces constant work, not the Big O.</p>
           <h3>A small improvement to the pair search</h3>
-          <p>The main solutions can also stop the outer loop when <code>i * i &lt;= ans</code>. Because <code>j ≤ i</code>, no product in the current or later rows can improve the maximum. This pruning does not change the stated <code>O(n² log n)</code> upper bound.</p>
+          <p>The main solutions can also stop the outer loop when <span class="math-inline">\(i \cdot  i \le  \mathrm{ans}\)</span>. Because <span class="math-inline">\(j \le  i\)</span>, no product in the current or later rows can improve the maximum. This pruning does not change the stated <span class="math-inline">\(O(n^2 \log n)\)</span> upper bound.</p>
         </section>
 
         <section class="solution-section" aria-labelledby="takeaway-title">
