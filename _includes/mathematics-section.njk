@@ -1,0 +1,29 @@
+---
+layout: base.njk
+math: true
+navSection: notes
+---
+<div class="notebook-layout">
+  <aside class="notebook-sidebar" aria-label="Linear Algebra chapters">
+    <details class="notebook-menu" open>
+      <summary>Linear Algebra · Contents</summary>
+      <nav aria-label="Notebook sections">
+        <a href="/notes/linear-algebra/"{% if notebookOverview %} aria-current="page"{% endif %}>Overview</a>
+        <p class="eyebrow-small">Chapter 1 · Vector Spaces</p>
+        <p class="notebook-group">§1.1 ℝⁿ and ℂⁿ</p>
+        <a href="/notes/linear-algebra/complex-numbers/"{% if not notebookOverview %} aria-current="page"{% endif %}>§1.1.1 Complex Numbers</a>
+      </nav>
+    </details>
+  </aside>
+  <article class="solution-article notebook-article">
+    <a class="solution-back" href="/notes/index.html">← All notes</a>
+    <div class="eyebrow">Mathematics · Linear Algebra</div>
+    <h1>{{ title }}</h1>
+    <p class="lead">{{ summary }}</p>
+    <div class="solution-content">{{ content | safe }}</div>
+    <nav class="notebook-pagination" aria-label="Section navigation">
+    {% if notebookOverview %}<a href="/notes/linear-algebra/complex-numbers/">Start reading: §1.1.1 Complex Numbers →</a>
+    {% else %}<a href="/notes/linear-algebra/">← Linear Algebra contents</a><span>End of published sections</span>{% endif %}
+    </nav>
+  </article>
+</div>

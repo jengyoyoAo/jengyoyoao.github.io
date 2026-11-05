@@ -10,6 +10,7 @@ module.exports = function (config) {
   config.addPreprocessor('drafts', 'md', (data) => data.draft === true ? false : undefined);
   const md = new MarkdownIt({ html: true, typographer: false });
   md.use(mathPlugin);
+  md.use(require('./scripts/math-preamble').theoremPlugin);
   config.setLibrary('md', md);
   config.ignores.add('README.md');
   config.ignores.add('docs/**');

@@ -12,7 +12,7 @@ permalink: notes/index.html
       <section class="content-section" aria-labelledby="topics-title">
         <h2 id="topics-title">Topics</h2>
         <div class="content-grid">
-          <article class="content-card"><span class="content-tag">01 · Mathematics</span><h3>From definitions to intuition</h3><p>Linear algebra, combinatorics, optimization, and the reasoning behind the results.</p></article>
+          <article class="content-card"><span class="content-tag">01 · Mathematics</span><h3><a href="/notes/linear-algebra/">From definitions to intuition</a></h3><p>Linear algebra, combinatorics, optimization, and the reasoning behind the results.</p></article>
           <article class="content-card"><span class="content-tag">02 · Programming</span><h3>Ideas expressed in code</h3><p>C, Python, data structures, and algorithms—with examples that help the concepts stick.</p></article>
           <article class="content-card"><span class="content-tag">03 · AI &amp; Computer Vision</span><h3>Models and experiments</h3><p>Machine learning, deep learning, and the ideas behind understanding images.</p></article>
           <article class="content-card"><span class="content-tag">04 · Tools</span><h3>A practical reference</h3><p>Git, Linux, LaTeX, and useful workflows I learn along the way.</p></article>
@@ -21,8 +21,6 @@ permalink: notes/index.html
       <section class="content-section" aria-labelledby="latest-title">
         <h2 id="latest-title">Latest notes</h2>
         {% if collections.notes.length %}<div class="project-list">{% for note in collections.notes %}<article class="project-row"><div><div class="eyebrow-small">{{ note.data.topic or "Learning" }} · {{ note.date | dateLabel }}</div><h3><a href="{{ note.url }}">{{ note.data.title }}</a></h3><p>{{ note.data.summary }}</p><div class="project-links"><a href="{{ note.url }}">Read note ↗</a></div></div></article>{% endfor %}</div>{% else %}<div class="solution-empty"><div class="eyebrow-small">The collection starts here</div><p>No notes published yet. I’ll add entries as I turn what I learn into explanations and examples.</p></div>{% endif %}
-          <p>No notes published yet. I’ll add entries as I turn what I learn into explanations and examples.</p>
-        </div>
         <p>Looking for programming problem write-ups? Visit <a class="text-link" href="../online-judge/index.html">Online Judge ↗</a>.</p>
       </section>
       <p><a class="back-link" href="../index.html">← Back to the home page</a></p>

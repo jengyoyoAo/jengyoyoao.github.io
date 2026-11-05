@@ -275,3 +275,37 @@ main { min-width: 0; }
 .solution-content .katex-display { overflow-x: auto; overflow-y: hidden; padding: .3rem 0; }
 .solution-content .solution-code-card { margin-top: 1rem; }
 .solution-code-card .hljs { background: transparent; padding: 0; }
+
+/* Shared theorem-style environments for Mathematics notes. */
+.math-statement { margin: 1.5rem 0; padding: 1rem 1.3rem; border: 1px solid #2b394a; border-left: 3px solid #9fc2ff; border-radius: 0 8px 8px 0; background: #111923; }
+.math-statement .math-statement-title { margin: 0 0 .6rem; color: #b7d0fa; font-weight: 700; }
+.math-statement > :last-child { margin-bottom: 0; }
+.math-definition { border-left-color: #63d3bb; }
+.math-remark { border-left-color: #e7c274; background: #191a1b; }
+
+/* Left-aligned worked examples with a small body indent. */
+.math-example-indented { padding-left: 1.5em; }
+.math-example-indented .katex-display { text-align: left; overflow-x: auto; overflow-y: hidden; }
+.math-example-indented .katex-display > .katex { text-align: left; }
+
+/* Multi-page mathematics notebook. */
+.notebook-layout { display: grid; grid-template-columns: 235px minmax(0,1fr); gap: 2.5rem; align-items: start; padding-top: 2.5rem; }
+.notebook-sidebar { position: sticky; top: 1.5rem; border: 1px solid #293644; border-radius: 10px; background: #101720; padding: 1rem; }
+.notebook-menu summary { cursor: pointer; font-weight: 650; color: #d7e5fb; }
+.notebook-menu nav { margin-top: 1rem; }
+.notebook-menu a { display: block; padding: .55rem .65rem; border-radius: 6px; text-decoration: none; font-size: .88rem; }
+.notebook-menu a[aria-current="page"] { background: #203047; color: #b6d2ff; }
+.notebook-menu .eyebrow-small { margin: 1.4rem 0 .6rem; font-size: .67rem; }
+.notebook-group { font-size: .85rem; color: #b1becd; margin: .75rem 0; }
+.notebook-article { width: 100%; max-width: none; margin: 0; min-width: 0; padding-top: 0; }
+.notebook-article h1 { font-size: clamp(2rem,4vw,3.2rem); }
+.notebook-article .katex-display { overflow-x: auto; overflow-y: hidden; }
+.notebook-section-card { display: flex; flex-direction: column; gap: .6rem; padding: 1.4rem; margin: 1rem 0; border: 1px solid #314052; border-radius: 10px; background: #111923; text-decoration: none; }
+.notebook-section-card strong { font-size: 1.3rem; color: #e4edf8; }
+.notebook-section-card > span:not(.eyebrow-small):not(.text-link) { color: #b1becd; }
+.note-proof { margin: 1.75rem 0; border: 1px solid #314052; border-radius: 8px; padding: 1rem 1.2rem; }
+.note-proof summary { cursor: pointer; font-weight: 650; color: #b6d2ff; }
+.note-proof[open] summary { margin-bottom: 1rem; }
+.notebook-pagination { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; border-top: 1px solid #293644; padding: 1.5rem 0; margin-top: 2.5rem; font-size: .9rem; }
+.notebook-pagination span { color: #a8b3c1; }
+@media(max-width:800px) { .notebook-layout { grid-template-columns: 1fr; gap: 1.5rem; } .notebook-sidebar { position: static; } }

@@ -23,7 +23,7 @@ function mathPlugin(md) {
     if(!silent){const token=state.push('math_inline','math',0);token.content=content;}
     state.pos=end+1;return true;
   });
-  md.renderer.rules.math_inline=(tokens,i)=>katex.renderToString(tokens[i].content,{throwOnError:true,strict:'error'});
+  md.renderer.rules.math_inline=(tokens,i)=>katex.renderToString(tokens[i].content,{throwOnError:true,strict:'error',macros:{...require('./math-preamble').macros}});
   md.block.ruler.before('fence','math-block',(state,start,end,silent)=>{
     const opening=state.src.slice(state.bMarks[start]+state.tShift[start],state.eMarks[start]).trim();
     if(!opening.startsWith('$$'))return false;
@@ -41,7 +41,7 @@ function mathPlugin(md) {
     }
     const token=state.push('math_block','math',0);token.block=true;token.content=content;token.map=[start,next];state.line=next;return true;
   });
-  md.renderer.rules.math_block=(tokens,i)=>katex.renderToString(tokens[i].content,{displayMode:true,throwOnError:true,strict:'error'})+'\n';
+  md.renderer.rules.math_block=(tokens,i)=>katex.renderToString(tokens[i].content,{displayMode:true,throwOnError:true,strict:'error',macros:{...require('./math-preamble').macros}})+'\n';
 }
 function validateArticles(items) {
  const seen = new Set();
