@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="description" content="LeetCode 1385: Python brute-force and binary-search solutions, with correctness and complexity analysis.">
+  <title>LeetCode 1385: Find the Distance Value Between Two Arrays — Cheng-You Cheng</title>
+  <link rel="stylesheet" href="../../site.css">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script defer src="../../solution-math.js"></script>
+  <style>.solution-article .katex { font-size: 1.05em; } .math-inline { white-space: nowrap; }</style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page">
+    <header class="topbar">
+      <a class="wordmark" href="../../index.html"><span>CY.</span> Cheng-You Cheng</a>
+      <nav aria-label="Main navigation">
+        <a href="../../about.html">About</a>
+        <a href="../../community.html">Community</a>
+        <a href="../../notes.html">Journal</a>
+        <a href="../index.html" aria-current="page">Online Judge</a>
+      </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <article class="solution-article">
+        <a class="solution-back" href="index.html"><span aria-hidden="true">←</span> LeetCode problems</a>
+        <div class="eyebrow">LeetCode · Problem 1385 · Daily Question · 2026-11-05</div>
+        <h1>Find the Distance Value Between Two Arrays</h1>
+        <p class="lead">Count elements in the first array whose distance from every element in the second array is greater than the threshold.</p>
+        <p class="solution-statement"><span>LeetCode 1385</span><time datetime="2026-11-05">Posted November 5, 2026</time><a class="text-link" href="https://leetcode.com/problems/find-the-distance-value-between-two-arrays/" target="_blank" rel="noopener noreferrer">View original problem ↗</a></p>
+
+        <section class="solution-section" aria-labelledby="idea-title"><h2 id="idea-title">Key idea</h2><p>For each <span class="math-inline">\(\mathrm{num}\)</span> in <span class="math-inline">\(\mathrm{arr1}\)</span>, determine whether <span class="math-inline">\(\mathrm{arr2}\)</span> contains a value in the inclusive interval <span class="math-inline">\([\mathrm{num} - d, \mathrm{num} + d]\)</span>. Count <span class="math-inline">\(\mathrm{num}\)</span> only when no such value exists. Equal values appearing at different positions in <span class="math-inline">\(\mathrm{arr1}\)</span> are counted separately.</p><p>My first approach checks every pair. Sorting <span class="math-inline">\(\mathrm{arr2}\)</span> lets the second approach discard half of the remaining candidates at each binary-search step.</p></section>
+        <section class="solution-section solution-code-section" aria-labelledby="code-title"><div class="solution-section-heading"><div><div class="eyebrow-small">Implementation</div><h2 id="code-title">Solution</h2></div></div>
+          <div class="solution-code-card" data-code-switcher><div class="solution-code-toolbar"><div class="code-tabs" role="tablist" aria-label="Choose solution approach">
+          <button id="binary-tab" type="button" role="tab" aria-selected="true" aria-controls="binary-panel" tabindex="0">Python</button>
+          <button id="c-tab" type="button" role="tab" aria-selected="false" aria-controls="c-panel" tabindex="-1">C</button></div>
+          <div class="code-copy-group"><button class="code-copy" type="button" data-copy-code>Copy</button><span class="code-copy-status" data-copy-status aria-live="polite"></span></div></div>
+<div id="binary-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="binary-tab" tabindex="0"><pre><code><span class="syntax-keyword">class</span> Solution:
+    <span class="syntax-keyword">def</span> <span class="syntax-function">findTheDistanceValue</span>(self, arr1: list[<span class="syntax-type">int</span>], arr2: list[<span class="syntax-type">int</span>], d: <span class="syntax-type">int</span>) -&gt; <span class="syntax-type">int</span>:
+        count = <span class="syntax-number">0</span>
+        arr2.<span class="syntax-function">sort</span>()
+
+        <span class="syntax-keyword">for</span> num <span class="syntax-keyword">in</span> arr1:
+            is_vaild = <span class="syntax-number">1</span>
+            l, r = <span class="syntax-number">0</span>, <span class="syntax-function">len</span>(arr2) - <span class="syntax-number">1</span>
+
+            <span class="syntax-keyword">while</span> l &lt;= r:
+                mid = (l + r) // <span class="syntax-number">2</span>
+                <span class="syntax-keyword">if</span> <span class="syntax-function">abs</span>(num - arr2[mid]) &lt;= d:
+                    is_vaild = <span class="syntax-number">0</span>
+                    <span class="syntax-keyword">break</span>
+                <span class="syntax-keyword">elif</span> num &gt; arr2[mid]:
+                    l = mid + <span class="syntax-number">1</span>
+                <span class="syntax-keyword">else</span>:
+                    r = mid - <span class="syntax-number">1</span>
+            count += is_vaild
+        <span class="syntax-keyword">return</span> count</code></pre></div>
+
+<div id="c-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="c-tab" tabindex="0" hidden><pre><code><span class="syntax-preprocessor">#include &lt;stdlib.h&gt;</span>
+
+<span class="syntax-type">int</span> <span class="syntax-function">compare</span>(<span class="syntax-type">const</span> <span class="syntax-type">void</span> *a, <span class="syntax-type">const</span> <span class="syntax-type">void</span> *b) {
+    <span class="syntax-type">int</span> x = *(<span class="syntax-type">const</span> <span class="syntax-type">int</span> *)a;
+    <span class="syntax-type">int</span> y = *(<span class="syntax-type">const</span> <span class="syntax-type">int</span> *)b;
+    <span class="syntax-keyword">return</span> (x &gt; y) - (x &lt; y);
+}
+
+<span class="syntax-type">int</span> <span class="syntax-function">findTheDistanceValue</span>(<span class="syntax-type">int</span> *arr1, <span class="syntax-type">int</span> arr1Size,
+                         <span class="syntax-type">int</span> *arr2, <span class="syntax-type">int</span> arr2Size, <span class="syntax-type">int</span> d) {
+    <span class="syntax-type">int</span> count = <span class="syntax-number">0</span>;
+    <span class="syntax-function">qsort</span>(arr2, arr2Size, <span class="syntax-type">sizeof</span>(<span class="syntax-type">int</span>), compare);
+
+    <span class="syntax-keyword">for</span> (<span class="syntax-type">int</span> i = <span class="syntax-number">0</span>; i &lt; arr1Size; i++) {
+        <span class="syntax-type">int</span> num = arr1[i];
+        <span class="syntax-type">int</span> is_valid = <span class="syntax-number">1</span>;
+        <span class="syntax-type">int</span> l = <span class="syntax-number">0</span>, r = arr2Size - <span class="syntax-number">1</span>;
+
+        <span class="syntax-keyword">while</span> (l &lt;= r) {
+            <span class="syntax-type">int</span> mid = l + (r - l) / <span class="syntax-number">2</span>;
+            <span class="syntax-keyword">if</span> (<span class="syntax-function">abs</span>(num - arr2[mid]) &lt;= d) {
+                is_valid = <span class="syntax-number">0</span>;
+                break;
+            } <span class="syntax-keyword">else</span> <span class="syntax-keyword">if</span> (num &gt; arr2[mid]) {
+                l = mid + <span class="syntax-number">1</span>;
+            } <span class="syntax-keyword">else</span> {
+                r = mid - <span class="syntax-number">1</span>;
+            }
+        }
+        count += is_valid;
+    }
+    <span class="syntax-keyword">return</span> count;
+}</code></pre></div>
+</div></section>
+        <section class="solution-section solution-code-section" aria-labelledby="brute-title">
+          <div class="solution-section-heading"><div><div class="eyebrow-small">First approach</div><h2 id="brute-title">Brute force</h2></div></div>
+          <p>Check every element of <span class="math-inline">\(\mathrm{arr2}\)</span> for each element of <span class="math-inline">\(\mathrm{arr1}\)</span>, stopping as soon as a distance is at most <span class="math-inline">\(d\)</span>.</p>
+          <div class="solution-code-card" data-code-switcher><div class="solution-code-toolbar"><div class="code-tabs" role="tablist" aria-label="Brute force language"><button id="brute-tab" type="button" role="tab" aria-selected="true" aria-controls="brute-panel" tabindex="0">Python</button></div><div class="code-copy-group"><button class="code-copy" type="button" data-copy-code>Copy</button><span class="code-copy-status" data-copy-status aria-live="polite"></span></div></div>
+<div id="brute-panel" class="solution-code-panel" role="tabpanel" aria-labelledby="brute-tab" tabindex="0"><pre><code><span class="syntax-keyword">class</span> Solution:
+    <span class="syntax-keyword">def</span> <span class="syntax-function">findTheDistanceValue</span>(self, arr1: list[<span class="syntax-type">int</span>], arr2: list[<span class="syntax-type">int</span>], d: <span class="syntax-type">int</span>) -&gt; <span class="syntax-type">int</span>:
+        count = <span class="syntax-number">0</span>
+        <span class="syntax-keyword">for</span> i <span class="syntax-keyword">in</span> <span class="syntax-function">range</span>(<span class="syntax-function">len</span>(arr1)):
+            vaild = <span class="syntax-number">1</span>
+            <span class="syntax-keyword">for</span> j <span class="syntax-keyword">in</span> <span class="syntax-function">range</span>(<span class="syntax-function">len</span>(arr2)):
+                <span class="syntax-keyword">if</span> <span class="syntax-function">abs</span>(arr1[i] - arr2[j]) &lt;= d:
+                    vaild = <span class="syntax-number">0</span>
+                    <span class="syntax-keyword">break</span>
+            count += vaild
+        <span class="syntax-keyword">return</span> count</code></pre></div></div></section>
+        <section class="solution-section" aria-labelledby="correctness-title"><h2 id="correctness-title">Why binary search works</h2><p>The search interval <span class="math-inline">\([l, r]\)</span> contains every candidate not yet ruled out. If <span class="math-inline">\(|\mathrm{num} - \mathrm{arr2}[\mathrm{mid}]| \le  d\)</span>, a disqualifying value has been found, so set <span class="math-inline">\(\mathrm{is\_vaild}\)</span> to zero and stop.</p><p>Otherwise, when <span class="math-inline">\(\mathrm{num} &gt; \mathrm{arr2}[\mathrm{mid}]\)</span>, the middle value is below <span class="math-inline">\(\mathrm{num} - d\)</span>. Every value to its left is also too small, so continue with <span class="math-inline">\(l = \mathrm{mid} + 1\)</span>. In the other case, the middle value is above <span class="math-inline">\(\mathrm{num} + d\)</span>, so all values to its right are too large and <span class="math-inline">\(r = \mathrm{mid} - 1\)</span> is safe. If the search becomes empty, no disqualifying value exists, and this element contributes one to <span class="math-inline">\(\mathrm{count}\)</span>.</p></section>
+        <section class="solution-section" aria-labelledby="complexity-title"><h2 id="complexity-title">Complexity</h2><p>Let <span class="math-inline">\(n = |\mathrm{arr1}|\)</span> and <span class="math-inline">\(m = |\mathrm{arr2}|\)</span>. Treat integer arithmetic and comparisons as constant-time operations.</p><ul class="solution-facts"><li><strong>Brute force:</strong> <span class="math-inline">\(O(nm)\)</span> time and <span class="math-inline">\(O(1)\)</span> extra space.</li><li><strong>Sorting + binary search:</strong> <span class="math-inline">\(O(m \log m + n \log m)\)</span> time for <span class="math-inline">\(m \ge  2\)</span>. More generally, including single-element arrays, <span class="math-inline">\(O(m \log(m + 1) + n \log(m + 1))\)</span>.</li><li><strong>Extra space:</strong> The binary searches use <span class="math-inline">\(O(1)\)</span> extra space; Python’s list sort may use <span class="math-inline">\(O(m)\)</span> temporary space, so the complete implementation uses <span class="math-inline">\(O(m)\)</span> extra space in the worst case.</li></ul></section>
+        <section class="solution-section" aria-labelledby="example-title"><h2 id="example-title">Example</h2><p>With <span class="math-inline">\(\mathrm{arr1} = [4, 5, 8]\)</span>, <span class="math-inline">\(\mathrm{arr2} = [10, 9, 1, 8]\)</span>, and <span class="math-inline">\(d = 2\)</span>, both <span class="math-inline">\(4\)</span> and <span class="math-inline">\(5\)</span> qualify. The element <span class="math-inline">\(8\)</span> does not, because <span class="math-inline">\(\mathrm{arr2}\)</span> contains <span class="math-inline">\(8\)</span>. The result is <span class="math-inline">\(2\)</span>.</p></section>
+        <section class="solution-section" aria-labelledby="takeaway-title"><h2 id="takeaway-title">Takeaway</h2><p>Sorting turns repeated full scans into logarithmic searches. This is a search for any value inside an interval, rather than an exact-match search. The condition includes equality, so a distance exactly equal to <span class="math-inline">\(d\)</span> disqualifies the element.</p><p><code>arr2.sort()</code> changes the input list in place. The C version sorts with <code>qsort</code> and follows the same binary-search steps. Its comparator returns the ordering without subtracting the two values. The distance subtraction is safe under this problem’s bounds. C sorting time and auxiliary space depend on the library’s <code>qsort</code> implementation; the C standard does not guarantee a particular complexity. The binary searches take <span class="math-inline">\(O(n \log(m + 1))\)</span> time and <span class="math-inline">\(O(1)\)</span> extra space beyond sorting.</p><p>The variable spellings <span class="math-inline">\(\mathrm{vaild}\)</span> and <span class="math-inline">\(\mathrm{is\_vaild}\)</span> are retained from my original code; their spelling does not affect execution.</p></section>
+      </article>
+    </main>
+    <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
+  </div>
+  <script src="../../solution-tabs.js" defer></script>
+</body>
+</html>
