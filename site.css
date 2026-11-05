@@ -317,3 +317,12 @@ main { min-width: 0; }
 .notebook-list-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1.5rem; }
 .notebook-list-heading .notebook-updated { margin: 0; font-size: .82rem; color: #a8b3c1; }
 .notebook-updated time { white-space: nowrap; }
+
+.math-figure-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin: 1.75rem 0; }
+.math-note-figure { min-width: 0; margin: 0; background: #111923; border: 1px solid #293644; border-radius: 10px; overflow: hidden; }
+.math-note-figure img { display: block; width: 100%; height: 215px; object-fit: contain; }
+.math-note-figure figcaption { padding: .8rem 1rem 1rem; font-size: .85rem; color: #b2bfce; }
+.math-note-figure figcaption strong { display: block; color: #e4edf8; }
+.math-note-figure figcaption p { margin: .55rem 0; }
+.math-note-figure figcaption a { font-size: .78rem; }
+@media(max-width:620px) { .math-figure-grid { grid-template-columns: 1fr; } }
