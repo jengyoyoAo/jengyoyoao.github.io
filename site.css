@@ -339,3 +339,11 @@ main { min-width: 0; }
 .notebook-menu .notebook-exercises-link::before { content: ''; position: absolute; left: .15rem; top: .5rem; bottom: .5rem; width: 2px; background: #40546b; border-radius: 1px; }
 .notebook-menu .notebook-exercises-link[aria-current="page"] { color: #bdd6ff; background: #1c2b3e; }
 .notebook-menu .notebook-exercises-link[aria-current="page"]::before { background: #9fc2ff; }
+
+/* Align parent sections and indent their child subsections. */
+.notebook-menu .notebook-parent-section { margin: .8rem 0 .25rem; padding: .55rem .65rem; color: #d7e5fb; font-size: .88rem; line-height: 1.5; }
+.notebook-menu .notebook-parent-link { margin: .65rem 0 .2rem; padding: .55rem .65rem; font-size: .88rem; line-height: 1.5; }
+.notebook-menu .notebook-subsection-link { margin: .1rem 0 .1rem 1rem; padding: .45rem .65rem; border-left: 1px solid #35465a; border-radius: 0 6px 6px 0; font-size: .81rem; line-height: 1.5; }
+.notebook-menu .notebook-subsection-link[aria-current="page"] { border-left-color: #9fc2ff; }
+
+.notebook-menu .notebook-parent-link { display: block; box-sizing: border-box; margin-left: 0; margin-right: 0; padding-left: .65rem; padding-right: .65rem; font-weight: 400; }

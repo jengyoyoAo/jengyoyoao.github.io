@@ -10,12 +10,14 @@ navSection: notes
       <nav aria-label="Notebook sections">
         <a href="/notes/linear-algebra/"{% if notebookOverview %} aria-current="page"{% endif %}>Overview</a>
         <p class="eyebrow-small">Chapter 1 · Vector Spaces</p>
-        <p class="notebook-group">§1.1 ℝⁿ and ℂⁿ</p>
-        <a href="/notes/linear-algebra/complex-numbers/"{% if (page.url == "/notes/linear-algebra/complex-numbers/index.html" or page.url == "/notes/linear-algebra/complex-numbers/") %} aria-current="page"{% endif %}>§1.1.1 Complex Numbers</a>
-        <a href="/notes/linear-algebra/lists/"{% if (page.url == "/notes/linear-algebra/lists/index.html" or page.url == "/notes/linear-algebra/lists/") %} aria-current="page"{% endif %}>§1.1.2 Lists</a>
-        <a href="/notes/linear-algebra/fn/"{% if (page.url == "/notes/linear-algebra/fn/index.html" or page.url == "/notes/linear-algebra/fn/") %} aria-current="page"{% endif %}>§1.1.3 𝔽ⁿ</a>
-        <a href="/notes/linear-algebra/fields/"{% if (page.url == "/notes/linear-algebra/fields/index.html" or page.url == "/notes/linear-algebra/fields/") %} aria-current="page"{% endif %}>§1.1.4 Fields · Optional</a>
-        <a href="/notes/linear-algebra/exercises-1-1/"{% if (page.url == "/notes/linear-algebra/exercises-1-1/index.html" or page.url == "/notes/linear-algebra/exercises-1-1/") %} aria-current="page"{% endif %}>§1.1.5 Exercises</a>
+        <a class="notebook-parent-link" href="/notes/linear-algebra/rn-and-cn/"{% if sectionOverview %} aria-current="page"{% endif %}>§1.1 ℝⁿ and ℂⁿ</a>
+        <a class="notebook-subsection-link" href="/notes/linear-algebra/complex-numbers/"{% if (page.url == "/notes/linear-algebra/complex-numbers/index.html" or page.url == "/notes/linear-algebra/complex-numbers/") %} aria-current="page"{% endif %}>§1.1.1 Complex Numbers</a>
+        <a class="notebook-subsection-link" href="/notes/linear-algebra/lists/"{% if (page.url == "/notes/linear-algebra/lists/index.html" or page.url == "/notes/linear-algebra/lists/") %} aria-current="page"{% endif %}>§1.1.2 Lists</a>
+        <a class="notebook-subsection-link" href="/notes/linear-algebra/fn/"{% if (page.url == "/notes/linear-algebra/fn/index.html" or page.url == "/notes/linear-algebra/fn/") %} aria-current="page"{% endif %}>§1.1.3 𝔽ⁿ</a>
+        <a class="notebook-subsection-link" href="/notes/linear-algebra/fields/"{% if (page.url == "/notes/linear-algebra/fields/index.html" or page.url == "/notes/linear-algebra/fields/") %} aria-current="page"{% endif %}>§1.1.4 Fields · Optional</a>
+        <a class="notebook-subsection-link" href="/notes/linear-algebra/exercises-1-1/"{% if (page.url == "/notes/linear-algebra/exercises-1-1/index.html" or page.url == "/notes/linear-algebra/exercises-1-1/") %} aria-current="page"{% endif %}>§1.1.5 Exercises</a>
+        <a class="notebook-parent-link" href="/notes/linear-algebra/vector-spaces/"{% if (page.url == "/notes/linear-algebra/vector-spaces/" or page.url == "/notes/linear-algebra/vector-spaces/index.html") %} aria-current="page"{% endif %}>§1.2 Definition of Vector Space</a>
+        <a class="notebook-exercises-link" href="/notes/linear-algebra/exercises-1-2/"{% if (page.url == "/notes/linear-algebra/exercises-1-2/" or page.url == "/notes/linear-algebra/exercises-1-2/index.html") %} aria-current="page"{% endif %}>Exercises for §1.2</a>
       </nav>
     </details>
   </aside>
@@ -26,12 +28,15 @@ navSection: notes
     <p class="lead">{{ summary }}</p>
     <div class="solution-content">{{ content | safe }}</div>
     <nav class="notebook-pagination" aria-label="Section navigation">
-    {% if notebookOverview %}<a href="/notes/linear-algebra/complex-numbers/">Start reading: §1.1.1 Complex Numbers →</a>
-    {% elif (page.url == "/notes/linear-algebra/complex-numbers/index.html" or page.url == "/notes/linear-algebra/complex-numbers/") %}<a href="/notes/linear-algebra/">← Linear Algebra contents</a><a href="/notes/linear-algebra/lists/">§1.1.2 Lists →</a>
+    {% if notebookOverview %}<a href="/notes/linear-algebra/rn-and-cn/">Start reading: §1.1 ℝⁿ and ℂⁿ →</a>
+    {% elif sectionOverview %}<a href="/notes/linear-algebra/">← Linear Algebra contents</a><a href="/notes/linear-algebra/complex-numbers/">§1.1.1 Complex Numbers →</a>
+    {% elif (page.url == "/notes/linear-algebra/complex-numbers/index.html" or page.url == "/notes/linear-algebra/complex-numbers/") %}<a href="/notes/linear-algebra/rn-and-cn/">← §1.1 contents</a><a href="/notes/linear-algebra/lists/">§1.1.2 Lists →</a>
     {% elif (page.url == "/notes/linear-algebra/lists/index.html" or page.url == "/notes/linear-algebra/lists/") %}<a href="/notes/linear-algebra/complex-numbers/">← §1.1.1 Complex Numbers</a><a href="/notes/linear-algebra/fn/">§1.1.3 𝔽ⁿ →</a>
     {% elif (page.url == "/notes/linear-algebra/fn/index.html" or page.url == "/notes/linear-algebra/fn/") %}<a href="/notes/linear-algebra/lists/">← §1.1.2 Lists</a><a href="/notes/linear-algebra/fields/">§1.1.4 Fields →</a>
     {% elif (page.url == "/notes/linear-algebra/fields/index.html" or page.url == "/notes/linear-algebra/fields/") %}<a href="/notes/linear-algebra/fn/">← §1.1.3 𝔽ⁿ</a><a href="/notes/linear-algebra/exercises-1-1/">§1.1.5 Exercises →</a>
-    {% else %}<a href="/notes/linear-algebra/fields/">← §1.1.4 Fields</a><a href="/notes/linear-algebra/">Contents ↑</a>{% endif %}
+    {% elif (page.url == "/notes/linear-algebra/exercises-1-1/" or page.url == "/notes/linear-algebra/exercises-1-1/index.html") %}<a href="/notes/linear-algebra/fields/">← §1.1.4 Fields</a><a href="/notes/linear-algebra/vector-spaces/">§1.2 Definition of Vector Space →</a>
+    {% elif (page.url == "/notes/linear-algebra/vector-spaces/" or page.url == "/notes/linear-algebra/vector-spaces/index.html") %}<a href="/notes/linear-algebra/exercises-1-1/">← §1.1.5 Exercises</a><a href="/notes/linear-algebra/exercises-1-2/">Exercises for §1.2 →</a>
+    {% else %}<a href="/notes/linear-algebra/vector-spaces/">← §1.2 Definition of Vector Space</a><a href="/notes/linear-algebra/">Contents ↑</a>{% endif %}
     </nav>
   </article>
 </div>
