@@ -347,3 +347,9 @@ main { min-width: 0; }
 .notebook-menu .notebook-subsection-link[aria-current="page"] { border-left-color: #9fc2ff; }
 
 .notebook-menu .notebook-parent-link { display: block; box-sizing: border-box; margin-left: 0; margin-right: 0; padding-left: .65rem; padding-right: .65rem; font-weight: 400; }
+
+.notebook-menu .notebook-title-single-line { white-space: nowrap; }
+
+/* Give notebook navigation enough space for full section titles. */
+@media (min-width: 1001px) { .notebook-layout { grid-template-columns: 310px minmax(0,1fr); gap: 2rem; } }
+@media (min-width: 801px) and (max-width: 1000px) { .notebook-layout { grid-template-columns: 1fr; } .notebook-sidebar { position: static; } }
