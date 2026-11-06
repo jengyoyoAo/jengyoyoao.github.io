@@ -6,6 +6,12 @@ const {parseHTML}=require('linkedom');
 const MarkdownIt=require('markdown-it');
 const {mathPlugin,sourceFile,validateArticles}=require('../scripts/site-utils');
 const baseline=require('./migration-baseline.json');
+const matter=require('gray-matter');
+function walk(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(f=>f.isDirectory()?walk(path.join(dir,f.name)):[path.join(dir,f.name)]);}
+const published=walk('solutions').filter(p=>p.endsWith('.md')).map(p=>({source:p,...matter(fs.readFileSync(p,'utf8')).data})).filter(d=>d.tags?.includes('solution') && d.draft!==true);
+const leetcodeIds=published.filter(d=>d.platform==='leetcode').map(d=>d.problem_id).sort((a,b)=>a-b);
+const articleChecks=published.map(d=>({url:d.permalink,codes:Object.values(d).filter(Array.isArray).flat().filter(v=>v?.path).map(v=>v.path)}));
+
 const read=url=>fs.readFileSync(path.join('_site',url),'utf8');
 const doc=url=>parseHTML(read(url)).document;
 
@@ -14,7 +20,7 @@ test('every pre-migration URL still exists, with static profile/journal pages pr
  for(const url of ['index.html','about.html','community.html','notes.html','journal/first-open-source-pr.html'])assert.equal(read(url),fs.readFileSync(url,'utf8'),url);
 });
 test('every code panel exactly matches its standalone source; tabs and rendered LaTeX remain valid',()=>{
- for(const article of baseline.articles){
+ for(const article of articleChecks){
   const d=doc(article.url),codes=[...d.querySelectorAll('.solution-code-panel code')];
   assert.deepEqual(codes.map(n=>n.textContent),article.codes.map(p=>fs.readFileSync(p,'utf8').trimEnd()),article.url);
   assert.ok(d.querySelector('.katex'),article.url);
@@ -28,16 +34,17 @@ test('every code panel exactly matches its standalone source; tabs and rendered 
  }
 });
 test('platform lists sort numerically and progress is generated without client JavaScript',()=>{
- for(const [slug,ids] of [['project-euler',[1,2,3,4]],['leetcode',[1,2,3,1385]],['cses',[]],['zerojudge',[]]]){
+ for(const slug of ['project-euler','leetcode','cses','zerojudge']){
+  const ids=published.filter(d=>d.platform===slug).map(d=>d.problem_id).sort((a,b)=>a-b);
   const d=doc(`online-judge/${slug}/index.html`);
   assert.deepEqual([...d.querySelectorAll('[data-problem-id]')].map(n=>Number(n.getAttribute('data-problem-id'))),ids);
   if(slug==='zerojudge')assert.equal(d.querySelector('.oj-progress'),null);
   else assert.equal(d.querySelector('.oj-progress-center strong').textContent,String(ids.length));
  }
- for(const id of [1,2,3,1385])assert.ok(doc(`online-judge/leetcode/problem-${id}.html`).querySelector('.difficulty-label'));
+ for(const id of leetcodeIds)assert.ok(doc(`online-judge/leetcode/problem-${id}.html`).querySelector('.difficulty-label'));
 });
 test('all local article, asset and navigation links resolve',()=>{
- for(const url of baseline.urls){
+ for(const url of new Set([...baseline.urls,...published.map(d=>d.permalink)])){
   for(const el of doc(url).querySelectorAll('[href], [src]')){
    const value=el.getAttribute('href')||el.getAttribute('src');if(!value||/^(https?:|mailto:|#|data:)/.test(value))continue;
    const target=new URL(value,'https://site.test/'+url).pathname;
@@ -75,8 +82,8 @@ test('a newly scaffolded article updates sorting, count and code from only Markd
   const source=path.join(temp,'solutions/leetcode/0042-test-automation.py');fs.writeFileSync(source,'print("first version")\n');
   run(['node_modules/@11ty/eleventy/cmd.cjs']);
   let d=parseHTML(fs.readFileSync(path.join(temp,'_site/online-judge/leetcode/index.html'),'utf8')).document;
-  assert.deepEqual([...d.querySelectorAll('[data-problem-id]')].map(n=>Number(n.getAttribute('data-problem-id'))),[1,2,3,42,1385]);
-  assert.equal(d.querySelector('.oj-progress-center strong').textContent,'5');
+  assert.deepEqual([...d.querySelectorAll('[data-problem-id]')].map(n=>Number(n.getAttribute('data-problem-id'))),[...leetcodeIds,42].sort((a,b)=>a-b));
+  assert.equal(d.querySelector('.oj-progress-center strong').textContent,String(leetcodeIds.length+1));
   const output=path.join(temp,'_site/online-judge/leetcode/problem-42.html');assert.match(fs.readFileSync(output,'utf8'),/first version/);
   fs.writeFileSync(source,'print("updated source only")\n');run(['node_modules/@11ty/eleventy/cmd.cjs']);
   assert.match(fs.readFileSync(output,'utf8'),/updated source only/);
