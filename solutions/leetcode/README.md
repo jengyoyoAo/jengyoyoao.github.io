@@ -12,4 +12,6 @@ For each problem, keep a Markdown explanation and source file together. Start wi
 - [3: Longest Substring Without Repeating Characters](0003-longest-substring-without-repeating-characters.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-3.html).
 - [1385: Find the Distance Value Between Two Arrays](1385-find-the-distance-value-between-two-arrays.md) — Python; [website write-up](../../online-judge/leetcode/problem-1385.html).
 
+- [1882: Process Tasks Using Servers](1882-process-tasks-using-servers.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-1882.html).
+
 - [2747: Count Zero Request Servers](2747-count-zero-request-servers.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-2747.html).
