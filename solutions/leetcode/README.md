@@ -16,3 +16,5 @@ For each problem, keep a Markdown explanation and source file together. Start wi
 - [1882: Process Tasks Using Servers](1882-process-tasks-using-servers.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-1882.html).
 
 - [2747: Count Zero Request Servers](2747-count-zero-request-servers.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-2747.html).
+
+- [3693: Climbing Stairs II](3693-climbing-stairs-ii.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-3693.html).
