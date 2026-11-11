@@ -132,3 +132,5 @@ The requirement “through the origin” is essential. Proving that this list is
 <a class="notebook-section-card" href="/notes/linear-algebra/sums-of-subspaces/"><span class="eyebrow-small">§1.3.1</span><strong>Sums of Subspaces</strong><span>Build the smallest subspace containing several given subspaces.</span><span class="text-link">Read subsection →</span></a>
 
 <a class="notebook-section-card" href="/notes/linear-algebra/direct-sums/"><span class="eyebrow-small">§1.3.2</span><strong>Direct Sums</strong><span>Unique decompositions, the zero test, and intersections.</span><span class="text-link">Read subsection →</span></a>
+
+<a class="notebook-section-card" href="/notes/linear-algebra/exercises-1-3/"><span class="eyebrow-small">Practice · §1.3</span><strong>Exercises for §1.3</strong><span>24 problems with collapsible solutions on subspaces, sums, and direct sums.</span><span class="text-link">Read exercises →</span></a>
