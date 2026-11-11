@@ -22,5 +22,11 @@
     "name": "Tools",
     "headline": "A practical reference",
     "description": "Git, Linux, LaTeX, and useful workflows."
+  },
+  {
+    "slug": "english",
+    "name": "English",
+    "headline": "Words in context",
+    "description": "Vocabulary, collocations, and usage notes collected while learning English."
   }
 ]

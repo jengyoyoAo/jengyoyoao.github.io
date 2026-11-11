@@ -1,0 +1,25 @@
+---
+layout: base.njk
+navSection: notes
+---
+<div class="notebook-layout">
+  <aside class="notebook-sidebar" aria-label="Vocabulary collections">
+    <details class="notebook-menu" open><summary>TOEIC · Contents</summary>
+      <nav aria-label="Vocabulary sections">
+        <a href="/notes/toeic/"{% if vocabularyOverview %} aria-current="page"{% endif %}>TOEIC overview</a>
+        <a href="/notes/toeic/vocabulary/a/"{% if not vocabularyOverview %} aria-current="page"{% endif %}>Vocabulary · A</a>
+      </nav>
+    </details>
+  </aside>
+  <article class="solution-article notebook-article">
+    <a class="solution-back" href="/notes/english/">← English notes</a>
+    <div class="eyebrow">English · TOEIC study notes</div>
+    <h1>{{ title }}</h1>
+    <p class="lead">{{ summary }}</p>
+    <p class="notebook-updated">Last updated <time datetime="{{ updated | dateISO }}">{{ updated | dateLabel }}</time></p>
+    <div class="vocabulary-content">{{ content | safe }}</div>
+    <nav class="notebook-pagination" aria-label="Collection navigation">
+      {% if vocabularyOverview %}<a href="/notes/toeic/vocabulary/a/">A · abreast–attendee →</a>{% else %}<a href="/notes/toeic/">← TOEIC overview</a>{% endif %}
+    </nav>
+  </article>
+</div>
