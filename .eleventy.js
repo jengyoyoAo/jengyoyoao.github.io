@@ -27,6 +27,8 @@ module.exports = function (config) {
   for (const file of publishedFiles()) config.addPassthroughCopy(file);
   config.addWatchTarget('solutions/**/*.{py,c}');
   config.addWatchTarget('online-judge/progress-data.json');
+  config.addWatchTarget('site.css');
+  config.addFilter('assetVersion', path => crypto.createHash('sha256').update(fs.readFileSync(path)).digest('hex').slice(0, 12));
 
   config.addCollection('notes', api => api.getFilteredByTag('note').sort((a,b) => new Date(b.date)-new Date(a.date)));
   config.addCollection('solutions', api => {

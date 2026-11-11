@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0b0f14">
   <meta name="description" content="{{ description or summary or title }}">
   <title>{% if problem_id %}{{ platforms[platform].name }} {{ problem_id }}: {% endif %}{{ title }} — Cheng-You Cheng</title>
-  <link rel="stylesheet" href="/site.css?v=20261106-notebook-wide">
+  <link rel="stylesheet" href="/site.css?v={{ 'site.css' | assetVersion }}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   {% if math %}<link rel="stylesheet" href="/assets/katex/katex.min.css"><link rel="stylesheet" href="/assets/code.css">{% endif %}
 </head>
