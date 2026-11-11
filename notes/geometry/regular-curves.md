@@ -5,7 +5,7 @@ title: "§1.3 Regular Curves; Arc Length"
 summary: "Nonzero velocity, tangent lines, arc-length parameters, and reversal of orientation."
 topic: Mathematics
 date: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-11
 draft: false
 permalink: notes/geometry/regular-curves/index.html
 ---
@@ -175,3 +175,5 @@ The two curves have the same trace and remain unit speed, but traverse correspon
 ## What to remember
 
 Regular means nonzero velocity. Arc length satisfies $ds/dt=\|\alpha'(t)\|$; using it as the parameter gives unit speed. A change of orientation reverses the direction of traversal without changing the trace.
+
+<a class="notebook-section-card" href="/notes/geometry/exercises-1-3/"><span class="eyebrow-small">Practice · §1.3</span><strong>Exercises for §1.3</strong><span>Ten problems with collapsible solutions on classical curves, tangents, and arc length.</span><span class="text-link">Read exercises →</span></a>
