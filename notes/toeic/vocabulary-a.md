@@ -10,7 +10,7 @@ draft: false
 permalink: notes/toeic/vocabulary/a/index.html
 ---
 
-These are my collected study words and collocations, not an official TOEIC word list. Chinese meanings are brief study glosses; examples are original. Usage notes distinguish fixed patterns from combinations that depend on context.
+The vocabulary and collocations in this collection are based on 《死神單字》; see the [TOEIC notebook reference](/notes/toeic/). These are personal study notes, not an official TOEIC word list. Chinese meanings are brief study glosses; examples are original. Usage notes distinguish fixed patterns from combinations that depend on context.
 
 <div class="vocabulary-jump-list" aria-label="Jump to a word">
 <a href="#abreast">abreast</a>
