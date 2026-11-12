@@ -17,6 +17,8 @@ For each problem, keep a Markdown explanation and source file together. Start wi
 
 - [2747: Count Zero Request Servers](2747-count-zero-request-servers.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-2747.html).
 
+- [3105: Longest Strictly Increasing or Strictly Decreasing Subarray](3105-longest-strictly-increasing-or-strictly-decreasing-subarray.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-3105.html).
+
 - [3693: Climbing Stairs II](3693-climbing-stairs-ii.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-3693.html).
 
 - [3789: Minimum Cost to Acquire Required Items](3789-minimum-cost-to-acquire-required-items.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-3789.html).
