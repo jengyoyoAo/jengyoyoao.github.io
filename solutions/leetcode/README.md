@@ -13,6 +13,8 @@ For each problem, keep a Markdown explanation and source file together. Start wi
 - [1267: Count Servers that Communicate](1267-count-servers-that-communicate.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-1267.html).
 - [1385: Find the Distance Value Between Two Arrays](1385-find-the-distance-value-between-two-arrays.md) — Python; [website write-up](../../online-judge/leetcode/problem-1385.html).
 
+- [1524: Number of Sub-arrays With Odd Sum](1524-number-of-sub-arrays-with-odd-sum.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-1524.html).
+
 - [1882: Process Tasks Using Servers](1882-process-tasks-using-servers.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-1882.html).
 
 - [2747: Count Zero Request Servers](2747-count-zero-request-servers.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-2747.html).
