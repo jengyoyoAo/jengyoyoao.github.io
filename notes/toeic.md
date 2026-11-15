@@ -13,7 +13,11 @@ permalink: notes/toeic/index.html
 
 ## Vocabulary & Collocations
 
-<a class="notebook-section-card" href="/notes/toeic/vocabulary/a/"><span class="eyebrow-small">A · 25 entries</span><strong>abreast → attendee</strong><span>Word meanings, collocations, examples, and common usage points.</span><span class="text-link">Open collection →</span></a>
+<a class="notebook-section-card" href="/notes/toeic/vocabulary/a/"><span class="eyebrow-small">A · 32 entries</span><strong>abreast → automotive</strong><span>Word meanings, collocations, examples, and common usage points.</span><span class="text-link">Open collection →</span></a>
+
+<a class="notebook-section-card" href="/notes/toeic/vocabulary/b/"><span class="eyebrow-small">B · 7 entries</span><strong>backup → by-law</strong><span>Chinese meanings, collocations, original examples, and usage notes.</span><span class="text-link">Open collection →</span></a>
+
+<a class="notebook-section-card" href="/notes/toeic/vocabulary/c/"><span class="eyebrow-small">C · 10 entries</span><strong>cab → checkout</strong><span>Chinese meanings, collocations, original examples, and usage notes.</span><span class="text-link">Open collection →</span></a>
 
 These notes are organized by initial letter to keep each page manageable.
 

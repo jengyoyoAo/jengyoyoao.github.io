@@ -2,10 +2,10 @@
 layout: vocabulary.njk
 tags: [vocabulary-section]
 title: "A · Vocabulary & Collocations"
-summary: "25 entries, from abreast to attendee, collected during TOEIC study."
+summary: "32 entries, from abreast to automotive, collected during TOEIC study."
 topic: English
 date: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-16
 draft: false
 permalink: notes/toeic/vocabulary/a/index.html
 ---
@@ -38,6 +38,13 @@ The vocabulary and collocations in this collection are based on 《死神單字�
 <a href="#architectural">architectural</a>
 <a href="#archive">archive</a>
 <a href="#attendee">attendee</a>
+<a href="#audit">audit</a>
+<a href="#audition">audition</a>
+<a href="#auditor">auditor</a>
+<a href="#authorization">authorization</a>
+<a href="#auto">auto</a>
+<a href="#automate">automate</a>
+<a href="#automotive">automotive</a>
 </div>
 
 <section class="vocabulary-entry" aria-labelledby="abreast">
@@ -560,6 +567,177 @@ Each registered attendee will receive a badge at the entrance.
 ### Usage note
 
 Use **the number of attendees** for a count. **Attendee number** can instead mean an identifying number assigned to one attendee.
+
+</section>
+
+<section class="vocabulary-entry" aria-labelledby="audit">
+<h2 id="audit">audit <span class="vocabulary-pos">[n.; vt.]</span></h2>
+
+**Meaning:** <span lang="zh-Hant">審計；查核；審核帳目；旁聽課程</span>
+
+### Collocations & patterns
+
+- conduct an audit
+- an internal / financial / tax audit
+- an audit report
+- audit a company’s accounts
+- audit a class / course
+- an auditing student
+
+### Example
+
+An independent firm will conduct a financial audit next month.
+
+<span class="reading-translation" lang="zh-Hant">一家獨立事務所將於下個月進行財務審計。</span>
+
+### Usage note
+
+<p lang="zh-Hant"><strong>Tax audit</strong> 是稅務查核。<strong>Audit a class</strong> 是「旁聽課程，通常不取得學分」；旁聽生可說 <strong>an auditing student</strong> 或 <strong>an auditor</strong>。</p>
+
+</section>
+
+<section class="vocabulary-entry" aria-labelledby="audition">
+<h2 id="audition">audition <span class="vocabulary-pos">[n.; vi.; vt.]</span></h2>
+
+**Meaning:** <span lang="zh-Hant">試鏡；試演；參加試鏡；為表演者試鏡</span>
+
+### Collocations & patterns
+
+- go to / go for an audition
+- audition for a role
+- hold auditions
+- pass / fail an audition
+- an audition tape
+- an open audition
+
+### Example
+
+The theater will hold open auditions for the lead role on Saturday.
+
+<span class="reading-translation" lang="zh-Hant">劇院將於週六為主角舉辦公開試鏡。</span>
+
+### Usage note
+
+<p lang="zh-Hant"><strong>Audition</strong> 也能當動詞：<strong>audition for a role</strong> 是「為某角色參加試鏡」；<strong>audition actors</strong> 是「對演員進行試鏡」。名詞可用 <strong>hold auditions</strong> 表示舉辦試鏡。</p>
+
+</section>
+
+<section class="vocabulary-entry" aria-labelledby="auditor">
+<h2 id="auditor">auditor <span class="vocabulary-pos">[n.]</span></h2>
+
+**Meaning:** <span lang="zh-Hant">審計人員；查核人員；旁聽生</span>
+
+### Collocations & patterns
+
+- an internal / external / independent auditor
+- a lead / government / qualified auditor
+- an auditor’s report
+
+### Example
+
+The external auditor requested copies of the expense records.
+
+<span class="reading-translation" lang="zh-Hant">外部審計人員要求提供費用紀錄的副本。</span>
+
+### Usage note
+
+<p lang="zh-Hant">在財務情境中是「審計人員」，在課堂情境也可能是「旁聽生」。<strong>Auditor’s report</strong> 指審計人員出具的報告；注意 <strong>auditor</strong> 與 <strong>audition</strong> 的意思不同。</p>
+
+</section>
+
+<section class="vocabulary-entry" aria-labelledby="authorization">
+<h2 id="authorization">authorization <span class="vocabulary-pos">[n.]</span></h2>
+
+**Meaning:** <span lang="zh-Hant">授權；批准；許可</span>
+
+### Collocations & patterns
+
+- give / grant authorization
+- obtain / require authorization
+- written / prior authorization
+- without authorization
+- authorization to access records
+
+### Example
+
+You must obtain written authorization before accessing these records.
+
+<span class="reading-translation" lang="zh-Hant">存取這些紀錄前，必須先取得書面授權。</span>
+
+### Usage note
+
+<p lang="zh-Hant">常當不可數名詞使用：<strong>obtain authorization</strong>、<strong>without authorization</strong>。<strong>Prior authorization</strong> 是事前許可；動詞為 <strong>authorize</strong>，如 authorize someone to do something。</p>
+
+</section>
+
+<section class="vocabulary-entry" aria-labelledby="auto">
+<h2 id="auto">auto <span class="vocabulary-pos">[n.; attributive]</span></h2>
+
+**Meaning:** <span lang="zh-Hant">汽車（較口語）；用在名詞前表示與汽車有關</span>
+
+### Collocations & patterns
+
+- the auto industry
+- auto insurance / repair / parts
+- an auto show / dealer / loan
+
+### Example
+
+The bank offers auto loans to eligible customers.
+
+<span class="reading-translation" lang="zh-Hant">這家銀行向符合資格的客戶提供汽車貸款。</span>
+
+### Usage note
+
+<p lang="zh-Hant"><strong>Auto</strong> 作名詞主要見於美式英語，表示 automobile；auto industry 等為名詞前的修飾用法。正式描述汽車相關技術時，也常用形容詞 <strong>automotive</strong>。</p>
+
+</section>
+
+<section class="vocabulary-entry" aria-labelledby="automate">
+<h2 id="automate">automate <span class="vocabulary-pos">[vt.]</span></h2>
+
+**Meaning:** <span lang="zh-Hant">使自動化</span>
+
+### Collocations & patterns
+
+- automate a process / tasks / production
+- automate repetitive work
+- automate the system
+- fully automate production
+
+### Example
+
+The company plans to automate repetitive data-entry tasks.
+
+<span class="reading-translation" lang="zh-Hant">公司計畫將重複性的資料輸入工作自動化。</span>
+
+### Usage note
+
+<p lang="zh-Hant"><strong>Automate</strong> 是動詞；<strong>automated</strong> 表示已自動化的，如 an automated system；<strong>automation</strong> 是「自動化」這個名詞。</p>
+
+</section>
+
+<section class="vocabulary-entry" aria-labelledby="automotive">
+<h2 id="automotive">automotive <span class="vocabulary-pos">[adj.]</span></h2>
+
+**Meaning:** <span lang="zh-Hant">汽車的；汽車產業或技術相關的</span>
+
+### Collocations & patterns
+
+- the automotive industry / market
+- automotive technology / parts / design
+- an automotive engineer
+- automotive manufacturing
+
+### Example
+
+The factory supplies parts to the automotive industry.
+
+<span class="reading-translation" lang="zh-Hant">這家工廠供應汽車產業所需的零件。</span>
+
+### Usage note
+
+<p lang="zh-Hant"><strong>Automotive</strong> 是形容詞，修飾與汽車有關的事物；<strong>automate</strong> 則是「使自動化」，兩者不能因字形相近就混用。</p>
 
 </section>
 
