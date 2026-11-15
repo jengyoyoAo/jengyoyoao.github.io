@@ -1,0 +1,54 @@
+---
+layout: vocabulary.njk
+tags: [reading-section]
+title: "Reading Practice"
+summary: "A ten-test practice log and a growing collection of review notes."
+topic: English
+date: 2026-11-16
+updated: 2026-11-16
+readingOverview: true
+permalink: notes/toeic/reading/index.html
+---
+<div class="reading-stats" aria-label="Reading practice summary">
+  <div><span class="eyebrow-small">Results recorded</span><strong>{{ readingProgress.completed }}<small> / 10</small></strong></div>
+  <div><span class="eyebrow-small">Test 1 · Raw result</span><strong>{{ readingProgress.first.correct }}<small> / {{ readingProgress.first.total }}</small></strong></div>
+  <div><span class="eyebrow-small">Accuracy</span><strong>{{ readingProgress.first.accuracy }}<small>%</small></strong></div>
+</div>
+
+<section aria-labelledby="practice-log">
+<h2 id="practice-log">Practice log</h2>
+<p>One result is recorded so far. Blank dates and times were not included in my notes. Results are raw correct-answer counts, not converted TOEIC scores.</p>
+<div class="reading-table-wrap" role="region" aria-label="Ten-test results" tabindex="0">
+<table class="reading-table reading-results">
+<caption>Reading tests 1–10</caption>
+<thead><tr><th scope="col">Test</th><th scope="col">Date</th><th scope="col">Correct</th><th scope="col">Accuracy</th><th scope="col">Time</th><th scope="col">Review</th></tr></thead>
+<tbody>
+{% for test in readingProgress.tests %}
+<tr{% if test.recorded %} class="reading-result-recorded"{% endif %}>
+<th scope="row">Test {{ test.number }}</th><td>{{ test.date or "—" }}</td>
+<td>{% if test.recorded %}{{ test.correct }} / {{ test.total }}{% else %}—{% endif %}</td>
+<td>{% if test.recorded %}{{ test.accuracy }}%{% else %}—{% endif %}</td>
+<td>{% if test.minutes %}{{ test.minutes }} min{% else %}—{% endif %}</td>
+<td>{% if test.notesUrl %}<a href="{{ test.notesUrl }}">Read notes →</a>{% else %}<span class="reading-muted">No record yet</span>{% endif %}</td>
+</tr>
+{% endfor %}
+</tbody></table></div>
+</section>
+
+<section aria-labelledby="test-one-breakdown">
+<h2 id="test-one-breakdown">Test 1 · Breakdown</h2>
+<p>The handwritten breakdown lists <strong>26 mistakes</strong>, matching the recorded result of <strong>74/100</strong>. Part 7 retains the notebook’s grouping by the number of questions in each set.</p>
+<div class="reading-table-wrap" role="region" aria-label="Test 1 section results" tabindex="0"><table class="reading-table">
+<caption>Test 1: correct answers and mistakes by section</caption>
+<thead><tr><th scope="col">Section</th><th scope="col">Correct</th><th scope="col">Mistakes</th><th scope="col">Accuracy</th></tr></thead>
+<tbody>{% for section in readingProgress.first.sections %}<tr><th scope="row">{{ section.label }}</th><td>{{ section.correct }} / {{ section.total }}</td><td>{{ section.incorrect }}</td><td>{{ section.accuracy }}%</td></tr>{% endfor %}</tbody>
+<tfoot><tr><th scope="row">Total</th><td>74 / 100</td><td>26</td><td>74%</td></tr></tfoot>
+</table></div>
+<div class="reading-callout"><strong>Next review</strong><p>Start with the Part 7 two-question sets (4/8 correct), then Part 6 (10/16). These are the lowest accuracy groups in this test. The vocabulary notes alone do not identify why each answer was missed.</p></div>
+<a class="notebook-section-card" href="/notes/toeic/reading/test-1/"><span class="eyebrow-small">Test 1 · Review</span><strong>Words in context</strong><span>Usage checks, sentence patterns, and vocabulary grouped by topic.</span><span class="text-link">Open review notes →</span></a>
+</section>
+
+<section class="reading-reference" aria-labelledby="reading-reference">
+<h2 id="reading-reference">Reference</h2>
+<p>Hackers Academia. <cite>最新！新制多益TOEIC閱讀題庫解析</cite>. Translated by Tina. 國際學村, 2024. ISBN 9789864543687. <a href="https://globalv.com.tw/product/121280030/">Publisher’s book page</a>.</p><p>The book contains ten reading practice tests. Results and review notes here are from my own practice; definitions, organization, and examples are rewritten for study. The first review is based on my nine-page handwritten Test 1 notebook. These pages contain study notes rather than reproduced test passages or an answer key.</p>
+</section>

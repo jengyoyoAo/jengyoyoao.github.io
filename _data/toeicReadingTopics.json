@@ -1,0 +1,900 @@
+[
+  {
+    "slug": "work",
+    "title": "Work, hiring & people",
+    "description": "People, roles, qualifications, and changes at work.",
+    "entries": [
+      {
+        "term": "briefing",
+        "pos": "n.",
+        "meaning": "A short meeting that gives information or instructions.",
+        "pattern": "attend a briefing; a staff briefing",
+        "meaningZh": "簡報；提供資訊或指示的簡短會議"
+      },
+      {
+        "term": "permanent position",
+        "pos": "n. phrase",
+        "meaning": "A job intended to continue, rather than a temporary post.",
+        "pattern": "apply for a permanent position",
+        "meaningZh": "長期、非臨時性的職缺；常設職位"
+      },
+      {
+        "term": "eligible",
+        "pos": "adj.",
+        "meaning": "Qualified or allowed to do or receive something.",
+        "pattern": "be eligible to apply; be eligible for benefits",
+        "meaningZh": "符合資格的；有權申請或享有某事物的"
+      },
+      {
+        "term": "competent",
+        "pos": "adj.",
+        "meaning": "Having the ability needed to do something well.",
+        "pattern": "a competent employee; competent at handling complaints",
+        "meaningZh": "有能力的；能勝任的"
+      },
+      {
+        "term": "shortlist",
+        "pos": "v.; n.",
+        "meaning": "Select the final candidates for consideration; the resulting list.",
+        "pattern": "be shortlisted for a position",
+        "meaningZh": "將人選列入最後候選名單；入圍名單"
+      },
+      {
+        "term": "successful candidate",
+        "pos": "n. phrase",
+        "meaning": "The applicant selected for a job or award.",
+        "pattern": "notify the successful candidate",
+        "meaningZh": "獲選者；獲錄用的應徵者"
+      },
+      {
+        "term": "upper management",
+        "pos": "n. phrase",
+        "meaning": "The senior people who direct an organization.",
+        "pattern": "an upper-management position",
+        "meaningZh": "高階管理階層"
+      },
+      {
+        "term": "step down",
+        "pos": "phrasal v.",
+        "meaning": "Leave a position of authority.",
+        "pattern": "step down as director; step down from a role",
+        "meaningZh": "辭去職務；卸任"
+      },
+      {
+        "term": "assume",
+        "pos": "v.",
+        "meaning": "Take on a role or responsibility; also, suppose something is true.",
+        "pattern": "assume responsibility; assume the role of manager",
+        "meaningZh": "承擔責任；擔任職務；假定"
+      },
+      {
+        "term": "consult with",
+        "pos": "v. phrase",
+        "meaning": "Discuss a matter with someone to seek advice.",
+        "pattern": "consult with a colleague",
+        "meaningZh": "與某人商議；向某人請教"
+      },
+      {
+        "term": "acquaintance",
+        "pos": "n.",
+        "meaning": "Someone you know, but not necessarily a close friend.",
+        "pattern": "a business acquaintance",
+        "meaningZh": "認識的人；熟人，未必是親近的朋友"
+      },
+      {
+        "term": "personal reference",
+        "pos": "n. phrase",
+        "meaning": "A person or recommendation that supports someone’s character.",
+        "pattern": "provide a personal reference",
+        "meaningZh": "品格推薦人；對個人品格的推薦或證明"
+      },
+      {
+        "term": "prestigious",
+        "pos": "adj.",
+        "meaning": "Highly respected or admired.",
+        "pattern": "a prestigious firm; a prestigious award",
+        "meaningZh": "享有盛名的；備受尊崇的"
+      },
+      {
+        "term": "prominent",
+        "pos": "adj.",
+        "meaning": "Important, well known, or easily noticed.",
+        "pattern": "a prominent business leader",
+        "meaningZh": "著名的；重要的；顯眼的"
+      },
+      {
+        "term": "influential",
+        "pos": "adj.",
+        "meaning": "Able to affect decisions or opinions.",
+        "pattern": "an influential member of the board",
+        "meaningZh": "有影響力的"
+      },
+      {
+        "term": "public speaker",
+        "pos": "n. phrase",
+        "meaning": "A person who gives talks to an audience.",
+        "pattern": "an engaging public speaker",
+        "meaningZh": "公開演講者"
+      },
+      {
+        "term": "literary agent",
+        "pos": "n. phrase",
+        "meaning": "A representative who helps writers sell their work.",
+        "pattern": "work with a literary agent",
+        "meaningZh": "文學經紀人；協助作者洽談出版事務的代理人"
+      },
+      {
+        "term": "agent",
+        "pos": "n.",
+        "meaning": "Someone who represents another person or organization.",
+        "pattern": "a real estate agent; a travel agent",
+        "meaningZh": "代理人；仲介"
+      },
+      {
+        "term": "investor",
+        "pos": "n.",
+        "meaning": "A person or organization that puts money into a venture.",
+        "pattern": "attract investors",
+        "meaningZh": "投資者"
+      },
+      {
+        "term": "resident / occupant",
+        "pos": "n.",
+        "meaning": "A resident lives in a place; an occupant uses or occupies it.",
+        "pattern": "a local resident; the building’s occupants",
+        "meaningZh": "resident 指居民、住戶；occupant 指使用或占用某空間的人，不一定住在那裡"
+      }
+    ],
+    "titleZh": "職場、招募與人物",
+    "descriptionZh": "人物、職務、資格與工作上的變動。"
+  },
+  {
+    "slug": "property",
+    "title": "Property, facilities & maintenance",
+    "description": "Buildings, household equipment, and problems that need attention.",
+    "entries": [
+      {
+        "term": "real estate",
+        "pos": "n.",
+        "meaning": "Land and buildings as property.",
+        "pattern": "a real estate agency",
+        "meaningZh": "不動產；房地產"
+      },
+      {
+        "term": "suburb",
+        "pos": "n.",
+        "meaning": "A residential area outside a city center.",
+        "pattern": "live in a suburb",
+        "meaningZh": "市郊；郊區住宅地帶"
+      },
+      {
+        "term": "condominium",
+        "pos": "n.",
+        "meaning": "An individually owned apartment, or a building with such units.",
+        "pattern": "buy a condominium",
+        "meaningZh": "分戶持有產權的公寓住宅；這類住宅組成的大樓"
+      },
+      {
+        "term": "refurbishment",
+        "pos": "n.",
+        "meaning": "Work that repairs and improves a building or item.",
+        "pattern": "undergo refurbishment",
+        "meaningZh": "整修；翻新"
+      },
+      {
+        "term": "hallway",
+        "pos": "n.",
+        "meaning": "A passage inside a building.",
+        "pattern": "at the end of the hallway",
+        "meaningZh": "走廊"
+      },
+      {
+        "term": "reception desk",
+        "pos": "n. phrase",
+        "meaning": "The place where visitors are welcomed or helped.",
+        "pattern": "check in at the reception desk",
+        "meaningZh": "接待櫃檯；服務台"
+      },
+      {
+        "term": "tenant",
+        "pos": "n.",
+        "meaning": "Someone who rents a property.",
+        "pattern": "notify the tenants",
+        "meaningZh": "承租人；房客"
+      },
+      {
+        "term": "appliance",
+        "pos": "n.",
+        "meaning": "A device used for a household task.",
+        "pattern": "a kitchen appliance; household appliances",
+        "meaningZh": "家用電器；家電"
+      },
+      {
+        "term": "outlet",
+        "pos": "n.",
+        "meaning": "An electrical socket; also, a shop or sales channel.",
+        "pattern": "a power outlet; a retail outlet",
+        "meaningZh": "電源插座；零售店或銷售通路"
+      },
+      {
+        "term": "amenity",
+        "pos": "n.",
+        "meaning": "A feature or facility that makes a place pleasant or useful.",
+        "pattern": "building amenities; local amenities",
+        "meaningZh": "提升生活便利性或舒適度的設施、服務"
+      },
+      {
+        "term": "intact",
+        "pos": "adj.",
+        "meaning": "Complete and undamaged.",
+        "pattern": "remain intact",
+        "meaningZh": "完整無缺的；未受損的"
+      },
+      {
+        "term": "crack",
+        "pos": "n.; v.",
+        "meaning": "A narrow split; to develop or cause a split.",
+        "pattern": "a crack in the wall",
+        "meaningZh": "裂縫；裂開；使產生裂痕"
+      },
+      {
+        "term": "infestation",
+        "pos": "n.",
+        "meaning": "The presence of many unwanted insects or other pests.",
+        "pattern": "a pest infestation",
+        "meaningZh": "害蟲大量孳生、侵擾的情況"
+      },
+      {
+        "term": "exterminator",
+        "pos": "n.",
+        "meaning": "A person or company that removes pests.",
+        "pattern": "call an exterminator",
+        "meaningZh": "除蟲人員；除蟲業者"
+      },
+      {
+        "term": "carbon monoxide",
+        "pos": "n.",
+        "meaning": "A poisonous gas produced by incomplete combustion.",
+        "pattern": "a carbon monoxide detector",
+        "meaningZh": "一氧化碳"
+      },
+      {
+        "term": "debris",
+        "pos": "uncountable n.",
+        "meaning": "Scattered broken pieces or waste.",
+        "pattern": "clear away debris",
+        "meaningZh": "碎片；殘骸；散落的廢棄物（不可數）"
+      },
+      {
+        "term": "overcrowding",
+        "pos": "uncountable n.",
+        "meaning": "Having too many people in a space.",
+        "pattern": "reduce overcrowding",
+        "meaningZh": "人數過多造成的擁擠"
+      }
+    ],
+    "titleZh": "房地產、設施與維修",
+    "descriptionZh": "建築、家用設備與需要處理的維護問題。"
+  },
+  {
+    "slug": "business",
+    "title": "Business, money & services",
+    "description": "Purchases, contracts, fees, and company operations.",
+    "entries": [
+      {
+        "term": "loyalty program",
+        "pos": "n. phrase",
+        "meaning": "A scheme that rewards repeat customers.",
+        "pattern": "join a loyalty program",
+        "meaningZh": "顧客忠誠獎勵計畫；會員回饋方案"
+      },
+      {
+        "term": "venture",
+        "pos": "n.",
+        "meaning": "A new business activity, often involving risk.",
+        "pattern": "a business venture; a joint venture",
+        "meaningZh": "新事業；通常帶有風險的商業活動"
+      },
+      {
+        "term": "share of stock",
+        "pos": "n. phrase",
+        "meaning": "A unit of ownership in a company.",
+        "pattern": "buy shares of stock",
+        "meaningZh": "股票的一股；公司所有權的一個單位"
+      },
+      {
+        "term": "bill",
+        "pos": "n.; v.",
+        "meaning": "A request for payment; to charge someone.",
+        "pattern": "an electricity bill; bill a customer for repairs",
+        "meaningZh": "帳單；向某人收費或開帳單"
+      },
+      {
+        "term": "billing",
+        "pos": "n.",
+        "meaning": "The process of preparing or sending requests for payment.",
+        "pattern": "a billing inquiry; a billing address",
+        "meaningZh": "開立帳單、計費或請款的作業"
+      },
+      {
+        "term": "shortfall",
+        "pos": "n.",
+        "meaning": "An amount by which something falls below what is needed.",
+        "pattern": "a budget shortfall",
+        "meaningZh": "不足額；短缺"
+      },
+      {
+        "term": "surplus",
+        "pos": "n.",
+        "meaning": "An amount left after needs or costs have been covered.",
+        "pattern": "a budget surplus",
+        "meaningZh": "剩餘；盈餘"
+      },
+      {
+        "term": "contract renewal",
+        "pos": "n. phrase",
+        "meaning": "The extension of a contract for a further period.",
+        "pattern": "discuss contract renewal",
+        "meaningZh": "合約續約"
+      },
+      {
+        "term": "merchandise",
+        "pos": "uncountable n.",
+        "meaning": "Goods offered for sale.",
+        "pattern": "return merchandise",
+        "meaningZh": "商品；貨品（不可數）"
+      },
+      {
+        "term": "waive",
+        "pos": "v.",
+        "meaning": "Choose not to require a payment or enforce a rule.",
+        "pattern": "waive a fee; waive a requirement",
+        "meaningZh": "免除費用、要求；放棄行使某項權利"
+      },
+      {
+        "term": "commission",
+        "pos": "v.; n.",
+        "meaning": "Order a piece of work; also, a fee for arranging a sale.",
+        "pattern": "commission a report; earn a commission",
+        "meaningZh": "委託製作或辦理；佣金"
+      },
+      {
+        "term": "specification",
+        "pos": "n.",
+        "meaning": "A detailed statement of requirements.",
+        "pattern": "meet the product specifications",
+        "meaningZh": "規格；詳細要求，常用複數 specifications"
+      },
+      {
+        "term": "data entry",
+        "pos": "n. phrase",
+        "meaning": "The work of putting information into a system.",
+        "pattern": "a data-entry position",
+        "meaningZh": "資料輸入"
+      },
+      {
+        "term": "compulsory",
+        "pos": "adj.",
+        "meaning": "Required by a rule or authority.",
+        "pattern": "compulsory training",
+        "meaningZh": "強制性的；必須參加或遵守的"
+      },
+      {
+        "term": "perks",
+        "pos": "plural n.",
+        "meaning": "Extra benefits associated with a job or arrangement.",
+        "pattern": "employee perks; travel perks",
+        "meaningZh": "工作或安排所附帶的額外福利、好處"
+      }
+    ],
+    "titleZh": "商務、金錢與服務",
+    "descriptionZh": "採購、合約、費用與企業營運。"
+  },
+  {
+    "slug": "public",
+    "title": "Public affairs, law & community",
+    "description": "Policy, legal institutions, donations, and community work.",
+    "entries": [
+      {
+        "term": "city council",
+        "pos": "n. phrase",
+        "meaning": "A city’s elected local governing body.",
+        "pattern": "a city council meeting",
+        "meaningZh": "市議會"
+      },
+      {
+        "term": "consensus",
+        "pos": "n.",
+        "meaning": "General agreement within a group.",
+        "pattern": "reach a consensus",
+        "meaningZh": "共識；普遍一致的意見"
+      },
+      {
+        "term": "property tax",
+        "pos": "n. phrase",
+        "meaning": "A tax assessed on property.",
+        "pattern": "pay property tax",
+        "meaningZh": "不動產稅；對房地產課徵的稅"
+      },
+      {
+        "term": "reform",
+        "pos": "n.; v.",
+        "meaning": "A change intended to improve a system; to make such changes.",
+        "pattern": "push for reform",
+        "meaningZh": "改革；改良制度"
+      },
+      {
+        "term": "radical",
+        "pos": "adj.; n.",
+        "meaning": "Involving fundamental change; a person advocating far-reaching change.",
+        "pattern": "a radical proposal; radical reform",
+        "meaningZh": "根本的、徹底的；激進的；主張大幅改革的人"
+      },
+      {
+        "term": "radicalize",
+        "pos": "v.",
+        "meaning": "Cause someone to adopt more extreme political or social views.",
+        "pattern": "become radicalized",
+        "meaningZh": "使某人的政治或社會觀點變得激進"
+      },
+      {
+        "term": "bill",
+        "pos": "n.",
+        "meaning": "A proposed law awaiting consideration or approval.",
+        "pattern": "amend a bill; pass a bill; reject a bill",
+        "meaningZh": "法案；尚待審議或通過的法律提案"
+      },
+      {
+        "term": "law firm",
+        "pos": "n. phrase",
+        "meaning": "A business that provides legal services.",
+        "pattern": "work for a law firm",
+        "meaningZh": "律師事務所"
+      },
+      {
+        "term": "government grant",
+        "pos": "n. phrase",
+        "meaning": "Funding provided by a government for a purpose.",
+        "pattern": "apply for a government grant",
+        "meaningZh": "政府補助金"
+      },
+      {
+        "term": "donor",
+        "pos": "n.",
+        "meaning": "A person or organization that gives money or resources.",
+        "pattern": "an anonymous donor",
+        "meaningZh": "捐贈者；捐款人"
+      },
+      {
+        "term": "gratitude",
+        "pos": "uncountable n.",
+        "meaning": "The feeling of being thankful.",
+        "pattern": "express gratitude to donors",
+        "meaningZh": "感激之情"
+      },
+      {
+        "term": "undisclosed",
+        "pos": "adj.",
+        "meaning": "Not made public.",
+        "pattern": "an undisclosed amount",
+        "meaningZh": "未公開的；未披露的"
+      },
+      {
+        "term": "outreach",
+        "pos": "uncountable n.",
+        "meaning": "Work that brings services or information to a community.",
+        "pattern": "a community outreach program",
+        "meaningZh": "向社區或特定群體提供服務、資訊的推廣工作"
+      },
+      {
+        "term": "guild",
+        "pos": "n.",
+        "meaning": "An association of people in a particular trade or profession.",
+        "pattern": "a writers’ guild",
+        "meaningZh": "同業公會；職業協會"
+      },
+      {
+        "term": "partner with",
+        "pos": "v. phrase",
+        "meaning": "Work together with another person or organization.",
+        "pattern": "partner with a local organization",
+        "meaningZh": "與某人或組織合作"
+      }
+    ],
+    "titleZh": "公共事務、法律與社區",
+    "descriptionZh": "政策、法律機構、捐贈與社區工作。"
+  },
+  {
+    "slug": "communication",
+    "title": "Communication, media & events",
+    "description": "Reporting, invitations, public appearances, and scheduled activities.",
+    "entries": [
+      {
+        "term": "press",
+        "pos": "n.",
+        "meaning": "News media and the people who work in them.",
+        "pattern": "the local press; members of the press",
+        "meaningZh": "新聞媒體；新聞從業人員"
+      },
+      {
+        "term": "news organization",
+        "pos": "n. phrase",
+        "meaning": "An organization that gathers and publishes news.",
+        "pattern": "a national news organization",
+        "meaningZh": "新聞機構"
+      },
+      {
+        "term": "press conference",
+        "pos": "n. phrase",
+        "meaning": "An event where a person or organization answers journalists’ questions.",
+        "pattern": "hold a press conference",
+        "meaningZh": "記者會"
+      },
+      {
+        "term": "publicity",
+        "pos": "uncountable n.",
+        "meaning": "Public attention or coverage, especially through the media.",
+        "pattern": "generate publicity; increase publicity",
+        "meaningZh": "媒體曝光；公眾關注；宣傳效果"
+      },
+      {
+        "term": "televise",
+        "pos": "v.",
+        "meaning": "Broadcast on television.",
+        "pattern": "televise an event",
+        "meaningZh": "以電視播出；電視轉播"
+      },
+      {
+        "term": "unveil",
+        "pos": "v.",
+        "meaning": "Show or announce something publicly for the first time.",
+        "pattern": "unveil a new product",
+        "meaningZh": "首次公開展示或宣布；揭曉"
+      },
+      {
+        "term": "hand out",
+        "pos": "phrasal v.",
+        "meaning": "Distribute items to people.",
+        "pattern": "hand out pamphlets",
+        "meaningZh": "分發；發放"
+      },
+      {
+        "term": "pamphlet",
+        "pos": "n.",
+        "meaning": "A small publication giving information.",
+        "pattern": "an information pamphlet",
+        "meaningZh": "資訊小冊子；宣傳手冊"
+      },
+      {
+        "term": "invitation",
+        "pos": "n.",
+        "meaning": "A request asking someone to attend an event.",
+        "pattern": "accept an invitation; an invitation to a ceremony",
+        "meaningZh": "邀請；邀請函"
+      },
+      {
+        "term": "forthcoming",
+        "pos": "adj.",
+        "meaning": "Happening or appearing soon.",
+        "pattern": "a forthcoming event; a forthcoming publication",
+        "meaningZh": "即將到來、舉行或出版的"
+      },
+      {
+        "term": "finalist",
+        "pos": "n.",
+        "meaning": "A person or entry reaching the final stage of a competition.",
+        "pattern": "an award finalist",
+        "meaningZh": "決賽入圍者；進入最後評選的人或作品"
+      },
+      {
+        "term": "award acceptance speech",
+        "pos": "n. phrase",
+        "meaning": "A speech given when accepting an award.",
+        "pattern": "deliver an award acceptance speech",
+        "meaningZh": "領獎致詞；得獎感言"
+      },
+      {
+        "term": "engaging",
+        "pos": "adj.",
+        "meaning": "Interesting and able to hold attention.",
+        "pattern": "an engaging presentation",
+        "meaningZh": "有趣而吸引人的"
+      },
+      {
+        "term": "succinct",
+        "pos": "adj.",
+        "meaning": "Clear and brief, without unnecessary words.",
+        "pattern": "a succinct summary",
+        "meaningZh": "簡明扼要的"
+      },
+      {
+        "term": "poetry collection",
+        "pos": "n. phrase",
+        "meaning": "A published group of poems.",
+        "pattern": "publish a poetry collection",
+        "meaningZh": "詩集"
+      },
+      {
+        "term": "appreciate",
+        "pos": "v.",
+        "meaning": "Value something or feel thankful for it.",
+        "pattern": "appreciate your help; appreciate having the opportunity",
+        "meaningZh": "欣賞；重視；感謝（不是「依賴」）"
+      },
+      {
+        "term": "reveal",
+        "pos": "v.",
+        "meaning": "Make something previously unknown visible or known.",
+        "pattern": "reveal a problem; reveal the results",
+        "meaningZh": "揭露；使原本未知的事為人所知"
+      }
+    ],
+    "titleZh": "溝通、媒體與活動",
+    "descriptionZh": "新聞報導、邀請、公開場合與活動安排。"
+  },
+  {
+    "slug": "technology",
+    "title": "Technology, products & science",
+    "description": "Devices, services, trials, and scientific vocabulary.",
+    "entries": [
+      {
+        "term": "video game console",
+        "pos": "n. phrase",
+        "meaning": "A device designed for playing video games.",
+        "pattern": "a video game console",
+        "meaningZh": "電玩遊戲主機"
+      },
+      {
+        "term": "cellular service",
+        "pos": "n. phrase",
+        "meaning": "Mobile telephone and data service.",
+        "pattern": "a cellular service provider",
+        "meaningZh": "行動電話與行動數據服務"
+      },
+      {
+        "term": "pilot",
+        "pos": "n.; adj.; v.",
+        "meaning": "An aircraft operator; a small-scale trial; to conduct a trial or guide something through a process.",
+        "pattern": "a pilot program; pilot a new service; pilot a bill through parliament",
+        "meaningZh": "飛行員；小規模試辦；試行；引導、推動某事完成程序（如使法案通過議會）"
+      },
+      {
+        "term": "pilot light",
+        "pos": "n. phrase",
+        "meaning": "A small gas flame that ignites a larger burner.",
+        "pattern": "relight the pilot light",
+        "meaningZh": "常明引火火焰；用來點燃主燃燒器的小火焰"
+      },
+      {
+        "term": "conceive",
+        "pos": "v.",
+        "meaning": "Form an idea or plan.",
+        "pattern": "conceive of a solution",
+        "meaningZh": "構想；想出計畫或點子"
+      },
+      {
+        "term": "perceive",
+        "pos": "v.",
+        "meaning": "Notice, recognize, or understand something.",
+        "pattern": "perceive a change; perceive something as useful",
+        "meaningZh": "察覺；感知；理解"
+      },
+      {
+        "term": "stem cell",
+        "pos": "n. phrase",
+        "meaning": "A cell that can develop into other types of cells.",
+        "pattern": "stem cell research",
+        "meaningZh": "幹細胞"
+      }
+    ],
+    "titleZh": "科技、產品與科學",
+    "descriptionZh": "設備、服務、試辦與科學用語。"
+  },
+  {
+    "slug": "travel",
+    "title": "Travel, hospitality & food",
+    "description": "Transport, restaurants, visitors, and booking arrangements.",
+    "entries": [
+      {
+        "term": "weather forecast",
+        "pos": "n. phrase",
+        "meaning": "A prediction of future weather conditions.",
+        "pattern": "check the weather forecast",
+        "meaningZh": "天氣預報"
+      },
+      {
+        "term": "walking tour",
+        "pos": "n. phrase",
+        "meaning": "A guided or planned visit made on foot.",
+        "pattern": "take a walking tour",
+        "meaningZh": "步行導覽；徒步遊覽"
+      },
+      {
+        "term": "fare",
+        "pos": "n.",
+        "meaning": "The price paid for a journey; also, food of a particular kind.",
+        "pattern": "a bus fare; traditional local fare",
+        "meaningZh": "交通票價、車資；某種類型的餐食"
+      },
+      {
+        "term": "vintage",
+        "pos": "adj.; n.",
+        "meaning": "From a particular past period, often valued for quality; a wine’s production year or its wine.",
+        "pattern": "a vintage car; vintage champagne; a fine vintage",
+        "meaningZh": "具年代特色且常有價值的；葡萄酒的釀造年份或該年份的酒"
+      },
+      {
+        "term": "bygone",
+        "pos": "adj.",
+        "meaning": "Belonging to an earlier time.",
+        "pattern": "a bygone era",
+        "meaningZh": "過去的；往昔的"
+      },
+      {
+        "term": "opening / operating hours",
+        "pos": "plural n.",
+        "meaning": "The hours during which a business is open or a service operates.",
+        "pattern": "check the opening hours; extend operating hours",
+        "meaningZh": "營業時間；服務運作時間"
+      },
+      {
+        "term": "preregistration",
+        "pos": "n.",
+        "meaning": "Registration completed before an event.",
+        "pattern": "preregistration is required",
+        "meaningZh": "事先登記；預先報名"
+      },
+      {
+        "term": "walk-in",
+        "pos": "n.; adj.",
+        "meaning": "A person arriving without an appointment; available without booking.",
+        "pattern": "accept walk-ins; a walk-in customer",
+        "meaningZh": "未預約就到場的人；無須預約的"
+      },
+      {
+        "term": "lost and found",
+        "pos": "n. phrase",
+        "meaning": "A place or service for items that have been lost.",
+        "pattern": "check the lost and found",
+        "meaningZh": "失物招領處；失物招領服務"
+      }
+    ],
+    "titleZh": "旅遊、餐飲與接待",
+    "descriptionZh": "交通、餐食、訪客與預約安排。"
+  },
+  {
+    "slug": "description",
+    "title": "Descriptions, degree & timing",
+    "description": "Useful adjectives and adverbs, with patterns that constrain their meaning.",
+    "entries": [
+      {
+        "term": "conventional",
+        "pos": "adj.",
+        "meaning": "Following established or usual methods.",
+        "pattern": "a conventional approach",
+        "meaningZh": "傳統的；遵循慣例的"
+      },
+      {
+        "term": "memorable",
+        "pos": "adj.",
+        "meaning": "Worth remembering or easy to remember.",
+        "pattern": "a memorable experience",
+        "meaningZh": "難忘的；值得記住的"
+      },
+      {
+        "term": "marginal",
+        "pos": "adj.",
+        "meaning": "Small in amount or effect; also, barely sufficient.",
+        "pattern": "a marginal increase",
+        "meaningZh": "幅度或影響很小的；勉強足夠的"
+      },
+      {
+        "term": "prosperous",
+        "pos": "adj.",
+        "meaning": "Financially successful or thriving.",
+        "pattern": "a prosperous business",
+        "meaningZh": "興旺的；繁榮富裕的"
+      },
+      {
+        "term": "comprehensive",
+        "pos": "adj.",
+        "meaning": "Covering the relevant subject thoroughly.",
+        "pattern": "a comprehensive review",
+        "meaningZh": "全面的；涵蓋周全的"
+      },
+      {
+        "term": "extensive",
+        "pos": "adj.",
+        "meaning": "Large in range or amount.",
+        "pattern": "extensive experience; extensive repairs",
+        "meaningZh": "範圍廣的；大量的"
+      },
+      {
+        "term": "inferior",
+        "pos": "adj.",
+        "meaning": "Lower in quality, rank, or value.",
+        "pattern": "inferior to the original",
+        "meaningZh": "品質、地位或價值較差的；低於……的"
+      },
+      {
+        "term": "hard-to-find",
+        "pos": "adj.",
+        "meaning": "Difficult to locate or obtain.",
+        "pattern": "hard-to-find replacement parts",
+        "meaningZh": "難以找到或取得的"
+      },
+      {
+        "term": "neatly",
+        "pos": "adv.",
+        "meaning": "In a tidy, orderly, or skillful way.",
+        "pattern": "neatly arranged files",
+        "meaningZh": "整齊地；俐落地"
+      },
+      {
+        "term": "promptly",
+        "pos": "adv.",
+        "meaning": "Without delay; at the stated time.",
+        "pattern": "respond promptly; arrive promptly",
+        "meaningZh": "迅速地；準時地"
+      },
+      {
+        "term": "anticipate",
+        "pos": "v.",
+        "meaning": "Expect or prepare for something.",
+        "pattern": "anticipate demand; anticipate receiving a reply",
+        "meaningZh": "預期；預先準備應對"
+      },
+      {
+        "term": "evidently",
+        "pos": "adv.",
+        "meaning": "As the available evidence suggests; apparently.",
+        "pattern": "The office is evidently closed.",
+        "meaningZh": "據現有跡象看來；顯然"
+      },
+      {
+        "term": "halt",
+        "pos": "v.; n.",
+        "meaning": "Stop, or bring something to a stop.",
+        "pattern": "halt production; come to a halt",
+        "meaningZh": "停止；使停止"
+      },
+      {
+        "term": "lengthen",
+        "pos": "v.",
+        "meaning": "Make or become longer.",
+        "pattern": "lengthen a stay; lengthen the process",
+        "meaningZh": "延長；變長"
+      },
+      {
+        "term": "somewhat",
+        "pos": "adv.",
+        "meaning": "To a limited degree.",
+        "pattern": "somewhat difficult",
+        "meaningZh": "有點；在某種程度上"
+      },
+      {
+        "term": "preferably",
+        "pos": "adv.",
+        "meaning": "Ideally, or as the preferred option.",
+        "pattern": "preferably before Friday",
+        "meaningZh": "最好是；以……為佳"
+      },
+      {
+        "term": "virtually",
+        "pos": "adv.",
+        "meaning": "Almost or nearly; also, using digital means, depending on context.",
+        "pattern": "virtually impossible; meet virtually",
+        "meaningZh": "幾乎；實際上差不多；也可依語境指以線上或虛擬方式"
+      },
+      {
+        "term": "appealing",
+        "pos": "adj.",
+        "meaning": "Attractive or interesting.",
+        "pattern": "an appealing offer",
+        "meaningZh": "有吸引力的；令人感興趣的"
+      }
+    ],
+    "titleZh": "描述、程度與時間",
+    "descriptionZh": "常見形容詞、副詞，以及影響詞義的搭配。"
+  }
+]

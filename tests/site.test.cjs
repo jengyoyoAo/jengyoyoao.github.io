@@ -101,3 +101,30 @@ test('a newly scaffolded article updates sorting, count and code from only Markd
   assert.ok(!fs.existsSync(output),'unpublishing a draft must remove old output on a clean build');
  } finally {fs.rmSync(temp,{recursive:true,force:true});}
 });
+
+test('TOEIC reading records preserve Test 1 totals and leave unrecorded tests empty',()=>{
+ const progress=require('../_data/readingProgress')();
+ assert.equal(progress.tests.length,10);
+ assert.equal(progress.completed,1);
+ assert.deepEqual([progress.first.correct,progress.first.incorrect,progress.first.total],[74,26,100]);
+ assert.deepEqual(progress.first.sections.map(s=>s.correct),[23,10,4,18,19]);
+ for(const test of progress.tests.slice(1)){
+  assert.equal(test.recorded,false);
+  assert.equal(test.date,null);
+  assert.equal(test.minutes,null);
+  assert.equal(test.notesUrl,null);
+ }
+ const log=doc('notes/toeic/reading/index.html');
+ assert.equal(log.querySelectorAll('.reading-results tbody tr').length,10);
+ assert.equal(log.querySelectorAll('.reading-result-recorded').length,1);
+ for(const url of ['notes/toeic/reading/index.html','notes/toeic/reading/test-1/index.html','notes/toeic/vocabulary/a/index.html']){
+  const d=doc(url),active=d.querySelectorAll('.notebook-sidebar [aria-current="page"]');
+  assert.equal(active.length,1,url);
+  assert.equal(active[0].getAttribute('href'),'/'+url.replace('index.html',''),url);
+  const ids=[...d.querySelectorAll('[id]')].map(n=>n.id);
+  assert.equal(new Set(ids).size,ids.length,url);
+ }
+ const review=doc('notes/toeic/reading/test-1/index.html');
+ assert.equal(review.querySelectorAll('details.reading-topic[id]').length,8);
+ assert.ok(review.body.textContent.includes('9789864543687'));
+});

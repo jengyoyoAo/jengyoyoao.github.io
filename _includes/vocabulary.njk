@@ -3,11 +3,14 @@ layout: base.njk
 navSection: notes
 ---
 <div class="notebook-layout">
-  <aside class="notebook-sidebar" aria-label="Vocabulary collections">
+  <aside class="notebook-sidebar" aria-label="TOEIC notebook">
     <details class="notebook-menu" open><summary>TOEIC · Contents</summary>
-      <nav aria-label="Vocabulary sections">
+      <nav aria-label="TOEIC sections">
         <a href="/notes/toeic/"{% if vocabularyOverview %} aria-current="page"{% endif %}>TOEIC overview</a>
-        <a href="/notes/toeic/vocabulary/a/"{% if not vocabularyOverview %} aria-current="page"{% endif %}>Vocabulary · A</a>
+        <a href="/notes/toeic/vocabulary/a/"{% if (page.url == "/notes/toeic/vocabulary/a/" or page.url == "/notes/toeic/vocabulary/a/index.html") %} aria-current="page"{% endif %}>Vocabulary · A</a>
+        <p class="eyebrow-small">Reading practice</p>
+        <a href="/notes/toeic/reading/"{% if readingOverview %} aria-current="page"{% endif %}>10-test practice log</a>
+        <a class="notebook-subsection-link" href="/notes/toeic/reading/test-1/"{% if readingTestOne %} aria-current="page"{% endif %}>Test 1 · Review notes</a>
       </nav>
     </details>
   </aside>
@@ -19,7 +22,7 @@ navSection: notes
     <p class="notebook-updated">Last updated <time datetime="{{ updated | dateISO }}">{{ updated | dateLabel }}</time></p>
     <div class="vocabulary-content">{{ content | safe }}</div>
     <nav class="notebook-pagination" aria-label="Collection navigation">
-      {% if vocabularyOverview %}<a href="/notes/toeic/vocabulary/a/">A · abreast–attendee →</a>{% else %}<a href="/notes/toeic/">← TOEIC overview</a>{% endif %}
+      {% if vocabularyOverview %}<a href="/notes/toeic/vocabulary/a/">A · abreast–attendee →</a>{% elif readingTestOne %}<a href="/notes/toeic/reading/">← Reading practice log</a>{% elif readingOverview %}<a href="/notes/toeic/">← TOEIC overview</a><a href="/notes/toeic/reading/test-1/">Test 1 · Review notes →</a>{% else %}<a href="/notes/toeic/">← TOEIC overview</a>{% endif %}
     </nav>
   </article>
 </div>
