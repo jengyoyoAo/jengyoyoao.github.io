@@ -17,6 +17,8 @@ For each problem, keep a Markdown explanation and source file together. Start wi
 
 - [1882: Process Tasks Using Servers](1882-process-tasks-using-servers.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-1882.html).
 
+- [2567: Minimum Score by Changing Two Elements](2567-minimum-score-by-changing-two-elements.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-2567.html).
+
 - [2747: Count Zero Request Servers](2747-count-zero-request-servers.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-2747.html).
 
 - [3105: Longest Strictly Increasing or Strictly Decreasing Subarray](3105-longest-strictly-increasing-or-strictly-decreasing-subarray.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-3105.html).
