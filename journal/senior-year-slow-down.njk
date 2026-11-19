@@ -1,28 +1,13 @@
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0f14">
-  <meta name="description" content="大四這一年，先放慢考研的腳步，重新安排學習、生活和接下來的方向。">
-  <title>我好迷茫 — Cheng-You Cheng</title>
-  <link rel="stylesheet" href="../site.css">
-  <link rel="icon" type="image/jpeg" href="../images/avatar.jpg">
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <div class="page">
-    <header class="topbar">
-      <a class="wordmark" href="../index.html"><span>CY.</span> Cheng-You Cheng</a>
-      <nav aria-label="Main navigation">
-        <a href="../about.html">About</a>
-        <a href="../community.html">Community</a>
-        <a href="../notes.html" aria-current="page">Journal</a>
-        <a href="../notes/index.html">Notes</a>
-        <a href="../online-judge/index.html">Online Judge</a>
-      </nav>
-    </header>
-    <main id="main-content" tabindex="-1">
+---
+layout: "base.njk"
+title: "我好迷茫"
+fullTitle: "我好迷茫 — Cheng-You Cheng"
+description: "大四這一年，先放慢考研的腳步，重新安排學習、生活和接下來的方向。"
+lang: "zh-Hant"
+navSection: "journal"
+permalink: "journal/senior-year-slow-down.html"
+mainId: "main-content"
+---
       <article class="journal-article">
         <div class="journal-article-meta">
           <span id="eyebrow-zh">最近的一些碎碎念</span>
@@ -88,10 +73,9 @@
         </section>
         <p><a class="back-link" href="../notes.html">← Back to Journal</a></p>
       </article>
-    </main>
-    <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
-  </div>
-  <script>
+    
+
+<script>
     const languageToggle = document.getElementById('language-toggle');
     const chineseArticle = document.getElementById('article-zh');
     const englishArticle = document.getElementById('article-en');
@@ -113,5 +97,3 @@
       languageToggle.setAttribute('aria-pressed', String(!showEnglish));
     });
   </script>
-</body>
-</html>

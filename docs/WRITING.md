@@ -1,8 +1,8 @@
-# 撰寫與更新內容
+# Writing and Updating Content
 
-## 一篇解題文章，只維護一份 Markdown
+## Keep one Markdown source for each solution article
 
-以 `solutions/leetcode/0003-longest-substring-without-repeating-characters.md` 為例：
+For example, use `solutions/leetcode/0003-longest-substring-without-repeating-characters.md`:
 
 ```yaml
 ---
@@ -25,12 +25,12 @@ solutions:
 ---
 ```
 
-接著直接寫內容：
+Then write the article content directly:
 
 ```markdown
 ## Key idea
 
-以 $n = |s|$ 表示字串長度。
+Let $n = |s|$ be the length of the string.
 
 ## Solution
 
@@ -42,24 +42,38 @@ solutions:
 - **Extra space:** $O(1)$ for a fixed alphabet.
 ```
 
-`solutions` 中的原始碼會自動讀取、配色，組成語言分頁和 Copy 按鈕。不要在 Markdown 另外貼一份相同程式碼。若要放暴力解或其他做法，宣告另一組，例如 `bruteForce`，在想放的位置寫 `{% solution bruteForce %}`。
+The source files listed under `solutions` are loaded and highlighted automatically, and rendered as language tabs with Copy buttons. Do not paste a duplicate copy of the same code into the Markdown file. For a brute-force or other approach, declare another source group, such as `bruteForce`, and insert it with `{% solution bruteForce %}` where you want it to appear.
 
-題號排序、Easy/Medium/Hard 顏色、文章日期與平台刊登題數由資料自動產生。每日題可加 `daily: "2026-11-05"`。不要在列表或圓環圖手改已刊登題數。平台總題數不會自行爬取，需更新 `online-judge/progress-data.json` 的快照及來源。
+Problem ordering, Easy/Medium/Hard colors, article dates, and the number of published problems per platform are generated automatically. For a daily problem, add `daily: "2026-11-05"`. Do not manually edit published problem counts in lists or charts. Platform-wide totals are not fetched automatically; update the snapshot and source in `online-judge/progress-data.json`.
 
-## 新增草稿
+## Create a draft
 
 ```sh
 npm run new:solution -- leetcode 4 "Median of Two Sorted Arrays" --difficulty=hard --languages=python,c
 npm run new:note -- linear-algebra-basics "Linear Algebra Basics" --topic=Mathematics
 ```
 
-預設 `draft: true`，不會出現在產生的網站、列表或計數。完成內容後改成 `draft: false`，再跑 `npm run dev` 預覽。草稿仍存在 Git repository；這不是儲存私人資料的機制。
+New content defaults to `draft: true` and will not appear on the generated site, in lists, or in counts. When it is ready, change this to `draft: false` and run `npm run dev` to preview it. Drafts are still stored in the Git repository, so this is not a way to store private information.
 
-一般知識筆記使用 `layout: note.njk`、`tags: [note]`，網址例如 `notes/linear-algebra-basics/index.html`。Notes 列表依日期由新到舊排列。不要把舊的 Journal（`notes.html`）與新的 Notes（`notes/`）混在一起。
+### Notes metadata
+
+Every file under `notes/**/*.md`, including drafts and section pages, must provide these fields:
+
+- `layout`: `note.njk`, `mathematics-section.njk`, `geometry-section.njk`, or `vocabulary.njk`.
+- `tags`: exactly one content tag: `note`, `math-section`, or `vocabulary-section`.
+- `title` and `summary`: non-empty strings.
+- `topic`: the `name` of a category in `_data/noteTopics.json`.
+- `date`: a valid `YYYY-MM-DD` date.
+- `permalink`: a unique `notes/<slug>/index.html` path.
+- `draft`: optional; if present, it must be the YAML boolean `true` or `false`.
+
+Before Eleventy builds the site, `npm run build` validates all notes, including drafts, and reports the source file and any field errors. A regular note uses `layout: note.njk` and `tags: [note]`, for example at `notes/linear-algebra-basics/index.html`. The Notes index sorts entries by date, newest first.
+
+Journal and Notes are separate sections. Journal contains personal experiences and reflections; its source files are in `journal/*.njk`, and its index source is `notes.njk`, which retains the public URL `/notes.html`. Notes contains learning material in mathematics, programming, AI, English, and tools; its source files are in `notes/`.
 
 ## LaTeX
 
-行內公式用 `$...$`；獨立公式如下：
+Use `$...$` for inline formulas and this format for a display formula:
 
 ```markdown
 $$
@@ -67,13 +81,13 @@ $$
 $$
 ```
 
-程式碼中的 `$` 不會轉成公式。函式名稱與實際程式語法可繼續使用反引號。LaTeX 寫錯會使建置失敗，避免把壞掉的公式發布出去。
+A `$` inside a code block is not rendered as a formula. Function names and literal programming syntax can continue to use backticks. Invalid LaTeX causes the build to fail, so check formulas before publishing.
 
-## 預覽與發布
+## Preview and publish
 
-1. `npm run dev`，開啟 `http://localhost:8765/`。
-2. `npm test` 確認文章、連結與自動化通過。
-3. Commit Markdown、原始碼、模板等來源檔；不要 commit `_site/` 或 `node_modules/`。
-4. Push 到 `master` 後，GitHub Actions 會建置並發布（首次需完成部署設定）。
+1. Run `npm run dev` and open `http://localhost:8765/`.
+2. Run `npm test` to check the articles, links, and automation.
+3. Commit source files such as Markdown, code, and templates. Do not commit `_site/` or `node_modules/`.
+4. Push to `master`. GitHub Actions will build and publish the site; initial deployment requires the deployment settings to be configured.
 
-目前首頁、About、Community 和 Journal 仍保留原本的靜態 HTML；已自動化的是解題文章、平台列表、進度與新增的學習筆記。未來新增全站導覽項目時，也要同步這些既有靜態頁。
+The home, About, Community, Journal index, and Journal articles share the navigation, footer, and page frame in `_includes/base.njk`. Update the shared template when adding a site-wide navigation item. Each page keeps its existing public URL through an explicit `permalink`.
