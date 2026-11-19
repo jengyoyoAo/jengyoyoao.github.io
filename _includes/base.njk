@@ -1,29 +1,24 @@
 <!doctype html>
-<html lang="{{ lang or 'en' }}">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0f14">
   <meta name="description" content="{{ description or summary or title }}">
-  <meta property="og:title" content="{{ fullTitle or title }}">
-  <meta property="og:description" content="{{ ogDescription or description or summary or title }}">
-  {% if ogUrl %}<meta property="og:url" content="{{ ogUrl }}">{% endif %}
-  <meta property="og:type" content="{{ ogType or 'website' }}">
-  <title>{% if fullTitle %}{{ fullTitle }}{% else %}{% if problem_id %}{{ platforms[platform].name }} {{ problem_id }}: {% endif %}{{ title }} — Cheng-You Cheng{% endif %}</title>
+  <title>{% if problem_id %}{{ platforms[platform].name }} {{ problem_id }}: {% endif %}{{ title }} — Cheng-You Cheng</title>
   <link rel="stylesheet" href="/site.css?v={{ 'site.css' | assetVersion }}">
   <link rel="icon" type="image/jpeg" href="/images/avatar.jpg">
-  {% if math or katex %}<link rel="stylesheet" href="/assets/katex/katex.min.css">{% endif %}
-  {% if math %}<link rel="stylesheet" href="/assets/code.css">{% endif %}
+  {% if math %}<link rel="stylesheet" href="/assets/katex/katex.min.css"><link rel="stylesheet" href="/assets/code.css">{% endif %}
 </head>
 <body>
-  <a class="skip-link" href="#{{ skipTarget or mainId or 'main-content' }}">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page">
     <header class="topbar">
-      <a class="wordmark" href="/index.html"{% if navSection == "home" %} aria-current="page"{% endif %}><span>CY.</span> Cheng-You Cheng</a>
-      <nav aria-label="Main navigation"><a href="/about.html"{% if navSection == "about" %} aria-current="page"{% endif %}>About</a><a href="/community.html"{% if navSection == "community" %} aria-current="page"{% endif %}>Community</a><a href="/notes.html"{% if navSection == "journal" %} aria-current="page"{% endif %}>Journal</a><a href="/notes/index.html"{% if navSection == "notes" %} aria-current="page"{% endif %}>Notes</a><a href="/online-judge/index.html"{% if navSection == "online-judge" or platform %} aria-current="page"{% endif %}>Online Judge</a></nav>
+      <a class="wordmark" href="/index.html"><span>CY.</span> Cheng-You Cheng</a>
+      <nav aria-label="Main navigation"><a href="/about.html">About</a><a href="/community.html">Community</a><a href="/notes.html">Journal</a><a href="/notes/index.html"{% if navSection == "notes" %} aria-current="page"{% endif %}>Notes</a><a href="/online-judge/index.html"{% if navSection != "notes" %} aria-current="page"{% endif %}>Online Judge</a></nav>
     </header>
-    <main id="{{ mainId or 'main-content' }}" tabindex="-1"{% if mainClass %} class="{{ mainClass }}"{% endif %}>{{ content | safe }}</main>
-    <footer class="footer" id="contact"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
+    <main id="main-content" tabindex="-1">{{ content | safe }}</main>
+    <footer class="footer"><span>Cheng-You Cheng · NCKU Mathematics</span><span><a href="mailto:jackyyoyo2@gmail.com">Email</a> · <a href="https://github.com/jengyoyoAo">GitHub</a></span></footer>
   </div>
   {% if math %}<script src="/solution-tabs.js" defer></script>{% endif %}
 </body>

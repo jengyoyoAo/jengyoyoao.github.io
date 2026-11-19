@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A static personal website for my profile, selected projects, teaching, and contact information.",
   "scripts": {
-    "build": "node scripts/clean.cjs && node scripts/validate-content.cjs && eleventy",
+    "build": "node scripts/clean.cjs && eleventy",
     "dev": "node scripts/clean.cjs && eleventy --serve --port=8765",
     "test": "npm run build && node --test tests/site.test.cjs",
     "new:solution": "node scripts/new-solution.cjs",

@@ -55,21 +55,7 @@ npm run new:note -- linear-algebra-basics "Linear Algebra Basics" --topic=Mathem
 
 預設 `draft: true`，不會出現在產生的網站、列表或計數。完成內容後改成 `draft: false`，再跑 `npm run dev` 預覽。草稿仍存在 Git repository；這不是儲存私人資料的機制。
 
-### Notes 中繼資料
-
-每個 `notes/**/*.md` 檔案（包括草稿和章節頁）都必須提供以下欄位：
-
-- `layout`：`note.njk`、`mathematics-section.njk`、`geometry-section.njk` 或 `vocabulary.njk`。
-- `tags`：恰好一個內容標籤：`note`、`math-section` 或 `vocabulary-section`。
-- `title`、`summary`：非空字串。
-- `topic`：必須符合 `_data/noteTopics.json` 中某個分類的 `name`。
-- `date`：有效的 `YYYY-MM-DD` 日期。
-- `permalink`：唯一的 `notes/<slug>/index.html` 路徑。
-- `draft`：選填；若提供，必須是 YAML 布林值 `true` 或 `false`。
-
-`npm run build` 會在 Eleventy 建置前檢查所有筆記，包括草稿，並列出來源檔及欄位問題。一般筆記使用 `layout: note.njk`、`tags: [note]`，例如 `notes/linear-algebra-basics/index.html`。Notes 列表依日期由新到舊排列。
-
-Journal 與 Notes 是不同內容：Journal 收錄個人經驗和反思，來源在 `journal/*.njk`，索引頁來源為 `notes.njk`、公開網址仍是 `/notes.html`；Notes 收錄數學、程式、AI、英文和工具等學習內容，來源在 `notes/`。
+一般知識筆記使用 `layout: note.njk`、`tags: [note]`，網址例如 `notes/linear-algebra-basics/index.html`。Notes 列表依日期由新到舊排列。不要把舊的 Journal（`notes.html`）與新的 Notes（`notes/`）混在一起。
 
 ## LaTeX
 
@@ -90,4 +76,4 @@ $$
 3. Commit Markdown、原始碼、模板等來源檔；不要 commit `_site/` 或 `node_modules/`。
 4. Push 到 `master` 後，GitHub Actions 會建置並發布（首次需完成部署設定）。
 
-首頁、About、Community、Journal 索引與 Journal 文章共用 `_includes/base.njk` 的導覽、頁尾和頁面外框。新增全站導覽項目時，只需更新共用模板。各頁仍以明確的 `permalink` 保留既有公開網址。
+目前首頁、About、Community 和 Journal 仍保留原本的靜態 HTML；已自動化的是解題文章、平台列表、進度與新增的學習筆記。未來新增全站導覽項目時，也要同步這些既有靜態頁。
