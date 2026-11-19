@@ -3,6 +3,8 @@ const path = require('node:path');
 const katex = require('katex');
 const matter = require('gray-matter');
 const platforms = new Set(['project-euler','leetcode','cses','zerojudge']);
+const noteLayouts = new Set(['note.njk','mathematics-section.njk','geometry-section.njk','vocabulary.njk']);
+const noteTags = new Set(['note','math-section','vocabulary-section']);
 const escape = s => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 function sourceFile(file) {
   const root = path.resolve('solutions');
@@ -52,6 +54,31 @@ function validateArticles(items) {
   if(d.permalink!==`online-judge/${d.platform}/problem-${d.problem_id}.html`)throw new Error(`Unexpected article URL: ${inputPath}`);
  }
 }
+function validateNotes(items, topics) {
+ const topicNames = new Set(topics.map(topic => topic.name));
+ const seenPermalinks = new Set();
+ const errors = [];
+ for (const {data:d,inputPath} of items) {
+  const missing = ['layout','tags','title','summary','topic','date','permalink'].filter(key => d[key] === undefined || d[key] === null || d[key] === '');
+  if (missing.length) errors.push(`${inputPath}: missing required fields: ${missing.join(', ')}`);
+  if (d.layout && !noteLayouts.has(d.layout)) errors.push(`${inputPath}: unsupported layout "${d.layout}"`);
+  if (d.tags && (!Array.isArray(d.tags) || d.tags.length !== 1 || !noteTags.has(d.tags[0]))) errors.push(`${inputPath}: tags must contain exactly one of: ${[...noteTags].join(', ')}`);
+  if (d.title !== undefined && (typeof d.title !== 'string' || !d.title.trim())) errors.push(`${inputPath}: title must be a nonempty string`);
+  if (d.summary !== undefined && (typeof d.summary !== 'string' || !d.summary.trim())) errors.push(`${inputPath}: summary must be a nonempty string`);
+  if (d.topic && !topicNames.has(d.topic)) errors.push(`${inputPath}: topic "${d.topic}" is not listed in _data/noteTopics.json`);
+  if (d.date !== undefined) {
+   const date = d.date instanceof Date && !Number.isNaN(d.date.valueOf()) ? d.date.toISOString().slice(0,10) : String(d.date);
+   if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(`${date}T00:00:00Z`)) || new Date(`${date}T00:00:00Z`).toISOString().slice(0,10) !== date) errors.push(`${inputPath}: date must be a valid YYYY-MM-DD value`);
+  }
+  if (d.draft !== undefined && typeof d.draft !== 'boolean') errors.push(`${inputPath}: draft must be true or false`);
+  if (d.permalink !== undefined) {
+   if (typeof d.permalink !== 'string' || !/^notes\/[a-z0-9][a-z0-9/-]*\/index\.html$/.test(d.permalink) || d.permalink.includes('//') || d.permalink.includes('..')) errors.push(`${inputPath}: permalink must be a notes/<slug>/index.html path`);
+   else if (seenPermalinks.has(d.permalink)) errors.push(`${inputPath}: duplicate permalink "${d.permalink}"`);
+   else seenPermalinks.add(d.permalink);
+  }
+ }
+ if (errors.length) throw new Error(`Invalid Notes metadata:\n${errors.map(error => `- ${error}`).join('\n')}`);
+}
 function publishedFiles() {
  const walk = dir => fs.readdirSync(dir,{withFileTypes:true}).flatMap(f=>f.isDirectory()?walk(path.join(dir,f.name)):[path.join(dir,f.name)]);
  const files=new Set();
@@ -67,4 +94,4 @@ function publishedFiles() {
  }
  return [...files];
 }
-module.exports={mathPlugin,escape,sourceFile,validateArticles,publishedFiles};
+module.exports={mathPlugin,escape,sourceFile,validateArticles,validateNotes,publishedFiles};

@@ -4,20 +4,30 @@ const fs=require('node:fs'),path=require('node:path'),os=require('node:os');
 const {execFileSync}=require('node:child_process');
 const {parseHTML}=require('linkedom');
 const MarkdownIt=require('markdown-it');
-const {mathPlugin,sourceFile,validateArticles}=require('../scripts/site-utils');
+const {mathPlugin,sourceFile,validateArticles,validateNotes}=require('../scripts/site-utils');
+const noteTopics=require('../_data/noteTopics.json');
 const baseline=require('./migration-baseline.json');
 const matter=require('gray-matter');
 function walk(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(f=>f.isDirectory()?walk(path.join(dir,f.name)):[path.join(dir,f.name)]);}
 const published=walk('solutions').filter(p=>p.endsWith('.md')).map(p=>({source:p,...matter(fs.readFileSync(p,'utf8')).data})).filter(d=>d.tags?.includes('solution') && d.draft!==true);
 const leetcodeIds=published.filter(d=>d.platform==='leetcode').map(d=>d.problem_id).sort((a,b)=>a-b);
 const articleChecks=published.map(d=>({url:d.permalink,codes:Object.values(d).filter(Array.isArray).flat().filter(v=>v?.path).map(v=>v.path)}));
+const publishedNotes=walk('notes').filter(file=>file.endsWith('.md')).map(inputPath=>({inputPath,...matter(fs.readFileSync(inputPath,'utf8')).data})).filter(note=>note.draft!==true);
 
 const read=url=>fs.readFileSync(path.join('_site',url),'utf8');
 const doc=url=>parseHTML(read(url)).document;
 
-test('every pre-migration URL still exists, with static profile/journal pages preserved',()=>{
+test('every pre-migration public URL still exists and profile and journal pages share the same shell',()=>{
  for(const url of baseline.urls)assert.ok(fs.existsSync(path.join('_site',url)),url);
- for(const url of ['index.html','about.html','community.html','notes.html','journal/first-open-source-pr.html'])assert.equal(read(url),fs.readFileSync(url,'utf8'),url);
+ for(const note of publishedNotes)assert.ok(fs.existsSync(path.join('_site',note.permalink)),`${note.inputPath} -> ${note.permalink}`);
+ for(const topic of noteTopics)assert.ok(fs.existsSync(path.join('_site','notes',topic.slug,'index.html')),`Notes topic: ${topic.slug}`);
+ for(const article of articleChecks)assert.ok(fs.existsSync(path.join('_site',article.url)),article.url);
+ const shellPages=['index.html','about.html','community.html','notes.html','journal/first-open-source-pr.html','journal/senior-year-slow-down.html','journal/where-my-student-gets-stuck.html'];
+ const navMarkup=[];
+ for(const url of shellPages){const d=doc(url);assert.equal(d.querySelectorAll('header.topbar').length,1,url);assert.equal(d.querySelectorAll('footer.footer').length,1,url);const nav=d.querySelector('header.topbar nav');assert.ok(nav,url);nav.querySelectorAll('[aria-current]').forEach(link=>link.removeAttribute('aria-current'));navMarkup.push(nav.innerHTML);}
+ assert.ok(navMarkup.every(markup=>markup===navMarkup[0]),'shared pages use one consistent navigation');
+ assert.match(read('journal/senior-year-slow-down.html'),/language-toggle/);
+ assert.match(read('index.html'),/Trying new things/);
 });
 test('every code panel exactly matches its standalone source; tabs and rendered LaTeX remain valid',()=>{
  for(const article of articleChecks){
@@ -43,14 +53,31 @@ test('platform lists sort numerically and progress is generated without client J
  }
  for(const id of leetcodeIds)assert.ok(doc(`online-judge/leetcode/problem-${id}.html`).querySelector('.difficulty-label'));
 });
-test('all local article, asset and navigation links resolve',()=>{
- for(const url of new Set([...baseline.urls,...published.map(d=>d.permalink)])){
-  for(const el of doc(url).querySelectorAll('[href], [src]')){
-   const value=el.getAttribute('href')||el.getAttribute('src');if(!value||/^(https?:|mailto:|#|data:)/.test(value))continue;
-   const target=new URL(value,'https://site.test/'+url).pathname;
-   const full=path.join('_site',decodeURIComponent(target));assert.ok(fs.existsSync(full),`${url}: ${value}`);
+test('all local links, fragments and assets in every generated HTML page resolve',()=>{
+ const htmlFiles=walk('_site').filter(file=>file.endsWith('.html'));
+ const documents=new Map(htmlFiles.map(file=>[path.relative('_site',file).split(path.sep).join('/'),parseHTML(fs.readFileSync(file,'utf8')).document]));
+ function targetFile(pathname){
+  const relative=decodeURIComponent(pathname).replace(/^\/+/, '') || 'index.html';
+  let full=path.join('_site',relative);
+  if(fs.existsSync(full)&&fs.statSync(full).isDirectory())full=path.join(full,'index.html');
+  else if(relative.endsWith('/'))full=path.join('_site',relative,'index.html');
+  return full;
+ }
+ for(const [url,d] of documents){
+  for(const el of d.querySelectorAll('[href], [src], [poster]')){
+   const value=el.getAttribute('href') ?? el.getAttribute('src') ?? el.getAttribute('poster');
+   if(!value || /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(value))continue;
+   const target=new URL(value,`https://site.test/${url}`);
+   const full=targetFile(target.pathname);
+   assert.ok(fs.existsSync(full),`${url}: ${value}`);
+   if(target.hash && full.endsWith('.html')){
+    const targetUrl=path.relative('_site',full).split(path.sep).join('/');
+    const targetDocument=documents.get(targetUrl) || parseHTML(fs.readFileSync(full,'utf8')).document;
+    assert.ok(targetDocument.getElementById(decodeURIComponent(target.hash.slice(1))),`${url}: ${value} points to a missing fragment`);
+   }
   }
  }
+ assert.ok(htmlFiles.length>=baseline.urls.length,'link checker includes all generated HTML pages');
 });
 test('LaTeX supports inline/display math, preserves code, and rejects invalid formulas',()=>{
  const md=new MarkdownIt().use(mathPlugin);
@@ -58,6 +85,13 @@ test('LaTeX supports inline/display math, preserves code, and rejects invalid fo
  assert.match(html,/katex-display/);assert.match(html,/<code>\$n\$<\/code>/);assert.match(html,/x = &quot;\$n\$&quot;/);
  assert.throws(()=>md.render('$\\notARealCommand{n}$'));
  assert.throws(()=>md.render('$$\nx\n'));
+});
+test('Notes metadata validates required fields, topics, layouts and unique public URLs',()=>{
+ const data={layout:'note.njk',tags:['note'],title:'Test note',summary:'A short summary.',topic:'Mathematics',date:new Date('2026-11-19T00:00:00Z'),permalink:'notes/test-note/index.html'};
+ assert.doesNotThrow(()=>validateNotes([{data,inputPath:'notes/test-note.md'}],noteTopics));
+ assert.throws(()=>validateNotes([{data:{...data,topic:'Learning'},inputPath:'notes/test-note.md'}],noteTopics),/topic .*noteTopics.json/);
+ assert.throws(()=>validateNotes([{data:{...data,summary:''},inputPath:'notes/test-note.md'}],noteTopics),/summary/);
+ assert.throws(()=>validateNotes([{data},{data}],noteTopics),/duplicate permalink/);
 });
 test('metadata and source errors fail clearly',()=>{
  assert.throws(()=>sourceFile('../secrets.py'));
