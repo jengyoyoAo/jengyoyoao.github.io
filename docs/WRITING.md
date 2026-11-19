@@ -71,6 +71,19 @@ Before Eleventy builds the site, `npm run build` validates all notes, including 
 
 Journal and Notes are separate sections. Journal contains personal experiences and reflections; its source files are in `journal/*.njk`, and its index source is `notes.njk`, which retains the public URL `/notes.html`. Notes contains learning material in mathematics, programming, AI, English, and tools; its source files are in `notes/`.
 
+## Pre-publication checks for LLM-assisted content
+
+Use the checks that apply whenever an LLM helped draft, translate, summarize, or produce content. Treat generated text and code as a draft, and verify it against reliable sources and your own intent before publishing.
+
+- **Facts and dates:** Check names, claims, dates, and links against the original records or authoritative sources. Do not fill gaps with plausible-sounding details or include personal information that was not intended for publication.
+- **Mathematics notes:** Verify definitions, assumptions, theorem statements, and each step of a proof or derivation. Recalculate examples independently, including boundary cases, and confirm that notation is consistent.
+- **Programming notes and solutions:** Run the code. Compare its output with known examples, then check edge cases and error behavior. Confirm that the explanation matches the actual implementation and that time and space complexity claims are justified.
+- **General study notes:** Verify technical claims against reliable or primary references, especially when they depend on a software version, standard, or recent change. Reproduce commands and outputs where possible.
+- **Journal and profile writing:** Make sure the wording says what you mean, keeps your voice, and separates remembered facts from interpretation. For bilingual writing, compare both versions for meaning, tone, and dates.
+- **Website and community pages:** Recheck your role, status, organization names, date ranges, and external links. Make sure every personal or achievement claim is supported by your records.
+
+Before publishing, preview the generated page and run `npm test`.
+
 ## LaTeX
 
 Use `$...$` for inline formulas and this format for a display formula:

@@ -20,7 +20,7 @@ module.exports = function (config) {
   config.ignores.add('solutions/TEMPLATE.md');
   config.ignores.add('_site/**');
 
-  for (const name of ['images', 'site.css', 'solution-tabs.js', 'online-judge/index.html', 'online-judge/progress-data.json']) config.addPassthroughCopy(name);
+  for (const name of ['images', 'site.css', 'solution-tabs.js', 'cv.pdf', 'online-judge/index.html', 'online-judge/progress-data.json']) config.addPassthroughCopy(name);
   config.addPassthroughCopy({'node_modules/katex/dist/katex.min.css': 'assets/katex/katex.min.css', 'node_modules/katex/dist/fonts': 'assets/katex/fonts'});
   config.addPassthroughCopy({'node_modules/highlight.js/styles/github-dark.css': 'assets/code.css'});
   // Preserve direct links to downloadable source files and Markdown notes.
