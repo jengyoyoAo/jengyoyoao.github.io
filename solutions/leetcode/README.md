@@ -25,6 +25,8 @@ For each problem, keep a Markdown explanation and source file together. Start wi
 
 - [3105: Longest Strictly Increasing or Strictly Decreasing Subarray](3105-longest-strictly-increasing-or-strictly-decreasing-subarray.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-3105.html).
 
+- [3331: Find Subtree Sizes After Changes](3331-find-subtree-sizes-after-changes.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-3331.html).
+
 - [3364: Minimum Positive Sum Subarray](3364-minimum-positive-sum-subarray.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-3364.html).
 
 - [3693: Climbing Stairs II](3693-climbing-stairs-ii.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-3693.html).
