@@ -17,6 +17,8 @@ For each problem, keep a Markdown explanation and source file together. Start wi
 
 - [1882: Process Tasks Using Servers](1882-process-tasks-using-servers.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-1882.html).
 
+- [2124: Check if All A's Appears Before All B's](2124-check-if-all-as-appears-before-all-bs.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-2124.html).
+
 - [2243: Calculate Digit Sum of a String](2243-calculate-digit-sum-of-a-string.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-2243.html).
 
 - [2567: Minimum Score by Changing Two Elements](2567-minimum-score-by-changing-two-elements.md) — Python and C; [website write-up](../../online-judge/leetcode/problem-2567.html).
